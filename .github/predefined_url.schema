@@ -1,0 +1,19 @@
+{
+    "type": "array",
+    "items": {
+        "type": "object",
+        "properties": {
+            "url": {
+                "type": "string",
+                "format": "uri",
+                "description": "The URL of the repository. It must be a valid URI."
+            },
+            "version": {
+                "type": "string",
+                "description": "The minimum supported Quartus version. This indicates that the repository is compatible with this Quartus version and all subsequent versions. If not specified, it means the repository is supported in all versions."
+            }
+        },
+        "required": ["url"],
+        "additionalProperties": false
+    }
+}
