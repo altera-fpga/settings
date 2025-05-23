@@ -1,0 +1,53 @@
+# This is a workflow to get the design examples of https://github.com/altera-fpga/settings/blob/main/predefined_url.json
+
+name: Get Predefined Design Examples
+
+on:
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+  # Schedule the workflow to run daily at 12 AM UTC
+  schedule:
+    - cron: "0 0 * * *"
+
+  # Run workflow when a file changes in the repo
+  push:
+    paths:
+      - '**/*'
+
+concurrency:
+  # Ensures that only one instance of this workflow runs at a time for the same branch
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  get-design-examples:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: 3.x
+
+      - name: Install Python Dependencies
+        shell: bash
+        run: pip install -r .github/get_predefined_de/requirements.txt
+
+      - name: Install GitHub CLI
+        run: |
+          sudo apt update
+          sudo apt install -y gh
+
+      - name: Get Predefined Design Examples
+        run: python .github/get_predefined_de/main.py
+
+      - name: Create Pull Request if Changes
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          chmod +x .github/get_predefined_de/create_pr_if_changes.sh && \
+          .github/get_predefined_de/create_pr_if_changes.sh
