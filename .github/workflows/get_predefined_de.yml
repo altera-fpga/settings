@@ -13,7 +13,8 @@ on:
   # Run workflow when a file changes in the repo
   push:
     paths:
-      - '**/*'
+      - '.github/get_predefined_de/controller.json'
+      - 'predefined_url.json'
 
 concurrency:
   # Ensures that only one instance of this workflow runs at a time for the same branch
