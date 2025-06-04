@@ -96,6 +96,51 @@ def replace_if_diff(options, all_list_json):
         )
 
 
+def convert_to_raw_github_url(github_url):
+    """
+    Convert a GitHub file URL to its raw content URL.
+
+    Parameters:
+    - github_url (str): The original GitHub URL.
+
+    Returns:
+    - str: The raw content URL.
+    """
+    # Split the URL to remove the protocol and get the path
+    parts = github_url.split("github.com/", 1)[-1]
+    
+    # Remove the authentication token if present
+    parts = parts.split("@", 1)[-1]
+    
+    # Replace 'blob/' with an empty string
+    parts = parts.replace("blob/", "")
+    
+    # Construct the raw content URL
+    raw_url = "https://raw.githubusercontent.com/" + parts
+    
+    return raw_url
+
+
+def use_raw_image_url(rich_description, repo_url):
+    img_pattern = r'<img [^>]*src="([^"]+)"[^>]*>'
+
+    # Function to replace the URL
+    def replace_with_raw(match):
+        img_url = match.group(1)
+
+        # Check if the repo_url is part of the image URL
+        # Ensure only GitHub URL with the same repo can be raw
+        if is_github(img_url) and repo_url in img_url:
+            raw_img_url = convert_to_raw_github_url(img_url)
+            return match.group(0).replace(img_url, raw_img_url)
+        else:
+            # If repo_url is not part of the image URL, return the original match
+            return match.group(0)
+
+    modified_description = re.sub(img_pattern, replace_with_raw, rich_description)
+    return modified_description
+
+
 def get_design_examples_list(data):
     # Possibility 1: { "data": { "designs": [] } }
     if "data" in data:
@@ -184,6 +229,9 @@ def process_github_url(url_detail):
                     item["Q_DOWNLOAD_URL"] = ""
 
                 item["Q_GITHUB_RELEASE"] = release["tag_name"]
+
+                # Modify the Rich Description Image URL by using raw GitHub URL
+                item["rich_description"] = use_raw_image_url(item["rich_description"], f"{url_detail['repo_owner']}/{url_detail['repo_name']}")
 
             list_json.extend(list_json_by_release)
         else:
