@@ -23,6 +23,7 @@ jobs:
           context: build-test-status
           status: "pending"
           token: ${{ secrets.GH_TOKEN }}
+          sha: ${{ github.sha }}
 
   build-test:
     runs-on: ubuntu-latest
@@ -65,3 +66,4 @@ jobs:
           context: build-test-status
           status: ${{ job.status }}
           token: ${{ secrets.GH_TOKEN }}
+          sha: ${{ github.sha }}
