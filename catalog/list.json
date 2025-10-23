@@ -4922,7 +4922,7 @@
             "devkit": "Agilex 5 FPGA E-Series 065B Premium Development Kit DK-A5E065BB32AES1",
             "device_part": "A5ED065BB32AE6SR0",
             "description": "Nios® V/c Processor-based Helloworld example design on the Agilex 5 FPGA E-Series 065B Premium Development Kit DK-A5E065BB32AES1",
-            "rich_description": "<p>Nios® V/c Processor-based Helloworld example design on the Agilex 5 FPGA E-Series 065B Premium Development Kit DK-A5E065BB32AES1</p><p><img alt=\"image\" src=\"https://github.com/altera-fpga/niosv-ed/blob/rel/25.3.0/niosv_c/niosv_c_helloworld_ocm_mem_test/img/hello_world_ocm.png\"/></p>",
+            "rich_description": "<p>Nios® V/c Processor-based Helloworld example design on the Agilex 5 FPGA E-Series 065B Premium Development Kit DK-A5E065BB32AES1</p><p><img alt=\"image\" src=\"https://raw.githubusercontent.com/altera-fpga/agilex5e-nios-ed/rel/25.3.0/niosv_c/niosv_c_helloworld_ocm_mem_test/img/hello_world_ocm.png\"/></p>",
             "category": "Memory",
             "url": "https://github.com/altera-fpga/agilex5e-nios-ed/tree/rel/25.3.0/niosv_c/niosv_c_helloworld_ocm_mem_test",
             "downloadUrl": "agilex5_niosv_c_helloworld_ocm_mem_test.zip",
@@ -4956,7 +4956,7 @@
                     "downloadUrl": "https://github.com/altera-fpga/agilex5e-nios-ed/blob/rel/25.3.0/niosv_g/niosv_g_webserver_ping/docs/NiosV_g_Processor_ping_on_Agilex_5_FPGA.md"
                 }
             ],
-            "Q_DOWNLOAD_URL": "https://api.github.com/repos/altera-fpga/agilex5e-nios-ed/releases/assets/303625841",
+            "Q_DOWNLOAD_URL": "https://api.github.com/repos/altera-fpga/agilex5e-nios-ed/releases/assets/307673766",
             "Q_GITHUB_RELEASE": "25.3.0-v1.0",
             "Q_VALIDATED": true
         },
