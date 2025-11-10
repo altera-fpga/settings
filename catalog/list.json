@@ -5879,7 +5879,7 @@
             "url": "https://github.com/altera-fpga/agilex3e-nios-ed/blob/rel/25.1.1/niosv_m/baseline_ghrd/docs/Nios_Vm_Processor_Baseline_GHRD_Design_on_Agilex_3_FPGA.md",
             "downloadUrl": "agilex3_niosv_m_baseline_ghrd.zip",
             "documentations": [],
-            "Q_DOWNLOAD_URL": "https://api.github.com/repos/altera-fpga/agilex3e-nios-ed/releases/assets/290820587",
+            "Q_DOWNLOAD_URL": "https://api.github.com/repos/altera-fpga/agilex3c-nios-ed/releases/assets/290820587",
             "Q_GITHUB_RELEASE": "25.1.1-v1.0",
             "Q_VALIDATED": true
         },
@@ -5896,7 +5896,7 @@
             "category": "GHRD",
             "url": "https://github.com/altera-fpga/agilex3e-nios-ed/releases/download/25.1-v1.0/agilex3_niosv_m_baseline_ghrd.zip",
             "downloadUrl": "agilex3_niosv_m_baseline_ghrd.zip",
-            "Q_DOWNLOAD_URL": "https://api.github.com/repos/altera-fpga/agilex3e-nios-ed/releases/assets/247410476",
+            "Q_DOWNLOAD_URL": "https://api.github.com/repos/altera-fpga/agilex3c-nios-ed/releases/assets/247410476",
             "Q_GITHUB_RELEASE": "25.1.0-v1.0",
             "Q_VALIDATED": true
         }
