@@ -305,7 +305,8 @@ def extract_url_details(urls):
 
 
 def get_legacy_predefined_url():
-    return ["https://bsas.intel.com/api/design_examples/latest/"]
+    # return ["https://bsas.intel.com/api/design_examples/latest/"]
+    return []
 
 
 def get_predefined_url():
