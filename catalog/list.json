@@ -1,6 +1,78 @@
 {
-    "num": 87,
+    "num": 94,
     "designs": [
+        {
+            "id": "-",
+            "title": "Agilex 7 FPGA - TinyML LiteRT System Example Design on Nios® V/g Processor",
+            "source": "GitHub",
+            "family": "Agilex 7",
+            "quartus_version": "25.3.1",
+            "patch_number": "Unknown",
+            "devkit": "Agilex® 7 FPGA F-Series Development Kit P-Tile and E-Tile DK-DEV-AGF014EA",
+            "device_part": "AGFB014R24B2E2V",
+            "description": "Nios® V/g Processor-based TinyML LiteRT system example design on the Agilex® 7 FPGA.",
+            "rich_description": "<p>This design demonstrates the TinyML application using LiteRT for microcontrollers software with Nios® V/g processor in the Agilex® 7 FPGA F-Series Development Kit P-Tile and E-Tile DK-DEV-AGF014EA. </p><p><img alt=\"image\" src=\"https://raw.githubusercontent.com/altera-fpga/agilex7f-nios-ed/rel/25.3.1/agf014ea-dev-devkit/niosv_g/tinyml_liteRT/img/block_diagram.png\"/></p>",
+            "category": "AI",
+            "url": "https://github.com/altera-fpga/agilex7f-nios-ed/releases/download/25.3.1/agilex7_niosv_g_tinyml_liteRT.zip",
+            "downloadUrl": "agilex7_niosv_g_tinyml_liteRT.zip",
+            "documentations": [
+                {
+                    "title": "Design Document",
+                    "downloadUrl": "https://github.com/altera-fpga/agilex7f-nios-ed/blob/rel/25.3.1/agf014ea-dev-devkit/niosv_g/tinyml_liteRT/docs/Nios_Vg_Processor_TinyML_Design_on_Agilex_7_FPGA.md"
+                }
+            ],
+            "Q_DOWNLOAD_URL": "https://api.github.com/repos/altera-fpga/agilex7f-nios-ed/releases/assets/344658973",
+            "Q_GITHUB_RELEASE": "25.3.1",
+            "Q_VALIDATED": true
+        },
+        {
+            "id": "-",
+            "title": "Agilex 7 FPGA Nios V/m Transceiver Loopback System Example Design",
+            "source": "GitHub",
+            "family": "Agilex 7",
+            "quartus_version": "25.3.1",
+            "patch_number": "Unknown",
+            "devkit": "Agilex 7 FPGA F-Series Development Kit 2xF-Tile DK-DEV-AGF027F1ES",
+            "device_part": "AGFD023R24C2E1VC",
+            "description": "F-Tile Transceiver loopback system example design on Agilex™ 7 FPGA F-Series Development Kit (2xF-Tile)",
+            "rich_description": "<p>This design demonstrates the serial loopback via QSFPDD on Agilex™ 7 FPGA F-Series Development Kit (2xF-Tile)</p><p><img alt=\"image\" src=\"https://raw.githubusercontent.com/altera-fpga/agilex7f-nios-ed/rel/25.3.1/agf027f1es-dev-devkit/niosv_m/xcver_ser_lp/img/niosv_xcver.png\"/></p>",
+            "category": "Transceiver",
+            "url": "https://github.com/altera-fpga/agilex7f-nios-ed/releases/download/25.3.1/agilex7_xcver_loopback.zip",
+            "downloadUrl": "agilex7_xcver_loopback.zip",
+            "documentations": [
+                {
+                    "title": "Design Document",
+                    "downloadUrl": "https://github.com/altera-fpga/agilex7f-nios-ed/blob/rel/25.3.1/agf027f1es-dev-devkit/niosv_m/xcver_ser_lp/docs/Nios_Vm_Processor_PAM4_8x53Gbps_with_QSFPDD_Serial_loopback_design.md"
+                }
+            ],
+            "Q_DOWNLOAD_URL": "https://api.github.com/repos/altera-fpga/agilex7f-nios-ed/releases/assets/344685849",
+            "Q_GITHUB_RELEASE": "25.3.1",
+            "Q_VALIDATED": true
+        },
+        {
+            "id": "-",
+            "title": "Agilex 7 FPGA - Lockstep System Example Design on Nios® V/g Processor",
+            "source": "GitHub",
+            "family": "Agilex 7",
+            "quartus_version": "25.3.1",
+            "patch_number": "Unknown",
+            "devkit": "Agilex® 7 FPGA F-Series Development Kit P-Tile and E-Tile DK-DEV-AGF014EA",
+            "device_part": "AGFB014R24B2E2V",
+            "description": "Nios® V/g Processor-based Lockstep system example design on the Agilex® 7 FPGA.",
+            "rich_description": "<p>This design demonstrates the working of NiosV/g lockstep feature through the standard fail safe control mechanism using by injecting root faults and reading alarms with Nios® V/m as the system supervisor on Agilex® 7 FPGA F-Series Development Kit P-Tile and E-Tile DK-DEV-AGF014EA. </p><p><img alt=\"image\" src=\"https://raw.githubusercontent.com/altera-fpga/agilex7f-nios-ed/rel/25.3.1/agf014ea-dev-devkit/niosv_g/lockstep/img/block_diagram.png\"/></p>",
+            "category": "Nios V",
+            "url": "https://github.com/altera-fpga/agilex7f-nios-ed/releases/download/25.3.1/agilex7_niosv_g_lockstep.zip",
+            "downloadUrl": "agilex7_niosv_g_lockstep.zip",
+            "documentations": [
+                {
+                    "title": "Design Document",
+                    "downloadUrl": "https://github.com/altera-fpga/agilex7f-nios-ed/blob/rel/25.3.1/agf014ea-dev-devkit/niosv_g/lockstep/docs/Nios_Vg_Processor_Lockstep_Design_on_Agilex_7_FPGA.md"
+                }
+            ],
+            "Q_DOWNLOAD_URL": "https://api.github.com/repos/altera-fpga/agilex7f-nios-ed/releases/assets/348032378",
+            "Q_GITHUB_RELEASE": "25.3.1",
+            "Q_VALIDATED": true
+        },
         {
             "id": "-",
             "title": "Agilex 7 FPGA - Lockstep Example Design Example on Nios V/g Processor",
@@ -593,6 +665,78 @@
             "downloadUrl": "agilex7_sisoc_sss.zip",
             "Q_DOWNLOAD_URL": "https://api.github.com/repos/altera-fpga/agilex7f-nios-ed/releases/assets/220575932",
             "Q_GITHUB_RELEASE": "24.3.0-v1.0",
+            "Q_VALIDATED": true
+        },
+        {
+            "id": "-",
+            "title": "Agilex 5 FPGA - TinyML LiteRT System Example Design on Nios® V/g Processor",
+            "source": "GitHub",
+            "family": "Agilex 5",
+            "quartus_version": "25.3.1",
+            "patch_number": "Unknown",
+            "devkit": "Agilex 5 FPGA ESeries 065B Premium Development Kit DKA5E065BB32AES1",
+            "device_part": "A5ED065BB32AE6SR0",
+            "description": "Nios® V/g Processor-based TinyML LiteRT example design on the Agilex® 5 FPGA.",
+            "rich_description": "<p>This design demonstrates the TinyML application using LiteRT for microcontrollers software with Nios® V/g processor in the Agilex™ 5 FPGA E-Series 065B Premium Development Kit (ES1) DK-A5E065BB32AES1. </p><p><img alt=\"image\" src=\"https://github.com/intel-innersource/applications.fpga.niosv-example-designs.niosv-example-designs/blob/rel/25.3.1/a5e065b-prem-devkit/niosv_g/tinyml_liteRT/img/block_diagram.png\"/></p>",
+            "category": "AI",
+            "url": "https://github.com/altera-fpga/agilex5e-nios-ed/releases/download/25.3.1/agilex5_niosv_g_tinyml_liteRT.zip",
+            "downloadUrl": "agilex5_niosv_g_tinyml_liteRT.zip",
+            "documentations": [
+                {
+                    "title": "Design Document",
+                    "downloadUrl": "https://github.com/intel-innersource/applications.fpga.niosv-example-designs.niosv-example-designs/blob/rel/25.3.1/agf014ea-dev-devkit/niosv_g/tinyml_liteRT/img/block_diagram.png"
+                }
+            ],
+            "Q_DOWNLOAD_URL": "https://api.github.com/repos/altera-fpga/agilex5e-nios-ed/releases/assets/349981796",
+            "Q_GITHUB_RELEASE": "25.3.1",
+            "Q_VALIDATED": true
+        },
+        {
+            "id": "-",
+            "title": "Nios® V/m Full Feature Golden Hardware Reference Design (GHRD) Overview",
+            "source": "GitHub",
+            "family": "Agilex 5",
+            "quartus_version": "25.3.1",
+            "patch_number": "Unknown",
+            "devkit": "Agilex 5 FPGA E-Series 065B Premium Development Kit DK-A5E065BB32AES1",
+            "device_part": "A5ED065BB32AE6SR0",
+            "description": "This design demonstrates the Full Feature Golden Hardware Reference Design (GHRD) that showcases the connectivity to multiple peripherals with Nios® V/m processor as the core on Agilex™ 5 FPGA E-Series 065B Premium Development Kit.",
+            "rich_description": "<p>This example design includes a Nios® V/m processor connected to various on-board peripherals.\nThe objective of the design is to accomplish data transfer between the processor and soft IP peripherals. Each peripheral has a dedicated application which demonstrates it's basic use.</p><p><img alt=\"Block Diagram\" src=\"https://raw.githubusercontent.com/altera-fpga/agilex5e-nios-ed/rel/25.3.1/niosv_m/niosv_m_full_feature_ghrd/img/full_feature_ghrd_block_design.png\"/></p>",
+            "category": "GHRD",
+            "url": "https://github.com/altera-fpga/agilex5e-nios-ed/releases/download/25.3.1/agilex5_niosv_m_full_feature_ghrd.zip",
+            "downloadUrl": "agilex5_niosv_m_full_feature_ghrd.zip",
+            "documentations": [
+                {
+                    "title": "Design Document",
+                    "downloadUrl": "https://github.com/altera-fpga/agilex5e-nios-ed/blob/rel/25.3.1/niosv_m/niosv_m_full_feature_ghrd/docs/NiosV_m_Processor_full_feature_ghrd_on_Agilex_5_FPGA.md"
+                }
+            ],
+            "Q_DOWNLOAD_URL": "https://api.github.com/repos/altera-fpga/agilex5e-nios-ed/releases/assets/352964718",
+            "Q_GITHUB_RELEASE": "25.3.1",
+            "Q_VALIDATED": true
+        },
+        {
+            "id": "-",
+            "title": "Nios® V/g Ping System Example Design",
+            "source": "GitHub",
+            "family": "Agilex 5",
+            "quartus_version": "25.3.1",
+            "patch_number": "Unknown",
+            "devkit": "Agilex 5 FPGA E-Series 065B Premium Development Kit DK-A5E065BB32AES1",
+            "device_part": "A5ED065BB32AE6SR0",
+            "description": "This design demonstrates the Ping application on a Nios® V/g processor using the Triple Speed Ethernet IP for the Agilex™ 5 FPGA E-Series 065B Premium Development Kit.",
+            "rich_description": "<p>The example design demonstrates ping application. The Nios V/g acts as the core. The Triple Speed Ethernet (TSE) IP is configured in RGMII mode and connectes to the onboard 88E1512 PHY via RGMII interface. </p><p>The design has 2 MSGDMA IPs configured in Memory Mapped to Stream (MM2S) mode for Transmission and Stream to Memory Mapped (S2MM) mode for Reception.</p><p>To test the application, connect the RGMII Interface of the Agilex 5 Development Kit to the Link Partner using RJ-45 cable.</p><p>Ensure that the IP addresses are modified accordingly in the application code under the following location - sw/app_freertos/main.c</p><p>Once the application binaries are downloaded (See section 3.d below for the steps), the board starts pinging the link partner automatically.</p><p>Observe the Ping Request and Response prints on the terminal.</p><p><img alt=\"image\" src=\"https://raw.githubusercontent.com/altera-fpga/agilex5e-nios-ed/rel/25.3.1/niosv_g/niosv_g_webserver_ping/img/web_server_block_diagram.png\"/></p><h2>Fix for the packet drop issue observed in 25.3</h2><p>To fix the packet drops that were observed when the board and link partner ping each other in 25.3, make the changes described below:</p><p>File to be modified- msgdma_driver.c</p><p>File path - sw/bsp_freertos/FreeRTOS_TCP_IP/source/portable/NetworkInterface/AlteraTSE/msgdma_driver.c</p><p>Function to be modified- msgdma_InitRxDescList()</p><p>Modification- Add the highlighted lines as shown in the figure below</p><p><img alt=\"image\" src=\"https://raw.githubusercontent.com/altera-fpga/agilex5e-nios-ed/rel/25.3.1/niosv_g/niosv_g_webserver_ping/img/msgdma_driver_update.png\"/></p><p>Note: The default BSP generated using niosv-bsp command will not have the above changes. Ensure these changes are done manually.</p><p>Once done, run niosv-app, cmake and make commands as mentioned in section 3.c below.</p>",
+            "category": "Networking",
+            "url": "https://github.com/altera-fpga/agilex5e-nios-ed/releases/download/25.3.1/agilex5_niosv_g_webserver_ping.zip",
+            "downloadUrl": "agilex5_niosv_g_webserver_ping.zip",
+            "documentations": [
+                {
+                    "title": "Design Document",
+                    "downloadUrl": "https://github.com/altera-fpga/agilex5e-nios-ed/blob/rel/25.3.1/niosv_g/niosv_g_webserver_ping/docs/NiosV_g_Processor_ping_on_Agilex_5_FPGA.md"
+                }
+            ],
+            "Q_DOWNLOAD_URL": "https://api.github.com/repos/altera-fpga/agilex5e-nios-ed/releases/assets/350434978",
+            "Q_GITHUB_RELEASE": "25.3.1",
             "Q_VALIDATED": true
         },
         {
@@ -1737,6 +1881,30 @@
             "downloadUrl": "a5ed065es-premium-devkit-debug2-legacy-baseline.zip",
             "Q_DOWNLOAD_URL": "https://api.github.com/repos/altera-fpga/agilex5e-ed-gsrd/releases/assets/245602288",
             "Q_GITHUB_RELEASE": "QPDS25.1_REL_GSRD_PR",
+            "Q_VALIDATED": true
+        },
+        {
+            "id": "-",
+            "title": "Nios® V/g Ping Design",
+            "source": "GitHub",
+            "family": "Agilex 3",
+            "quartus_version": "25.3.1",
+            "patch_number": "Unknown",
+            "devkit": "default",
+            "device_part": "A3CZ135BB18AE7S",
+            "description": "This design demonstrates the Ping application on a Nios® V/g processor using the Triple Speed Ethernet IP for the Atum 3 Terasic Development Kit.",
+            "rich_description": "<p>The example design demonstrates ping application. The Nios V/g acts as the core. The Triple Speed Ethernet (TSE) IP is configured in RGMII mode and connectes to the onboard DP83867IR TI PHY via RGMII interface. \nThe design has 2 MSGDMA IPs configured in Memory Mapped to Stream (MM2S) mode for Transmission and Stream to Memory Mapped (S2MM) mode for Reception.</p><p>To test the application, connect the RGMII Interface of the Atum 3 Development Kit to the Link Partner using RJ-45 cable.\nEnsure that the IP addresses are modified accordingly in the application code under the following location - sw/app_freertos/main.c\nOnce the application binaries are downloaded (See section 3.d below for the steps), the board starts pinging the link partner automatically.\nObserve the Ping Request and Response prints on the terminal.</p><p><img alt=\"image\" src=\"https://github.com/altera-fpga/agilex3c-nios-ed/blob/rel/25.3.1/terasic_atum_a3_nano/niosv_g/niosv_g_webserver_ping/img/web_server_block_diagram.png\"/></p><h2>Manual update of the TSE and MSGDMA driver code</h2><p>For 25.3.1, when the user builds the Niosv BSP, the driver code for TSE and MSGDMA are not compatible with Agilex 3.</p><p>To ensure the correct files are picked, please do the following steps:</p><ol>\n<li>\n<p>Create the BSP manually by running the command in section 3.c below</p>\n</li>\n<li>\n<p>Remove the following folder: sw/bsp_freertos/FreeRTOS_TCP_IP/source/portable/NetworkInterface/AlteraTSE/</p>\n</li>\n<li>\n<p>Replace it with the AlteraTSE folder shared with the package .zip or uploaded under sources/sw in github repository.</p>\n</li>\n<li>\n<p>Run the app creation , cmake and make commands from section 3c below. Do not re-generate BSP as it will overwrite the replaced driver files.</p>\n</li>\n</ol>",
+            "category": "Networking",
+            "url": "https://github.com/altera-fpga/agilex3c-nios-ed/releases/download/25.3.1/atum_a3_nano_niosv_g_webserver_ping.zip",
+            "downloadUrl": "atum_a3_nano_niosv_g_webserver_ping.zip",
+            "documentations": [
+                {
+                    "title": "Design Document",
+                    "downloadUrl": "https://github.com/altera-fpga/agilex3c-nios-ed/blob/rel/25.3.1/terasic_atum_a3_nano/niosv_g/niosv_g_webserver_ping/docs/Nios_Vg_Processor_Webserver_Ping_Design_on_Atum_A3_Nano_FPGA.md"
+                }
+            ],
+            "Q_DOWNLOAD_URL": "https://api.github.com/repos/altera-fpga/agilex3c-nios-ed/releases/assets/355166240",
+            "Q_GITHUB_RELEASE": "25.3.1",
             "Q_VALIDATED": true
         },
         {
