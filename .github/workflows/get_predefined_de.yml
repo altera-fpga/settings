@@ -48,7 +48,7 @@ jobs:
           sudo apt install -y gh
 
       - name: Get Predefined Design Examples
-        run: python .github/get_predefined_de/main.py
+        run: python .github/get_predefined_de/main.py --predefined_url "https://github.com/altera-fpga/agilex5e-nios-ed" --predefined_url "https://github.com/altera-fpga/agilex3c-nios-ed"
 
       - name: Create Pull Request if Changes
         env:
