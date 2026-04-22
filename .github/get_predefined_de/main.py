@@ -340,7 +340,7 @@ def get_unique_urls(url_details):
 
 def merge_with_existing_catalog(options, new_designs):
     """Load the existing catalog and merge new designs into it.
-    New designs take precedence over existing ones with the same downloadUrl."""
+    Uses 'url' as the unique key: matching entries are updated, new ones are appended."""
     existing_designs = []
 
     if os.path.exists(options.output):
@@ -352,14 +352,22 @@ def merge_with_existing_catalog(options, new_designs):
         except Exception as e:
             logging.warning(f"Could not read existing catalog: {e}. Starting fresh.")
 
-    new_download_urls = {
-        d.get("downloadUrl") for d in new_designs if d.get("downloadUrl")
-    }
-    filtered_existing = [
-        d for d in existing_designs if d.get("downloadUrl") not in new_download_urls
-    ]
+    new_designs_by_url = {d["url"]: d for d in new_designs if "url" in d}
 
-    merged = filtered_existing + new_designs
+    merged = []
+    seen_urls = set()
+    for design in existing_designs:
+        url = design.get("url")
+        if url and url in new_designs_by_url:
+            merged.append(new_designs_by_url[url])
+            seen_urls.add(url)
+        else:
+            merged.append(design)
+
+    for url, design in new_designs_by_url.items():
+        if url not in seen_urls:
+            merged.append(design)
+
     return merged
 
 
