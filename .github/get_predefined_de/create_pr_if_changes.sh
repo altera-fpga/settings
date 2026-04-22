@@ -64,9 +64,9 @@ if [[ `git status --porcelain` ]]; then
     echo "Creating a pull request..."
     BODY_CONTENT="Automated PR: Differences detected between the existing file and the generated content."
     if [[ "$BRANCH" == "main" ]]; then
-        gh pr create --title "$PR_TITLE" --body "$BODY_CONTENT" --base "$BRANCH" --head "$BRANCH_NAME" --reviewer "kytiu"
+        gh pr create --title "$PR_TITLE" --body "$BODY_CONTENT" --base "$BRANCH" --head "$BRANCH_NAME"
     else
-        gh pr create --title "$PR_TITLE" --body "$BODY_CONTENT" --base "rel/$BRANCH" --head "$BRANCH_NAME" --reviewer "kytiu"
+        gh pr create --title "$PR_TITLE" --body "$BODY_CONTENT" --base "rel/$BRANCH" --head "$BRANCH_NAME"
     fi
 else
     echo "No changes to commit"
