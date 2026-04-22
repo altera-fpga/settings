@@ -338,9 +338,40 @@ def get_unique_urls(url_details):
     return unique_list
 
 
+def merge_with_existing_catalog(options, new_designs):
+    """Load the existing catalog and merge new designs into it.
+    New designs take precedence over existing ones with the same downloadUrl."""
+    existing_designs = []
+
+    if os.path.exists(options.output):
+        try:
+            with open(options.output, "r", encoding="utf-8") as file:
+                existing_content = json.load(file)
+                existing_designs = existing_content.get("designs", [])
+                logging.info(f"Loaded {len(existing_designs)} existing design(s) from catalog.")
+        except Exception as e:
+            logging.warning(f"Could not read existing catalog: {e}. Starting fresh.")
+
+    new_download_urls = {
+        d.get("downloadUrl") for d in new_designs if d.get("downloadUrl")
+    }
+    filtered_existing = [
+        d for d in existing_designs if d.get("downloadUrl") not in new_download_urls
+    ]
+
+    merged = filtered_existing + new_designs
+    return merged
+
+
 def get_design_examples(options):
     all_list_json = []
-    predefined_urls = get_predefined_url()
+
+    if options.predefined_url:
+        logging.info(f"--predefined_url mode: processing {len(options.predefined_url)} specified URL(s) only.")
+        predefined_urls = options.predefined_url
+    else:
+        predefined_urls = get_predefined_url()
+
     url_details = extract_url_details(predefined_urls)
     url_details = get_unique_urls(url_details)
 
@@ -361,10 +392,18 @@ def get_design_examples(options):
 
     logging.info("----------------------------------------")
     if all_list_json:
-        logging.info(f"Consolidating all {LIST_JSON} files into '{options.output}'...")
-        logging.info(f"Total consolidated design examples: {len(all_list_json)}")
-        all_list_json = metadata_formatize(all_list_json)
+        if options.predefined_url:
+            logging.info(f"Merging {len(all_list_json)} design example(s) into existing catalog...")
+            merged = merge_with_existing_catalog(options, all_list_json)
+            logging.info(f"Total design examples after merge: {len(merged)}")
+            all_list_json = metadata_formatize(merged)
+        else:
+            logging.info(f"Consolidating all {LIST_JSON} files into '{options.output}'...")
+            logging.info(f"Total consolidated design examples: {len(all_list_json)}")
+            all_list_json = metadata_formatize(all_list_json)
         replace_if_diff(options, all_list_json)
+    elif options.predefined_url:
+        logging.warning(f"No {LIST_JSON} files were found for the included URLs. Existing catalog unchanged.")
     else:
         logging.error(f"No {LIST_JSON} files were found.")
 
@@ -399,6 +438,14 @@ def close_logging():
 
 def main(argv):
     option_parser = optparse.OptionParser(usage=DEFAULT_USAGE_TEXT, version=VERSION)
+    option_parser.add_option(
+        "--predefined_url",
+        action="append",
+        dest="predefined_url",
+        default=None,
+        help="Only process specified predefined URL(s) and merge into existing catalog. "
+             "Can be specified multiple times. e.g. --predefined_url <url1> --predefined_url <url2>",
+    )
     options, args = option_parser.parse_args(argv)
 
     initialize_logging()
