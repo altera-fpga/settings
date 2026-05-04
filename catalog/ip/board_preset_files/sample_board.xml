@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<board>
+<name>sample board</name>
+<vendor>Altera</vendor>
+<device_family>Agilex 5</device_family>
+<device_part>A5ED065AB32AE1V</device_part>
+<version>1.0</version>
+<product_url>https://www.altera.com/products/fpga/agilex/5</product_url>
+</board>
