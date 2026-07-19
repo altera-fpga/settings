@@ -1,5 +1,5 @@
 {
-    "num": 116,
+    "num": 117,
     "designs": [
         {
             "id": "-",
@@ -1243,6 +1243,34 @@
             "downloadUrl": "agilex5_niosv_m_pio.zip",
             "Q_DOWNLOAD_URL": "https://api.github.com/repos/altera-fpga/agilex5e-nios-ed/releases/assets/220617185",
             "Q_GITHUB_RELEASE": "24.3.0-v1.0",
+            "Q_VALIDATED": true
+        },
+        {
+            "id": "-",
+            "title": "HPS with Multi-rate Ethernet PHY System Example Design for Agilex 5 Modular Development Kit",
+            "source": "GitHub",
+            "family": "Agilex 5",
+            "quartus_version": "26.1",
+            "patch_number": "None",
+            "devkit": "Agilex 5 FPGA E-Series 065B Modular Development Kit MK-A5E065BB32AEA",
+            "device_part": "A5ED065BB32AE4S",
+            "description": "This design, which is based on the Agilex 5 SoC Golden Hardware Reference Design (GHRD), is part of the Golden System Reference Design (GSRD). It adds a new subsystem with a Multi-rate Ethernet PHY that covers all Hardware features specific to the TSN-SGMII XCVR.",
+            "rich_description": "<p>This design demonstrates 3x2.5G ports connected to the HPS:</p><ul>\n<li>Enables the data path between <strong>HPS &lt;-&gt; XGMAC &lt;-&gt; MR PHY (Direct mode) &lt;-&gt; Marvell PHY</strong> running at a 2.5G rate.</li>\n<li>Showcases dynamic reconfiguration, allowing runtime switching between Ethernet rates without system downtime.</li>\n<li><strong>Port 0:</strong> Demonstrates Precision Time Protocol (PTP) functionality (Supports 2.5G/1G).</li>\n<li><strong>Port 1:</strong> Configured as a non-PTP port with expanded multi-rate support (<strong>Supports 2.5G/1G/100M/10M</strong>).</li>\n<li><strong>Port 2:</strong> Configured for Small Form-factor Pluggable (SFP) operation with PTP enabled.<br/>\n<em>Note: Port 2 (SFP) does not support dynamic reconfiguration.</em></li>\n<li>Enables the <strong>Deterministic Latency (DL)</strong> feature of the MR PHY IP, which precisely determines the delay between the PCS elastic FIFO (EFIFO) and the PMA pins for TSN use cases. It also enables the CSR interface with the HPS Lightweight Bridge to convey these delays (Soft PCS, Hard PCS, and PMA delays) for both RX and TX directions.</li>\n<li>Utilizes a <strong>GMII (8-bit) interface</strong> for TSN-enabled Ethernet data transfers to and from the XGMAC to the external PHY. Transceiver reference clocks are used to derive the required frequency for running this parallel interface, ensuring a zero-ppm difference between these clocks.</li>\n</ul><h3>Block Diagram (Text Representation)</h3><pre><code class=\"language-text\">+----------------------------------------------------------------------+\n|                    Agilex 5 SoC System                               |\n|                                                                      |\n|   +----------------------------------------------------+             |\n|   |                        HPS                         |             |\n|   +----------------------------------------------------+             |\n|            |                      |                |                 |\n|            |                      |                |                 |\n|   +------------------+  +------------------+  +------------------+   |\n|   |   MR PHY 0       |  |   MR PHY 1       |  |   MR PHY 2       |   |\n|   |   (PTP)          |  |   (Non-PTP)      |  |   (SFP + PTP)    |   |\n|   +------------------+  +------------------+  +------------------+   |\n|         |                    |                     |                 |\n|   +-----------+        +------------+         +-----------+          |\n|   | Marvell PHY|       | Marvell PHY|         | SFP Cage  |          |\n|   | Port 0     |       | Port 1     |         | Port 2    |          |\n|   | 2.5G/1G    |       | 2.5G/1G/   |         | 2.5G      |          |\n|   | PTP        |       | 100M/10M   |         | SFP+PTP   |          |\n|   |            |       | Non-PTP    |         |           |          |\n|   +------------+       +-------------+        +-----------+          |\n|                                                                      |\n+----------------------------------------------------------------------+\n\n</code></pre><p><strong>Note:</strong><br/>\n- Ports 0 and 1 support dynamic reconfiguration between 2.5G and 1G rates.<br/>\n- Port 2 (SFP) does <strong>not</strong> support dynamic reconfiguration.</p><p>The system block diagram is shown below:</p><p><img alt=\"Agilex™ 5 3xMulti-rate Ethernet PHY block diagram\" src=\"https://raw.githubusercontent.com/altera-fpga/agilex5-ed-tsn-sgmii/rel/26.1/images/SM_TSN.png\"/></p><h2>Repository Structure</h2><ul>\n<li>Directory Structure used in this example design\n <code>bash\n    |--- doc  \n    |--- src\n    |   |--- hw \n    |   |--- sw</code></li>\n</ul>",
+            "category": "HPS, Ethernet",
+            "url": "https://github.com/altera-fpga/agilex5-ed-tsn-sgmii",
+            "downloadUrl": "source_code.zip",
+            "documentations": [
+                {
+                    "title": "Hardware Build README",
+                    "downloadUrl": "https://github.com/altera-fpga/agilex5-ed-tsn-sgmii/blob/rel/26.1/src/hw/a5e065bb32aea_mdk_3x2.5G/README.md"
+                },
+                {
+                    "title": "Software Build README",
+                    "downloadUrl": "https://github.com/altera-fpga/agilex5-ed-tsn-sgmii/blob/rel/26.1/src/sw/README.md"
+                }
+            ],
+            "Q_DOWNLOAD_URL": "https://api.github.com/repos/altera-fpga/agilex5-ed-tsn-sgmii/releases/assets/479456825",
+            "Q_GITHUB_RELEASE": "26.1-1",
             "Q_VALIDATED": true
         },
         {
