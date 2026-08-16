@@ -1,5 +1,5 @@
 {
-    "num": 117,
+    "num": 139,
     "designs": [
         {
             "id": "-",
@@ -1307,6 +1307,618 @@
             "downloadUrl": "source_code.zip",
             "Q_DOWNLOAD_URL": "https://api.github.com/repos/altera-fpga/agilex5-ed-tsn-sgmii/releases/assets/209677369",
             "Q_GITHUB_RELEASE": "24.3-1",
+            "Q_VALIDATED": true
+        },
+        {
+            "id": "-",
+            "title": "HPS Baseline System Example Design with eMMC Boot for Agilex 5 FPGA E-Series 065A Premium Development Kit",
+            "source": "GitHub",
+            "family": "Agilex 5 E-Series",
+            "quartus_version": "26.1.1",
+            "patch_number": "Unknown",
+            "devkit": "Agilex 5 FPGA E-Series 065A Premium Development Kit DK-A5E065AB32AEA",
+            "device_part": "A5ED065AB32AE1V",
+            "description": "This is the HPS Baseline System Example Design for Agilex 5 FPGA E-Series 065A Premium Development Kit with HPS NAND daughter card, which also offers eMMC.",
+            "rich_description": "<p></p><p>This is a hardware reference design for Altera Agilex 5 System On Chip (SoC) FPGA and it is part of the HPS Baseline System Example Design (formerly known as GSRD or Golden System Reference Design) that exercises soft IP in the fabric, boots to U-Boot, then Linux, and runs sample Linux applications.\nRefer to the <a href='\\\"https://altera-fpga.github.io/latest/embedded-designs/agilex-5/e-series/premium/gsrd/ug-gsrd-agx5e-premium/\"'>Agilex 5 E-Series Premium Development Kit HPS Baseline System Example Design</a> for information about this design.</p><p></p><p>The design uses HPS First configuration mode and boots from Arm Cortex-A55 core processor.</p><p></p><h2>Baseline-A55 feature\n</h2><p>This reference design demonstrates the following system integration between Hard Processor System (HPS) and FPGA IPs:</p><ul><li>Hard Processor System (HPS) enablement and configuration\n<ul><li>Enable dual core Arm Cortex-A76 processor\n</li><li>Enable dual core Arm Cortex-A55 processor\n</li><li>HPS Peripheral and I/O (SD/MMC, EMAC, MDIO, USB, I3C, JTAG, UART, and GPIO)\n</li><li>HPS Clock and Reset\n</li><li>HPS FPGA Bridge and Interrupt\n<ul><li>Note: The System MMU port in F2H and F2SDRAM bridges are disabled by default</li></ul>\n</li></ul><li>HPS EMIF configuration (starting 25.1.1 ECC is enabled by default)\n</li><li>System integration with FPGA IPs\n<ul><li>Fabric subsystem that consists of NiosV subsystem, 256KB of FPGA On-Chip Memory, System ID, Programmable I/O (PIO) IP for controlling DIPSW, PushButton, and LEDs.\n</li><li>NiosV subsystem that consists of JTAG Avalon Master Bridge IP and Address Span Extender IP to allow System-Console debug activity and FPGA content access through JTAG.\n\n</li></ul></li></li></ul><p></p><h3>USB modes\n</h3><p>This design supports USB 3.1 in both host and device mode.<br/>Once power up, the USB mode will remain and cannot be changed during runtime.\n\n</p><p>The linux device tree (dts) needs to be configured.<br/>The dts can be set with \"dr_mode\".\n\n</p><table border='\\\"1\\\"' cellpadding='\\\"10\\\"'><tr><th>dr_mode value</th><th>Equivalent USB mode</th></tr>\n<tr><td>host</td><td>Host</td></tr>\n<tr><td>peripheral</td><td>Device</td></tr></table>",
+            "category": "HPS",
+            "url": "https://www.github.com/altera-fpga/agilex5e-ed-gsrd",
+            "downloadUrl": "dk-a5e065ab32aea-emmc-baseline-a55.zip",
+            "documentations": [
+                {
+                    "title": "HPS Baseline System Example Design User Guide for the Agilex 5 E-Series Premium Development Kit",
+                    "downloadUrl": "https://altera-fpga.github.io/latest/embedded-designs/agilex-5/e-series/premium/gsrd/ug-gsrd-agx5e-premium/"
+                },
+                {
+                    "title": "HPS Baseline System Example Design README for the Agilex 5 E-Series Premium Development Kit",
+                    "downloadUrl": "https://github.com/altera-fpga/agilex5e-ed-gsrd/blob/main/dk-a5e065ab32aea-emmc/baseline-a55/README.md"
+                }
+            ],
+            "Q_DOWNLOAD_URL": "https://api.github.com/repos/altera-fpga/agilex5e-ed-gsrd/releases/assets/511237910",
+            "Q_GITHUB_RELEASE": "QPDS26.1.1_REL_GSRD_PR",
+            "Q_VALIDATED": true
+        },
+        {
+            "id": "-",
+            "title": "HPS Baseline-A55 System Example Design for Modular Development Kit for Agilex 5 FPGA E-Series 065B Modular Development Kit (ES)",
+            "source": "GitHub",
+            "family": "Agilex 5 E-Series",
+            "quartus_version": "26.1.1",
+            "patch_number": "Unknown",
+            "devkit": "Agilex 5 FPGA E-Series 065B Modular Development Kit MK-A5E065BB32AES1",
+            "device_part": "A5ED065BB32AE6SR0",
+            "description": "This is the HPS Baseline System Example Design for Agilex 5 FPGA E-Series 065B Modular Development Kit.",
+            "rich_description": "<p></p><p>This is a hardware reference design for Altera Agilex 5 System On Chip (SoC) FPGA and it is part of the HPS Baseline System Example Design (formerly known as GSRD or Golden System Reference Design) that exercises soft IP in the fabric, boots to U-Boot, then Linux, and runs sample Linux applications.Refer to the <a href='\\\"https://altera-fpga.github.io/latest/embedded-designs/agilex-5/e-series/modular/gsrd/ug-gsrd-agx5e-modular/\"'>Agilex 5 E-Series Modular Development Kit HPS Baseline System Example Design</a> for information about this design.</p><p>The design uses HPS First configuration mode.</p><p></p><h2>Baseline feature\n</h2><p>This reference design demonstrates the following system integration between Hard Processor System (HPS) and FPGA IPs:</p><ul><li>Hard Processor System (HPS) enablement and configuration\n<ul><li>Enable dual core Arm Cortex-A76 processor\n</li><li>Enable dual core Arm Cortex-A55 processor\n</li><li>HPS Peripheral and I/O (SD/MMC, EMAC, MDIO, USB, I3C, JTAG, UART, and GPIO)\n</li><li>HPS Clock and Reset\n</li><li>HPS FPGA Bridge and Interrupt\n<ul><li>Note: The System MMU port in F2H and F2SDRAM bridges are disabled by default</li></ul>\n</li></ul><li>HPS EMIF configuration (starting 25.1.1 ECC is enabled by default)\n</li><li>System integration with FPGA IPs\n<ul><li>Fabric subsystem that consists of NiosV subsystem, 256KB of FPGA On-Chip Memory, System ID, Programmable I/O (PIO) IP for controlling DIPSW, PushButton, and LEDs.\n</li><li>NiosV subsystem that consists of JTAG Avalon Master Bridge IP and Address Span Extender IP to allow System-Console debug activity and FPGA content access through JTAG.\n\n</li></ul></li></li></ul><p></p><h3>USB modes\n</h3><p>This design supports USB 3.1 in both host and device mode.<br/>Once power up, the USB mode will remain and cannot be changed during runtime.\n\n</p><p>The linux device tree (dts) needs to be configured.<br/>The dts can be set with \"dr_mode\".\n\n</p><table border='\\\"1\\\"' cellpadding='\\\"10\\\"'><tr><th>dr_mode value</th><th>Equivalent USB mode</th></tr>\n<tr><td>host</td><td>Host</td></tr>\n<tr><td>peripheral</td><td>Device</td></tr></table>",
+            "category": "HPS",
+            "url": "https://www.github.com/altera-fpga/agilex5e-ed-gsrd",
+            "downloadUrl": "mk-a5e065bb32aes1-baseline.zip",
+            "documentations": [
+                {
+                    "title": "HPS Baseline System Example Design User Guide for the Agilex 5 E-Series Modular Development Kit",
+                    "downloadUrl": "https://altera-fpga.github.io/latest/embedded-designs/agilex-5/e-series/modular/gsrd/ug-gsrd-agx5e-modular/"
+                },
+                {
+                    "title": "HPS Baseline System Example Design README for the Agilex 5 E-Series Modular Development Kit",
+                    "downloadUrl": "https://github.com/altera-fpga/agilex5e-ed-gsrd/blob/main/mk-a5e065bb32aes1/baseline-a55/README.md"
+                }
+            ],
+            "Q_DOWNLOAD_URL": "",
+            "Q_GITHUB_RELEASE": "QPDS26.1.1_REL_GSRD_PR",
+            "Q_VALIDATED": true
+        },
+        {
+            "id": "-",
+            "title": "HPS Time-Sensitive Network (RGMII from HVIO) System Example Design with HPS Expansion Board for Agilex 5 FPGA E-Series 065B Premium Development Kit (ES)",
+            "source": "GitHub",
+            "family": "Agilex 5 E-Series",
+            "quartus_version": "26.1.1",
+            "patch_number": "Unknown",
+            "devkit": "Agilex 5 FPGA E-Series 065B Premium Development Kit DK-A5E065BB32AES1",
+            "device_part": "A5ED065BB32AE6SR0",
+            "description": "Time-Sensitive Networking (TSN): PHY configuration 2 (RGMII from FPGA HVIO) System Example Design for Agilex 5 FPGA E-Series 065B Premium Development Kit with Out of Box Experience (OOBE) daughter card, which is also known as HPS Enablement Expansion Board.",
+            "rich_description": "<p></p><p>This is a hardware reference design for Altera Agilex 5 System On Chip (SoC) FPGA and it is part of the HPS Baseline System Example Design (formerly known as GSRD or Golden System Reference Design) that exercises soft IP in the fabric, boots to U-Boot, then Linux, and runs sample Linux applications.\nRefer to the <a href='\\\"https://altera-fpga.github.io/latest/embedded-designs/agilex-5/e-series/premium/gsrd/ug-gsrd-agx5e-premium/\"'>Agilex 5 E-Series Premium Development Kit HPS Baseline System Example Design</a> for information about this design.</p><p></p><p>The design uses HPS First configuration mode and boots from Arm Cortex-A55 core processor.</p><p></p><h2>Time-Sensitive Networking (TSN): PHY configuration 2 (RGMII from FPGA HVIO) feature\n</h2><p>This reference design demonstrates the following system integration between Hard Processor System (HPS) and FPGA IPs:</p><ul><li>Hard Processor System (HPS) enablement and configuration\n<ul><li>Enable dual core Arm Cortex-A76 processor\n</li><li>Enable dual core Arm Cortex-A55 processor\n</li><li>HPS Peripheral and I/O (SD/MMC, EMAC, MDIO, USB, I3C, JTAG, UART, and GPIO)\n</li><li>HPS Clock and Reset\n</li><li>HPS FPGA Bridge and Interrupt\n<ul><li>Note: The System MMU port in F2H and F2SDRAM bridges are disabled by default</li></ul>\n</li></ul><li>HPS EMIF configuration (starting 25.1.1 ECC is enabled by default)\n</li><li>System integration with FPGA IPs\n<ul><li>GMII to RGMII Converter IP to handle conversion for HPS XGMAC into FPGA HVIO interface.\n</li><li>Fabric subsystem that consists of NiosV subsystem, 256KB of FPGA On-Chip Memory, System ID, Programmable I/O (PIO) IP for controlling DIPSW, PushButton, and LEDs.\n</li><li>NiosV subsystem that consists of JTAG Avalon Master Bridge IP and Address Span Extender IP to allow System-Console debug activity and FPGA content access through JTAG.\n\n</li></ul></li></li></ul><p></p><h3>USB modes\n</h3><p>This design supports USB 3.1 in both host and device mode.<br/>Once power up, the USB mode will remain and cannot be changed during runtime.\n\n</p><p>The linux device tree (dts) needs to be configured.<br/>The dts can be set with \"dr_mode\".\n\n</p><table border='\\\"1\\\"' cellpadding='\\\"10\\\"'><tr><th>dr_mode value</th><th>Equivalent USB mode</th></tr>\n<tr><td>host</td><td>Host</td></tr>\n<tr><td>peripheral</td><td>Device</td></tr></table><h2>Advanced feature\n</h2><p>FPGA RGMII subsystem that consists of GMII-to-RGMII conversion for HPS XGMAC into FPGA IO connection</p>",
+            "category": "HPS",
+            "url": "https://www.github.com/altera-fpga/agilex5e-ed-gsrd",
+            "downloadUrl": "dk-a5e065bb32aea-enablement-tsn-rgmii-hvio.zip",
+            "documentations": [
+                {
+                    "title": "HPS Baseline System Example Design User Guide for the Agilex 5 E-Series Premium Development Kit",
+                    "downloadUrl": "https://altera-fpga.github.io/latest/embedded-designs/agilex-5/e-series/premium/gsrd/ug-gsrd-agx5e-premium/"
+                },
+                {
+                    "title": "HPS Time-Sensitive Network (RGMII from HVIO) System Example Design README for the Agilex 5 E-Series Premium Development Kit",
+                    "downloadUrl": "https://github.com/altera-fpga/agilex5e-ed-gsrd/blob/main/dk-a5e065bb32aes1-enablement/tsn-rgmii-hvio/README.md"
+                }
+            ],
+            "Q_DOWNLOAD_URL": "https://api.github.com/repos/altera-fpga/agilex5e-ed-gsrd/releases/assets/511237955",
+            "Q_GITHUB_RELEASE": "QPDS26.1.1_REL_GSRD_PR",
+            "Q_VALIDATED": true
+        },
+        {
+            "id": "-",
+            "title": "HPS Baseline-A55 System Example Design with HPS Expansion Board for Agilex 5 FPGA E-Series 065A Premium Development Kit",
+            "source": "GitHub",
+            "family": "Agilex 5 E-Series",
+            "quartus_version": "26.1.1",
+            "patch_number": "Unknown",
+            "devkit": "Agilex 5 FPGA E-Series 065A Premium Development Kit DK-A5E065AB32AEA",
+            "device_part": "A5ED065AB32AE1V",
+            "description": "This is the HPS Baseline System Example Design for Agilex 5 FPGA E-Series 065A Premium Development Kit with Out of Box Experience (OOBE) daughter card, which is also known as HPS Enablement Expansion Board.",
+            "rich_description": "<p></p><p>This is a hardware reference design for Altera Agilex 5 System On Chip (SoC) FPGA and it is part of the HPS Baseline System Example Design (formerly known as GSRD or Golden System Reference Design) that exercises soft IP in the fabric, boots to U-Boot, then Linux, and runs sample Linux applications.\nRefer to the <a href='\\\"https://altera-fpga.github.io/latest/embedded-designs/agilex-5/e-series/premium/gsrd/ug-gsrd-agx5e-premium/\"'>Agilex 5 E-Series Premium Development Kit HPS Baseline System Example Design</a> for information about this design.</p><p></p><p>The design uses HPS First configuration mode and boots from Arm Cortex-A55 core processor.</p><p></p><h2>Baseline-A55 feature\n</h2><p>This reference design demonstrates the following system integration between Hard Processor System (HPS) and FPGA IPs:</p><ul><li>Hard Processor System (HPS) enablement and configuration\n<ul><li>Enable dual core Arm Cortex-A76 processor\n</li><li>Enable dual core Arm Cortex-A55 processor\n</li><li>HPS Peripheral and I/O (SD/MMC, EMAC, MDIO, USB, I3C, JTAG, UART, and GPIO)\n</li><li>HPS Clock and Reset\n</li><li>HPS FPGA Bridge and Interrupt\n<ul><li>Note: The System MMU port in F2H and F2SDRAM bridges are disabled by default</li></ul>\n</li></ul><li>HPS EMIF configuration (starting 25.1.1 ECC is enabled by default)\n</li><li>System integration with FPGA IPs\n<ul><li>Fabric subsystem that consists of NiosV subsystem, 256KB of FPGA On-Chip Memory, System ID, Programmable I/O (PIO) IP for controlling DIPSW, PushButton, and LEDs.\n</li><li>NiosV subsystem that consists of JTAG Avalon Master Bridge IP and Address Span Extender IP to allow System-Console debug activity and FPGA content access through JTAG.\n\n</li></ul></li></li></ul><p></p><h3>USB modes\n</h3><p>This design supports USB 3.1 in both host and device mode.<br/>Once power up, the USB mode will remain and cannot be changed during runtime.\n\n</p><p>The linux device tree (dts) needs to be configured.<br/>The dts can be set with \"dr_mode\".\n\n</p><table border='\\\"1\\\"' cellpadding='\\\"10\\\"'><tr><th>dr_mode value</th><th>Equivalent USB mode</th></tr>\n<tr><td>host</td><td>Host</td></tr>\n<tr><td>peripheral</td><td>Device</td></tr></table>",
+            "category": "HPS",
+            "url": "https://www.github.com/altera-fpga/agilex5e-ed-gsrd",
+            "downloadUrl": "dk-a5e065ab32aea-enablement-baseline-a55.zip",
+            "documentations": [
+                {
+                    "title": "HPS Baseline System Example Design User Guide for the Agilex 5 E-Series Premium Development Kit",
+                    "downloadUrl": "https://altera-fpga.github.io/latest/embedded-designs/agilex-5/e-series/premium/gsrd/ug-gsrd-agx5e-premium/"
+                },
+                {
+                    "title": "HPS Baseline System Example Design README for the Agilex 5 E-Series Premium Development Kit",
+                    "downloadUrl": "https://github.com/altera-fpga/agilex5e-ed-gsrd/blob/main/dk-a5e065ab32aea-enablement/baseline-a55/README.md"
+                }
+            ],
+            "Q_DOWNLOAD_URL": "https://api.github.com/repos/altera-fpga/agilex5e-ed-gsrd/releases/assets/511237913",
+            "Q_GITHUB_RELEASE": "QPDS26.1.1_REL_GSRD_PR",
+            "Q_VALIDATED": true
+        },
+        {
+            "id": "-",
+            "title": "HPS Baseline-A76 System Example Design with HPS Expansion Board for Agilex 5 FPGA E-Series 065B Premium Development Kit (ES)",
+            "source": "GitHub",
+            "family": "Agilex 5 E-Series",
+            "quartus_version": "26.1.1",
+            "patch_number": "Unknown",
+            "devkit": "Agilex 5 FPGA E-Series 065B Premium Development Kit DK-A5E065BB32AES1",
+            "device_part": "A5ED065BB32AE6SR0",
+            "description": "This is the HPS Baseline System Example Design for Agilex 5 FPGA E-Series 065B Premium Development Kit with Out of Box Experience (OOBE) daughter card, which is also known as HPS Enablement Expansion Board.",
+            "rich_description": "<p></p><p>This is a hardware reference design for Altera Agilex 5 System On Chip (SoC) FPGA and it is part of the HPS Baseline System Example Design (formerly known as GSRD or Golden System Reference Design) that exercises soft IP in the fabric, boots to U-Boot, then Linux, and runs sample Linux applications.\nRefer to the <a href='\\\"https://altera-fpga.github.io/latest/embedded-designs/agilex-5/e-series/premium/gsrd/ug-gsrd-agx5e-premium/\"'>Agilex 5 E-Series Premium Development Kit HPS Baseline System Example Design</a> for information about this design.</p><p></p><p>The design uses HPS First configuration mode and boots from Arm Cortex-A76 core 2 processor.</p><p></p><h2>Baseline-A76 feature\n</h2><p>This reference design demonstrates the following system integration between Hard Processor System (HPS) and FPGA IPs:</p><ul><li>Hard Processor System (HPS) enablement and configuration\n<ul><li>Enable dual core Arm Cortex-A76 processor\n</li><li>Enable dual core Arm Cortex-A55 processor\n</li><li>HPS Peripheral and I/O (SD/MMC, EMAC, MDIO, USB, I3C, JTAG, UART, and GPIO)\n</li><li>HPS Clock and Reset\n</li><li>HPS FPGA Bridge and Interrupt\n<ul><li>Note: The System MMU port in F2H and F2SDRAM bridges are disabled by default</li></ul>\n</li></ul><li>HPS EMIF configuration (starting 25.1.1 ECC is enabled by default)\n</li><li>System integration with FPGA IPs\n<ul><li>Fabric subsystem that consists of NiosV subsystem, 256KB of FPGA On-Chip Memory, System ID, Programmable I/O (PIO) IP for controlling DIPSW, PushButton, and LEDs.\n</li><li>NiosV subsystem that consists of JTAG Avalon Master Bridge IP and Address Span Extender IP to allow System-Console debug activity and FPGA content access through JTAG.\n\n</li></ul></li></li></ul><p></p><h3>USB modes\n</h3><p>This design supports USB 3.1 in both host and device mode.<br/>Once power up, the USB mode will remain and cannot be changed during runtime.\n\n</p><p>The linux device tree (dts) needs to be configured.<br/>The dts can be set with \"dr_mode\".\n\n</p><table border='\\\"1\\\"' cellpadding='\\\"10\\\"'><tr><th>dr_mode value</th><th>Equivalent USB mode</th></tr>\n<tr><td>host</td><td>Host</td></tr>\n<tr><td>peripheral</td><td>Device</td></tr></table>",
+            "category": "HPS",
+            "url": "https://www.github.com/altera-fpga/agilex5e-ed-gsrd",
+            "downloadUrl": "dk-a5e065bb32aes1-enablement-baseline-a76.zip",
+            "documentations": [
+                {
+                    "title": "HPS Baseline System Example Design User Guide for the Agilex 5 E-Series Premium Development Kit",
+                    "downloadUrl": "https://altera-fpga.github.io/latest/embedded-designs/agilex-5/e-series/premium/gsrd/ug-gsrd-agx5e-premium/"
+                },
+                {
+                    "title": "HPS Baseline System Example Design README for the Agilex 5 E-Series Premium Development Kit",
+                    "downloadUrl": "https://github.com/altera-fpga/agilex5e-ed-gsrd/blob/main/dk-a5e065bb32aes1-enablement/baseline-a76/README.md"
+                }
+            ],
+            "Q_DOWNLOAD_URL": "https://api.github.com/repos/altera-fpga/agilex5e-ed-gsrd/releases/assets/511237977",
+            "Q_GITHUB_RELEASE": "QPDS26.1.1_REL_GSRD_PR",
+            "Q_VALIDATED": true
+        },
+        {
+            "id": "-",
+            "title": "HPS Baseline-A55 System Example Design with HPS Expansion Board for Agilex 5 FPGA E-Series 065A Premium Development Kit",
+            "source": "GitHub",
+            "family": "Agilex 5 E-Series",
+            "quartus_version": "26.1.1",
+            "patch_number": "Unknown",
+            "devkit": "Agilex 5 FPGA E-Series 065A Premium Development Kit DK-A5E065AB32AEA",
+            "device_part": "A5ED065AB32AE1V",
+            "description": "This is the HPS Baseline System Example Design for Agilex 5 FPGA E-Series 065A Premium Development Kit with with HPS NAND daughter card.",
+            "rich_description": "<p></p><p>This is a hardware reference design for Altera Agilex 5 System On Chip (SoC) FPGA and it is part of the HPS Baseline System Example Design (formerly known as GSRD or Golden System Reference Design) that exercises soft IP in the fabric, boots to U-Boot, then Linux, and runs sample Linux applications.\nRefer to the <a href='\\\"https://altera-fpga.github.io/latest/embedded-designs/agilex-5/e-series/premium/gsrd/ug-gsrd-agx5e-premium/\"'>Agilex 5 E-Series Premium Development Kit HPS Baseline System Example Design</a> for information about this design.</p><p></p><p>The design uses HPS First configuration mode and boots from Arm Cortex-A55 core processor.</p><p></p><h2>Baseline-A55 feature\n</h2><p>This reference design demonstrates the following system integration between Hard Processor System (HPS) and FPGA IPs:</p><ul><li>Hard Processor System (HPS) enablement and configuration\n<ul><li>Enable dual core Arm Cortex-A76 processor\n</li><li>Enable dual core Arm Cortex-A55 processor\n</li><li>HPS Peripheral and I/O (SD/MMC, EMAC, MDIO, USB, I3C, JTAG, UART, and GPIO)\n</li><li>HPS Clock and Reset\n</li><li>HPS FPGA Bridge and Interrupt\n<ul><li>Note: The System MMU port in F2H and F2SDRAM bridges are disabled by default</li></ul>\n</li></ul><li>HPS EMIF configuration (starting 25.1.1 ECC is enabled by default)\n</li><li>System integration with FPGA IPs\n<ul><li>Fabric subsystem that consists of NiosV subsystem, 256KB of FPGA On-Chip Memory, System ID, Programmable I/O (PIO) IP for controlling DIPSW, PushButton, and LEDs.\n</li><li>NiosV subsystem that consists of JTAG Avalon Master Bridge IP and Address Span Extender IP to allow System-Console debug activity and FPGA content access through JTAG.\n\n</li></ul></li></li></ul><p></p><h3>USB modes\n</h3><p>This design supports USB 3.1 in both host and device mode.<br/>Once power up, the USB mode will remain and cannot be changed during runtime.\n\n</p><p>The linux device tree (dts) needs to be configured.<br/>The dts can be set with \"dr_mode\".\n\n</p><table border='\\\"1\\\"' cellpadding='\\\"10\\\"'><tr><th>dr_mode value</th><th>Equivalent USB mode</th></tr>\n<tr><td>host</td><td>Host</td></tr>\n<tr><td>peripheral</td><td>Device</td></tr></table>",
+            "category": "HPS",
+            "url": "https://www.github.com/altera-fpga/agilex5e-ed-gsrd",
+            "downloadUrl": "dk-a5e065ab32aea-nand-baseline-a55.zip",
+            "documentations": [
+                {
+                    "title": "HPS Baseline System Example Design User Guide for the Agilex 5 E-Series Premium Development Kit",
+                    "downloadUrl": "https://altera-fpga.github.io/latest/embedded-designs/agilex-5/e-series/premium/gsrd/ug-gsrd-agx5e-premium/"
+                },
+                {
+                    "title": "HPS Baseline System Example Design README for the Agilex 5 E-Series Premium Development Kit",
+                    "downloadUrl": "https://github.com/altera-fpga/agilex5e-ed-gsrd/blob/main/dk-a5e065ab32aea-nand/baseline-a55/README.md"
+                }
+            ],
+            "Q_DOWNLOAD_URL": "https://api.github.com/repos/altera-fpga/agilex5e-ed-gsrd/releases/assets/511237941",
+            "Q_GITHUB_RELEASE": "QPDS26.1.1_REL_GSRD_PR",
+            "Q_VALIDATED": true
+        },
+        {
+            "id": "-",
+            "title": "HPS Baseline-A55 System Example Design with HPS Expansion Board for Agilex 5 FPGA E-Series 065B Premium Development Kit (ES)",
+            "source": "GitHub",
+            "family": "Agilex 5 E-Series",
+            "quartus_version": "26.1.1",
+            "patch_number": "Unknown",
+            "devkit": "Agilex 5 FPGA E-Series 065B Premium Development Kit DK-A5E065BB32AES1",
+            "device_part": "A5ED065BB32AE6SR0",
+            "description": "This is the HPS Baseline System Example Design for Agilex 5 FPGA E-Series 065B Premium Development Kit with Out of Box Experience (OOBE) daughter card, which is also known as HPS Enablement Expansion Board.",
+            "rich_description": "<p></p><p>This is a hardware reference design for Altera Agilex 5 System On Chip (SoC) FPGA and it is part of the HPS Baseline System Example Design (formerly known as GSRD or Golden System Reference Design) that exercises soft IP in the fabric, boots to U-Boot, then Linux, and runs sample Linux applications.\nRefer to the <a href='\\\"https://altera-fpga.github.io/latest/embedded-designs/agilex-5/e-series/premium/gsrd/ug-gsrd-agx5e-premium/\"'>Agilex 5 E-Series Premium Development Kit HPS Baseline System Example Design</a> for information about this design.</p><p></p><p>The design uses HPS First configuration mode and boots from Arm Cortex-A55 core 0 processor.</p><p></p><h2>Baseline-A55 feature\n</h2><p>This reference design demonstrates the following system integration between Hard Processor System (HPS) and FPGA IPs:</p><ul><li>Hard Processor System (HPS) enablement and configuration\n<ul><li>Enable dual core Arm Cortex-A76 processor\n</li><li>Enable dual core Arm Cortex-A55 processor\n</li><li>HPS Peripheral and I/O (SD/MMC, EMAC, MDIO, USB, I3C, JTAG, UART, and GPIO)\n</li><li>HPS Clock and Reset\n</li><li>HPS FPGA Bridge and Interrupt\n<ul><li>Note: The System MMU port in F2H and F2SDRAM bridges are disabled by default</li></ul>\n</li></ul><li>HPS EMIF configuration (starting 25.1.1 ECC is enabled by default)\n</li><li>System integration with FPGA IPs\n<ul><li>Fabric subsystem that consists of NiosV subsystem, 256KB of FPGA On-Chip Memory, System ID, Programmable I/O (PIO) IP for controlling DIPSW, PushButton, and LEDs.\n</li><li>NiosV subsystem that consists of JTAG Avalon Master Bridge IP and Address Span Extender IP to allow System-Console debug activity and FPGA content access through JTAG.\n\n</li></ul></li></li></ul><p></p><h3>USB modes\n</h3><p>This design supports USB 3.1 in both host and device mode.<br/>Once power up, the USB mode will remain and cannot be changed during runtime.\n\n</p><p>The linux device tree (dts) needs to be configured.<br/>The dts can be set with \"dr_mode\".\n\n</p><table border='\\\"1\\\"' cellpadding='\\\"10\\\"'><tr><th>dr_mode value</th><th>Equivalent USB mode</th></tr>\n<tr><td>host</td><td>Host</td></tr>\n<tr><td>peripheral</td><td>Device</td></tr></table>",
+            "category": "HPS",
+            "url": "https://www.github.com/altera-fpga/agilex5e-ed-gsrd",
+            "downloadUrl": "dk-a5e065bb32aes1-enablement-baseline-a55.zip",
+            "documentations": [
+                {
+                    "title": "HPS Baseline System Example Design User Guide for the Agilex 5 E-Series Premium Development Kit",
+                    "downloadUrl": "https://altera-fpga.github.io/latest/embedded-designs/agilex-5/e-series/premium/gsrd/ug-gsrd-agx5e-premium/"
+                },
+                {
+                    "title": "HPS Baseline System Example Design README for the Agilex 5 E-Series Premium Development Kit",
+                    "downloadUrl": "https://github.com/altera-fpga/agilex5e-ed-gsrd/blob/main/dk-a5e065bb32aes1-enablement/baseline-a55/README.md"
+                }
+            ],
+            "Q_DOWNLOAD_URL": "https://api.github.com/repos/altera-fpga/agilex5e-ed-gsrd/releases/assets/511237974",
+            "Q_GITHUB_RELEASE": "QPDS26.1.1_REL_GSRD_PR",
+            "Q_VALIDATED": true
+        },
+        {
+            "id": "-",
+            "title": "HPS Time-Sensitive Network (RGMII from HVIO) System Example Design with HPS Expansion Board for Agilex 5 FPGA E-Series 065A Premium Development Kit",
+            "source": "GitHub",
+            "family": "Agilex 5 E-Series",
+            "quartus_version": "26.1.1",
+            "patch_number": "Unknown",
+            "devkit": "Agilex 5 FPGA E-Series 065A Premium Development Kit DK-A5E065AB32AEA",
+            "device_part": "A5ED065AB32AE1V",
+            "description": "Time-Sensitive Networking (TSN): PHY configuration 2 (RGMII from FPGA HVIO) System Example Design for Agilex 5 FPGA E-Series 065A Premium Development Kit with Out of Box Experience (OOBE) daughter card, which is also known as HPS Enablement Expansion Board.",
+            "rich_description": "<p></p><p>This is a hardware reference design for Altera Agilex 5 System On Chip (SoC) FPGA and it is part of the HPS Baseline System Example Design (formerly known as GSRD or Golden System Reference Design) that exercises soft IP in the fabric, boots to U-Boot, then Linux, and runs sample Linux applications.\nRefer to the <a href='\\\"https://altera-fpga.github.io/latest/embedded-designs/agilex-5/e-series/premium/gsrd/ug-gsrd-agx5e-premium/\"'>Agilex 5 E-Series Premium Development Kit HPS Baseline System Example Design</a> for information about this design.</p><p></p><p>The design uses HPS First configuration mode and boots from Arm Cortex-A55 core processor.</p><p></p><h2>Time-Sensitive Networking (TSN): PHY configuration 2 (RGMII from FPGA HVIO) feature\n</h2><p>This reference design demonstrates the following system integration between Hard Processor System (HPS) and FPGA IPs:</p><ul><li>Hard Processor System (HPS) enablement and configuration\n<ul><li>Enable dual core Arm Cortex-A76 processor\n</li><li>Enable dual core Arm Cortex-A55 processor\n</li><li>HPS Peripheral and I/O (SD/MMC, EMAC, MDIO, USB, I3C, JTAG, UART, and GPIO)\n</li><li>HPS Clock and Reset\n</li><li>HPS FPGA Bridge and Interrupt\n<ul><li>Note: The System MMU port in F2H and F2SDRAM bridges are disabled by default</li></ul>\n</li></ul><li>HPS EMIF configuration (starting 25.1.1 ECC is enabled by default)\n</li><li>System integration with FPGA IPs\n<ul><li>GMII to RGMII Converter IP to handle conversion for HPS XGMAC into FPGA HVIO interface.\n</li><li>Fabric subsystem that consists of NiosV subsystem, 256KB of FPGA On-Chip Memory, System ID, Programmable I/O (PIO) IP for controlling DIPSW, PushButton, and LEDs.\n</li><li>NiosV subsystem that consists of JTAG Avalon Master Bridge IP and Address Span Extender IP to allow System-Console debug activity and FPGA content access through JTAG.\n\n</li></ul></li></li></ul><p></p><h3>USB modes\n</h3><p>This design supports USB 3.1 in both host and device mode.<br/>Once power up, the USB mode will remain and cannot be changed during runtime.\n\n</p><p>The linux device tree (dts) needs to be configured.<br/>The dts can be set with \"dr_mode\".\n\n</p><table border='\\\"1\\\"' cellpadding='\\\"10\\\"'><tr><th>dr_mode value</th><th>Equivalent USB mode</th></tr>\n<tr><td>host</td><td>Host</td></tr>\n<tr><td>peripheral</td><td>Device</td></tr></table><h2>Advanced feature\n</h2><p>FPGA RGMII subsystem that consists of GMII-to-RGMII conversion for HPS XGMAC into FPGA IO connection</p>",
+            "category": "HPS",
+            "url": "https://www.github.com/altera-fpga/agilex5e-ed-gsrd",
+            "downloadUrl": "dk-a5e065ab32aea-enablement-tsn-rgmii-hvio.zip",
+            "documentations": [
+                {
+                    "title": "HPS Baseline System Example Design User Guide for the Agilex 5 E-Series Premium Development Kit",
+                    "downloadUrl": "https://altera-fpga.github.io/latest/embedded-designs/agilex-5/e-series/premium/gsrd/ug-gsrd-agx5e-premium/"
+                },
+                {
+                    "title": "HPS Time-Sensitive Network (RGMII from HVIO) System Example Design README for the Agilex 5 E-Series Premium Development Kit",
+                    "downloadUrl": "https://github.com/altera-fpga/agilex5e-ed-gsrd/blob/main/dk-a5e065ab32aea-enablement/tsn-rgmii-hvio/README.md"
+                }
+            ],
+            "Q_DOWNLOAD_URL": "https://api.github.com/repos/altera-fpga/agilex5e-ed-gsrd/releases/assets/511237938",
+            "Q_GITHUB_RELEASE": "QPDS26.1.1_REL_GSRD_PR",
+            "Q_VALIDATED": true
+        },
+        {
+            "id": "-",
+            "title": "HPS Baseline-A55 System Example Design for Agilex 5 FPGA E-Series 013B Development Kit",
+            "source": "GitHub",
+            "family": "Agilex 5",
+            "quartus_version": "26.1.1",
+            "patch_number": "Unknown",
+            "devkit": "Agilex 5 FPGA E-Series 013B Development Kit DK-A5E013BM16AEA",
+            "device_part": "A5ED013BM16AE4SCS",
+            "description": "This is the HPS Baseline System Example Design for Agilex 5 FPGA E-Series 013B Development Kit.",
+            "rich_description": "<p></p><p>This is a hardware reference design for Altera Agilex 5 System On Chip (SoC) FPGA and it is part of the HPS Baseline System Example Design (formerly known as GSRD or Golden System Reference Design) that exercises soft IP in the fabric, boots to U-Boot, then Linux, and runs sample Linux applications.\nRefer to the <a href='\\\"https://altera-fpga.github.io/latest/embedded-designs/agilex-5/e-series/013B/gsrd/ug-gsrd-agx5e-013b\"'>Agilex 5 E-Series 013B Development Kit HPS Baseline System Example Design</a> for information about this design.</p><p></p><p>The design uses HPS First configuration mode and boots from Arm Cortex-A55 core processor.</p><p></p><h2>Baseline-A55 feature\n</h2><p>This reference design demonstrates the following system integration between Hard Processor System (HPS) and FPGA IPs:</p><ul><li>Hard Processor System (HPS) enablement and configuration\n<ul><li>Enable dual core Arm Cortex-A76 processor\n</li><li>Enable dual core Arm Cortex-A55 processor\n</li><li>HPS Peripheral and I/O (SD/MMC, EMAC, MDIO, USB, I3C, JTAG, UART, and GPIO)\n</li><li>HPS Clock and Reset\n</li><li>HPS FPGA Bridge and Interrupt\n<ul><li>Note: The System MMU port in F2SDRAM bridge is disabled by default</li></ul>\n</li></ul><li>HPS EMIF configuration (starting 25.1.1 ECC is enabled by default)\n</li><li>System integration with FPGA IPs\n<ul><li>Fabric subsystem that consists of NiosV subsystem, 256KB of FPGA On-Chip Memory, System ID, Programmable I/O (PIO) IP for controlling DIPSW, PushButton, and LEDs.\n</li><li>NiosV subsystem that consists of JTAG Avalon Master Bridge IP and Address Span Extender IP to allow System-Console debug activity and FPGA content access through JTAG.\n\n</li></ul></li></li></ul><p></p><h3>USB modes\n</h3><p>This design supports USB 3.1 in both host and device mode.<br/>Once power up, the USB mode will remain and cannot be changed during runtime.\n\n</p><p>The linux device tree (dts) needs to be configured.<br/>The dts can be set with \"dr_mode\".\n\n</p><table border='\\\"1\\\"' cellpadding='\\\"10\\\"'><tr><th>dr_mode value</th><th>Equivalent USB mode</th></tr>\n<tr><td>host</td><td>Host</td></tr>\n<tr><td>peripheral</td><td>Device</td></tr></table>",
+            "category": "HPS",
+            "url": "https://www.github.com/altera-fpga/agilex5e-ed-gsrd",
+            "downloadUrl": "dk-a5e013bm16aea-baseline-a55.zip",
+            "documentations": [
+                {
+                    "title": "HPS Baseline System Example Design README for the Agilex 5 FPGA E-Series 013B Development Kit",
+                    "downloadUrl": "https://github.com/altera-fpga/agilex5e-ed-gsrd/blob/main/dk-a5e013bm16aea/baseline-a55/README.md"
+                }
+            ],
+            "Q_DOWNLOAD_URL": "https://api.github.com/repos/altera-fpga/agilex5e-ed-gsrd/releases/assets/511237918",
+            "Q_GITHUB_RELEASE": "QPDS26.1.1_REL_GSRD_PR",
+            "Q_VALIDATED": true
+        },
+        {
+            "id": "-",
+            "title": "HPS Baseline-A55 System Example Design with HPS Expansion Board for Agilex 5 FPGA E-Series 065A Premium Development Kit",
+            "source": "GitHub",
+            "family": "Agilex 5 E-Series",
+            "quartus_version": "26.1.1",
+            "patch_number": "Unknown",
+            "devkit": "Agilex 5 FPGA E-Series 065A Premium Development Kit DK-A5E065AB32AEA",
+            "device_part": "A5ED065AB32AE1V",
+            "description": "This is the HPS Baseline System Example Design for Agilex 5 FPGA E-Series 065A Premium Development Kit with Out of Box Experience (OOBE) daughter card, also known as HPS Enablement Expansion Board.",
+            "rich_description": "<p></p><p>This is a hardware reference design for Altera Agilex 5 System On Chip (SoC) FPGA and it is part of the HPS Baseline System Example Design (formerly known as GSRD or Golden System Reference Design) that exercises soft IP in the fabric, boots to U-Boot, then Linux, and runs sample Linux applications.\nRefer to the <a href='\\\"https://altera-fpga.github.io/latest/embedded-designs/agilex-5/e-series/premium/gsrd/ug-gsrd-agx5e-premium/\"'>Agilex 5 E-Series Premium Development Kit HPS Baseline System Example Design</a> for information about this design.</p><p>Starting with Altera® FPGA Design Suite 26.1, the HPS Baseline-A55 System Example Design has been upgraded to use the Visual Designer Studio (VDS) flow. This repository contains the VDS-based implementation of the HPS Baseline‑A55 System Example Design, maintaining functional equivalence with earlier Quartus Design releases while adopting the VDS system design methodology.</p><p>Visual Designer Studio is a next‑generation system design environment integrated directly into Quartus® Prime Pro Edition. It simplifies the creation of complex systems through an intuitive drag‑and‑drop interface and intelligent connectivity automation, enabling faster IP integration, system assembly, and seamless RTL integration.</p><p></p><p>The design uses HPS First configuration mode and boots from Arm Cortex-A55 core processor.</p><p></p><h2>Baseline-A55 feature\n</h2><p>This reference design demonstrates the following system integration between Hard Processor System (HPS) and FPGA IPs:</p><ul><li>Hard Processor System (HPS) enablement and configuration\n<ul><li>Enable dual core Arm Cortex-A76 processor\n</li><li>Enable dual core Arm Cortex-A55 processor\n</li><li>HPS Peripheral and I/O (SD/MMC, EMAC, MDIO, USB, I3C, JTAG, UART, and GPIO)\n</li><li>HPS Clock and Reset\n</li><li>HPS FPGA Bridge and Interrupt\n<ul><li>Note: The System MMU port in F2H and F2SDRAM bridges are disabled by default</li></ul>\n</li></ul><li>HPS EMIF configuration (starting 25.1.1 ECC is enabled by default)\n</li><li>System integration with FPGA IPs\n<ul><li>Fabric subsystem that consists of NiosV subsystem, 256KB of FPGA On-Chip Memory, System ID, Programmable I/O (PIO) IP for controlling DIPSW, PushButton, and LEDs.\n</li><li>NiosV subsystem that consists of JTAG Avalon Master Bridge IP and Address Span Extender IP to allow System-Console debug activity and FPGA content access through JTAG.\n\n</li></ul></li></li></ul><p></p><h3>USB modes\n</h3><p>This design supports USB 3.1 in both host and device mode.<br/>Once power up, the USB mode will remain and cannot be changed during runtime.\n\n</p><p>The linux device tree (dts) needs to be configured.<br/>The dts can be set with \"dr_mode\".\n\n</p><table border='\\\"1\\\"' cellpadding='\\\"10\\\"'><tr><th>dr_mode value</th><th>Equivalent USB mode</th></tr>\n<tr><td>host</td><td>Host</td></tr>\n<tr><td>peripheral</td><td>Device</td></tr></table>",
+            "category": "HPS",
+            "url": "https://www.github.com/altera-fpga/agilex5e-ed-gsrd",
+            "downloadUrl": "a5ed065a-premium-devkit-oobe-baseline-a55.zip",
+            "documentations": [
+                {
+                    "title": "HPS Baseline System Example Design User Guide for the Agilex 5 E-Series Premium Development Kit",
+                    "downloadUrl": "https://altera-fpga.github.io/latest/embedded-designs/agilex-5/e-series/premium/gsrd/ug-gsrd-agx5e-premium/"
+                },
+                {
+                    "title": "HPS Baseline System Example Design README for the Agilex 5 E-Series Premium Development Kit",
+                    "downloadUrl": "https://github.com/altera-fpga/agilex5e-ed-gsrd/blob/main/a5ed065a-premium-devkit-oobe/baseline-a55/README.md"
+                }
+            ],
+            "Q_DOWNLOAD_URL": "",
+            "Q_GITHUB_RELEASE": "QPDS26.1.1_REL_GSRD_PR",
+            "Q_VALIDATED": true
+        },
+        {
+            "id": "-",
+            "title": "HPS Baseline-A55 System Example Design with HPS Test Board for Agilex 5 FPGA E-Series 065B Premium Development Kit (ES)",
+            "source": "GitHub",
+            "family": "Agilex 5 E-Series",
+            "quartus_version": "26.1.1",
+            "patch_number": "Unknown",
+            "devkit": "Agilex 5 FPGA E-Series 065B Premium Development Kit DK-A5E065BB32AES1",
+            "device_part": "A5ED065BB32AE6SR0",
+            "description": "This is the HPS Baseline System Example Design for Agilex 5 FPGA E-Series 065B Premium Development Kit with HPS Test Board.",
+            "rich_description": "<p></p><p>This is a hardware reference design for Altera Agilex 5 System On Chip (SoC) FPGA and it is part of the HPS Baseline System Example Design (formerly known as GSRD or Golden System Reference Design) that exercises soft IP in the fabric, boots to U-Boot, then Linux, and runs sample Linux applications.\nRefer to the <a href='\\\"https://altera-fpga.github.io/latest/embedded-designs/agilex-5/e-series/premium/gsrd/ug-gsrd-agx5e-premium/\"'>Agilex 5 E-Series Premium Development Kit HPS Baseline System Example Design</a> for information about this design.</p><p></p><p>The design uses HPS First configuration mode and boots from Arm Cortex-A55 core processor.</p><p></p><h2>Baseline-A55 feature\n</h2><p>This reference design demonstrates the following system integration between Hard Processor System (HPS) and FPGA IPs:</p><ul><li>Hard Processor System (HPS) enablement and configuration\n<ul><li>Enable dual core Arm Cortex-A76 processor\n</li><li>Enable dual core Arm Cortex-A55 processor\n</li><li>HPS Peripheral and I/O (SD/MMC, EMAC, SPI, MDIO, I3C, JTAG, UART, TRACE, and GPIO)\n</li><li>HPS Clock and Reset\n</li><li>HPS FPGA Bridge and Interrupt\n<ul><li>Note: The System MMU port in F2H and F2SDRAM bridges are disabled by default</li></ul>\n</li></ul><li>HPS EMIF configuration (starting 25.1.1 ECC is enabled by default)\n</li><li>System integration with FPGA IPs\n<ul><li>Fabric subsystem that consists of NiosV subsystem, 256KB of FPGA On-Chip Memory, System ID, Programmable I/O (PIO) IP for controlling DIPSW, PushButton, and LEDs.\n</li><li>NiosV subsystem that consists of JTAG Avalon Master Bridge IP and Address Span Extender IP to allow System-Console debug activity and FPGA content access through JTAG.</li></ul></li></li></ul>",
+            "category": "HPS",
+            "url": "https://www.github.com/altera-fpga/agilex5e-ed-gsrd",
+            "downloadUrl": "dk-a5e065bb32aes1-test-baseline-a55.zip",
+            "documentations": [
+                {
+                    "title": "HPS Baseline System Example Design User Guide for the Agilex 5 E-Series Premium Development Kit",
+                    "downloadUrl": "https://altera-fpga.github.io/latest/embedded-designs/agilex-5/e-series/premium/gsrd/ug-gsrd-agx5e-premium/"
+                },
+                {
+                    "title": "HPS Baseline System Example Design README for the Agilex 5 E-Series Premium Development Kit",
+                    "downloadUrl": "https://github.com/altera-fpga/agilex5e-ed-gsrd/blob/main/dk-a5e065bb32aes1-test/baseline-a55/README.md"
+                }
+            ],
+            "Q_DOWNLOAD_URL": "https://api.github.com/repos/altera-fpga/agilex5e-ed-gsrd/releases/assets/511237995",
+            "Q_GITHUB_RELEASE": "QPDS26.1.1_REL_GSRD_PR",
+            "Q_VALIDATED": true
+        },
+        {
+            "id": "-",
+            "title": "Data Mover System Example Design for Agilex 5 FPGA E-Series 065A Premium Development Kit",
+            "source": "GitHub",
+            "family": "Agilex 5 E-Series",
+            "quartus_version": "26.1.1",
+            "patch_number": "Unknown",
+            "devkit": "Agilex 5 FPGA E-Series 065A Premium Development Kit DK-A5E065AB32AEA",
+            "device_part": "A5ED065AB32AE1V",
+            "description": "This is the Data Mover System Example Design for Agilex 5 FPGA E-Series 065A Premium Development Kit with Out of Box Experience (OOBE) daughter card, which is also known as HPS Enablement Expansion Board.",
+            "rich_description": "<p>The Data Mover System Example Design is based on the Quartus Design for Agilex 5 FPGA E-Series 065A Premium Development Kit with Out of Box Experience (OOBE) daughter card. It showcases data transactions among FPGA fabric, HPS, and external memory. This embedded system incorporates all data channels between the FPGA fabric and the HPS (F2H, F2SDRAM, H2F, and LWH2F) and uses a software benchmark program to highlight performance metrics for different data flows.</p><p>The design uses HPS First configuration mode and boots from Arm Cortex-A55 core processor.</p>",
+            "category": "HPS",
+            "url": "https://www.github.com/altera-fpga/agilex5e-ed-gsrd",
+            "downloadUrl": "dk-a5e065ab32aea-enablement-datamover.zip",
+            "documentations": [
+                {
+                    "title": "Data Mover Documentation for the Agilex 5 E-Series Premium Development Kit",
+                    "downloadUrl": "https://docs.altera.com/r/example-designs/gg00091/current"
+                },
+                {
+                    "title": "Data Mover System Example Design README for the Agilex 5 E-Series Premium Development Kit",
+                    "downloadUrl": "https://github.com/altera-fpga/agilex5e-ed-gsrd/blob/main/dk-a5e065ab32aea-enablement/datamover/README.md"
+                }
+            ],
+            "Q_DOWNLOAD_URL": "https://api.github.com/repos/altera-fpga/agilex5e-ed-gsrd/releases/assets/511237914",
+            "Q_GITHUB_RELEASE": "QPDS26.1.1_REL_GSRD_PR",
+            "Q_VALIDATED": true
+        },
+        {
+            "id": "-",
+            "title": "HPS Time-Sensitive Network (RGMII from HVIO) System Example Design with HPS Expansion Board for Agilex 5 FPGA E-Series 065B Premium Development Kit",
+            "source": "GitHub",
+            "family": "Agilex 5 E-Series",
+            "quartus_version": "26.1.1",
+            "patch_number": "Unknown",
+            "devkit": "Agilex 5 FPGA E-Series 065B Premium Development Kit DK-A5E065BB32AES1",
+            "device_part": "A5ED065BB32AE4S",
+            "description": "Time-Sensitive Networking (TSN): PHY configuration 2 (RGMII from FPGA HVIO) System Example Design for Agilex 5 FPGA E-Series 065B Premium Development Kit with Out of Box Experience (OOBE) daughter card, which is also known as HPS Enablement Expansion Board.",
+            "rich_description": "<p></p><p>This is a hardware reference design for Altera Agilex 5 System On Chip (SoC) FPGA and it is part of the HPS Baseline System Example Design (formerly known as GSRD or Golden System Reference Design) that exercises soft IP in the fabric, boots to U-Boot, then Linux, and runs sample Linux applications.\nRefer to the <a href='\\\"https://altera-fpga.github.io/latest/embedded-designs/agilex-5/e-series/premium/gsrd/ug-gsrd-agx5e-premium/\"'>Agilex 5 E-Series Premium Development Kit HPS Baseline System Example Design</a> for information about this design.</p><p></p><p>The design uses HPS First configuration mode and boots from Arm Cortex-A55 core processor.</p><p></p><h2>Time-Sensitive Networking (TSN): PHY configuration 2 (RGMII from FPGA HVIO) feature\n</h2><p>This reference design demonstrates the following system integration between Hard Processor System (HPS) and FPGA IPs:</p><ul><li>Hard Processor System (HPS) enablement and configuration\n<ul><li>Enable dual core Arm Cortex-A76 processor\n</li><li>Enable dual core Arm Cortex-A55 processor\n</li><li>HPS Peripheral and I/O (SD/MMC, EMAC, MDIO, USB, I3C, JTAG, UART, and GPIO)\n</li><li>HPS Clock and Reset\n</li><li>HPS FPGA Bridge and Interrupt\n<ul><li>Note: The System MMU port in F2H and F2SDRAM bridges are disabled by default</li></ul>\n</li></ul><li>HPS EMIF configuration (starting 25.1.1 ECC is enabled by default)\n</li><li>System integration with FPGA IPs\n<ul><li>GMII to RGMII Converter IP to handle conversion for HPS XGMAC into FPGA HVIO interface.\n</li><li>Fabric subsystem that consists of NiosV subsystem, 256KB of FPGA On-Chip Memory, System ID, Programmable I/O (PIO) IP for controlling DIPSW, PushButton, and LEDs.\n</li><li>NiosV subsystem that consists of JTAG Avalon Master Bridge IP and Address Span Extender IP to allow System-Console debug activity and FPGA content access through JTAG.\n\n</li></ul></li></li></ul><p></p><h3>USB modes\n</h3><p>This design supports USB 3.1 in both host and device mode.<br/>Once power up, the USB mode will remain and cannot be changed during runtime.\n\n</p><p>The linux device tree (dts) needs to be configured.<br/>The dts can be set with \"dr_mode\".\n\n</p><table border='\\\"1\\\"' cellpadding='\\\"10\\\"'><tr><th>dr_mode value</th><th>Equivalent USB mode</th></tr>\n<tr><td>host</td><td>Host</td></tr>\n<tr><td>peripheral</td><td>Device</td></tr></table><h2>Advanced feature\n</h2><p>FPGA RGMII subsystem that consists of GMII-to-RGMII conversion for HPS XGMAC into FPGA IO connection</p>",
+            "category": "HPS",
+            "url": "https://www.github.com/altera-fpga/agilex5e-ed-gsrd",
+            "downloadUrl": "dk-a5e065bb32aea-enablement-tsn-rgmii-hvio.zip",
+            "documentations": [
+                {
+                    "title": "HPS Baseline System Example Design User Guide for the Agilex 5 E-Series Premium Development Kit",
+                    "downloadUrl": "https://altera-fpga.github.io/latest/embedded-designs/agilex-5/e-series/premium/gsrd/ug-gsrd-agx5e-premium/"
+                },
+                {
+                    "title": "HPS Time-Sensitive Network (RGMII from HVIO) System Example Design README for the Agilex 5 E-Series Premium Development Kit",
+                    "downloadUrl": "https://github.com/altera-fpga/agilex5e-ed-gsrd/blob/main/dk-a5e065bb32aea-enablement/tsn-rgmii-hvio/README.md"
+                }
+            ],
+            "Q_DOWNLOAD_URL": "https://api.github.com/repos/altera-fpga/agilex5e-ed-gsrd/releases/assets/511237955",
+            "Q_GITHUB_RELEASE": "QPDS26.1.1_REL_GSRD_PR",
+            "Q_VALIDATED": true
+        },
+        {
+            "id": "-",
+            "title": "HPS Baseline-A55 System Example Design with eMMC Boot for Agilex 5 FPGA E-Series 065B Premium Development Kit (ES)",
+            "source": "GitHub",
+            "family": "Agilex 5 E-Series",
+            "quartus_version": "26.1.1",
+            "patch_number": "Unknown",
+            "devkit": "Agilex 5 FPGA E-Series 065B Premium Development Kit DK-A5E065BB32AES1",
+            "device_part": "A5ED065BB32AE6SR0",
+            "description": "This is the HPS Baseline System Example Design for Agilex 5 FPGA E-Series 065B Premium Development Kit with Out of Box Experience (OOBE) daughter card, which is also known as HPS Enablement Expansion Board.",
+            "rich_description": "<p></p><p>This is a hardware reference design for Altera Agilex 5 System On Chip (SoC) FPGA and it is part of the HPS Baseline System Example Design (formerly known as GSRD or Golden System Reference Design) that exercises soft IP in the fabric, boots to U-Boot, then Linux, and runs sample Linux applications.\nRefer to the <a href='\\\"https://altera-fpga.github.io/latest/embedded-designs/agilex-5/e-series/premium/gsrd/ug-gsrd-agx5e-premium/\"'>Agilex 5 E-Series Premium Development Kit HPS Baseline System Example Design</a> for information about this design.</p><p></p><p>The design uses HPS First configuration mode and boots from Arm Cortex-A55 core processor.</p><p></p><h2>Baseline-A55 feature\n</h2><p>This reference design demonstrates the following system integration between Hard Processor System (HPS) and FPGA IPs:</p><ul><li>Hard Processor System (HPS) enablement and configuration\n<ul><li>Enable dual core Arm Cortex-A76 processor\n</li><li>Enable dual core Arm Cortex-A55 processor\n</li><li>HPS Peripheral and I/O (SD/MMC, EMAC, MDIO, USB, I3C, JTAG, UART, and GPIO)\n</li><li>HPS Clock and Reset\n</li><li>HPS FPGA Bridge and Interrupt\n<ul><li>Note: The System MMU port in F2H and F2SDRAM bridges are disabled by default</li></ul>\n</li></ul><li>HPS EMIF configuration (starting 25.1.1 ECC is enabled by default)\n</li><li>System integration with FPGA IPs\n<ul><li>Fabric subsystem that consists of NiosV subsystem, 256KB of FPGA On-Chip Memory, System ID, Programmable I/O (PIO) IP for controlling DIPSW, PushButton, and LEDs.\n</li><li>NiosV subsystem that consists of JTAG Avalon Master Bridge IP and Address Span Extender IP to allow System-Console debug activity and FPGA content access through JTAG.\n\n</li></ul></li></li></ul><p></p><h3>USB modes\n</h3><p>This design supports USB 3.1 in both host and device mode.<br/>Once power up, the USB mode will remain and cannot be changed during runtime.\n\n</p><p>The linux device tree (dts) needs to be configured.<br/>The dts can be set with \"dr_mode\".\n\n</p><table border='\\\"1\\\"' cellpadding='\\\"10\\\"'><tr><th>dr_mode value</th><th>Equivalent USB mode</th></tr>\n<tr><td>host</td><td>Host</td></tr>\n<tr><td>peripheral</td><td>Device</td></tr></table>",
+            "category": "HPS",
+            "url": "https://www.github.com/altera-fpga/agilex5e-ed-gsrd",
+            "downloadUrl": "dk-a5e065bb32aes1-emmc-baseline-a55.zip",
+            "documentations": [
+                {
+                    "title": "HPS Baseline System Example Design User Guide for the Agilex 5 E-Series Premium Development Kit",
+                    "downloadUrl": "https://altera-fpga.github.io/latest/embedded-designs/agilex-5/e-series/premium/gsrd/ug-gsrd-agx5e-premium/"
+                },
+                {
+                    "title": "HPS Baseline System Example Design README for the Agilex 5 E-Series Premium Development Kit",
+                    "downloadUrl": "https://github.com/altera-fpga/agilex5e-ed-gsrd/blob/main/dk-a5e065bb32aes1-emmc/baseline-a55/README.md"
+                }
+            ],
+            "Q_DOWNLOAD_URL": "https://api.github.com/repos/altera-fpga/agilex5e-ed-gsrd/releases/assets/511237973",
+            "Q_GITHUB_RELEASE": "QPDS26.1.1_REL_GSRD_PR",
+            "Q_VALIDATED": true
+        },
+        {
+            "id": "-",
+            "title": "HPS Baseline-A55 System Example Design with eMMC Boot for Agilex 5 FPGA E-Series 065B Premium Development Kit",
+            "source": "GitHub",
+            "family": "Agilex 5 E-Series",
+            "quartus_version": "26.1.1",
+            "patch_number": "Unknown",
+            "devkit": "Agilex 5 FPGA E-Series 065B Premium Development Kit DK-A5E065BB32AEA",
+            "device_part": "A5ED065BB32AE4S",
+            "description": "This is the HPS Baseline System Example Design for Agilex 5 FPGA E-Series 065B Premium Development Kit with HPS NAND daughter card, which also offers eMMC.",
+            "rich_description": "<p></p><p>This is a hardware reference design for Altera Agilex 5 System On Chip (SoC) FPGA and it is part of the HPS Baseline System Example Design (formerly known as GSRD or Golden System Reference Design) that exercises soft IP in the fabric, boots to U-Boot, then Linux, and runs sample Linux applications.\nRefer to the <a href='\\\"https://altera-fpga.github.io/latest/embedded-designs/agilex-5/e-series/premium/gsrd/ug-gsrd-agx5e-premium/\"'>Agilex 5 E-Series Premium Development Kit HPS Baseline System Example Design</a> for information about this design.</p><p></p><p>The design uses HPS First configuration mode and boots from Arm Cortex-A55 core processor.</p><p></p><h2>Baseline-A55 feature\n</h2><p>This reference design demonstrates the following system integration between Hard Processor System (HPS) and FPGA IPs:</p><ul><li>Hard Processor System (HPS) enablement and configuration\n<ul><li>Enable dual core Arm Cortex-A76 processor\n</li><li>Enable dual core Arm Cortex-A55 processor\n</li><li>HPS Peripheral and I/O (SD/MMC, EMAC, MDIO, USB, I3C, JTAG, UART, and GPIO)\n</li><li>HPS Clock and Reset\n</li><li>HPS FPGA Bridge and Interrupt\n<ul><li>Note: The System MMU port in F2H and F2SDRAM bridges are disabled by default</li></ul>\n</li></ul><li>HPS EMIF configuration (starting 25.1.1 ECC is enabled by default)\n</li><li>System integration with FPGA IPs\n<ul><li>Fabric subsystem that consists of NiosV subsystem, 256KB of FPGA On-Chip Memory, System ID, Programmable I/O (PIO) IP for controlling DIPSW, PushButton, and LEDs.\n</li><li>NiosV subsystem that consists of JTAG Avalon Master Bridge IP and Address Span Extender IP to allow System-Console debug activity and FPGA content access through JTAG.\n\n</li></ul></li></li></ul><p></p><h3>USB modes\n</h3><p>This design supports USB 3.1 in both host and device mode.<br/>Once power up, the USB mode will remain and cannot be changed during runtime.\n\n</p><p>The linux device tree (dts) needs to be configured.<br/>The dts can be set with \"dr_mode\".\n\n</p><table border='\\\"1\\\"' cellpadding='\\\"10\\\"'><tr><th>dr_mode value</th><th>Equivalent USB mode</th></tr>\n<tr><td>host</td><td>Host</td></tr>\n<tr><td>peripheral</td><td>Device</td></tr></table>",
+            "category": "HPS",
+            "url": "https://www.github.com/altera-fpga/agilex5e-ed-gsrd",
+            "downloadUrl": "dk-a5e065bb32aea-emmc-baseline-a55.zip",
+            "documentations": [
+                {
+                    "title": "HPS Baseline System Example Design User Guide for the Agilex 5 E-Series Premium Development Kit",
+                    "downloadUrl": "https://altera-fpga.github.io/latest/embedded-designs/agilex-5/e-series/premium/gsrd/ug-gsrd-agx5e-premium/"
+                },
+                {
+                    "title": "HPS Baseline System Example Design README for the Agilex 5 E-Series Premium Development Kit",
+                    "downloadUrl": "https://github.com/altera-fpga/agilex5e-ed-gsrd/blob/main/dk-a5e065bb32aea-emmc/baseline-a55/README.md"
+                }
+            ],
+            "Q_DOWNLOAD_URL": "https://api.github.com/repos/altera-fpga/agilex5e-ed-gsrd/releases/assets/511237950",
+            "Q_GITHUB_RELEASE": "QPDS26.1.1_REL_GSRD_PR",
+            "Q_VALIDATED": true
+        },
+        {
+            "id": "-",
+            "title": "HPS Baseline-A55 System Example Design with NAND Boot for Agilex 5 FPGA E-Series 065B Premium Development Kit",
+            "source": "GitHub",
+            "family": "Agilex 5 E-Series",
+            "quartus_version": "26.1.1",
+            "patch_number": "Unknown",
+            "devkit": "Agilex 5 FPGA E-Series 065B Premium Development Kit DK-A5E065BB32AEA",
+            "device_part": "A5ED065BB32AE4S",
+            "description": "This is the HPS Baseline System Example Design for Agilex 5 FPGA E-Series 065B Premium Development Kit HPS NAND daughter card.",
+            "rich_description": "<p></p><p>This is a hardware reference design for Altera Agilex 5 System On Chip (SoC) FPGA and it is part of the HPS Baseline System Example Design (formerly known as GSRD or Golden System Reference Design) that exercises soft IP in the fabric, boots to U-Boot, then Linux, and runs sample Linux applications.\nRefer to the <a href='\\\"https://altera-fpga.github.io/latest/embedded-designs/agilex-5/e-series/premium/gsrd/ug-gsrd-agx5e-premium/\"'>Agilex 5 E-Series Premium Development Kit HPS Baseline System Example Design</a> for information about this design.</p><p></p><p>The design uses HPS First configuration mode and boots from Arm Cortex-A55 core processor.</p><p></p><h2>Baseline-A55 feature\n</h2><p>This reference design demonstrates the following system integration between Hard Processor System (HPS) and FPGA IPs:</p><ul><li>Hard Processor System (HPS) enablement and configuration\n<ul><li>Enable dual core Arm Cortex-A76 processor\n</li><li>Enable dual core Arm Cortex-A55 processor\n</li><li>HPS Peripheral and I/O (SD/MMC, EMAC, MDIO, USB, I3C, JTAG, UART, and GPIO)\n</li><li>HPS Clock and Reset\n</li><li>HPS FPGA Bridge and Interrupt\n<ul><li>Note: The System MMU port in F2H and F2SDRAM bridges are disabled by default</li></ul>\n</li></ul><li>HPS EMIF configuration (starting 25.1.1 ECC is enabled by default)\n</li><li>System integration with FPGA IPs\n<ul><li>Fabric subsystem that consists of NiosV subsystem, 256KB of FPGA On-Chip Memory, System ID, Programmable I/O (PIO) IP for controlling DIPSW, PushButton, and LEDs.\n</li><li>NiosV subsystem that consists of JTAG Avalon Master Bridge IP and Address Span Extender IP to allow System-Console debug activity and FPGA content access through JTAG.\n\n</li></ul></li></li></ul><p></p><h3>USB modes\n</h3><p>This design supports USB 3.1 in both host and device mode.<br/>Once power up, the USB mode will remain and cannot be changed during runtime.\n\n</p><p>The linux device tree (dts) needs to be configured.<br/>The dts can be set with \"dr_mode\".\n\n</p><table border='\\\"1\\\"' cellpadding='\\\"10\\\"'><tr><th>dr_mode value</th><th>Equivalent USB mode</th></tr>\n<tr><td>host</td><td>Host</td></tr>\n<tr><td>peripheral</td><td>Device</td></tr></table>",
+            "category": "HPS",
+            "url": "https://www.github.com/altera-fpga/agilex5e-ed-gsrd",
+            "downloadUrl": "dk-a5e065bb32aea-nand-baseline-a55.zip",
+            "documentations": [
+                {
+                    "title": "HPS Baseline System Example Design User Guide for the Agilex 5 E-Series Premium Development Kit",
+                    "downloadUrl": "https://altera-fpga.github.io/latest/embedded-designs/agilex-5/e-series/premium/gsrd/ug-gsrd-agx5e-premium/"
+                },
+                {
+                    "title": "HPS Baseline System Example Design README for the Agilex 5 E-Series Premium Development Kit",
+                    "downloadUrl": "https://github.com/altera-fpga/agilex5e-ed-gsrd/blob/main/dk-a5e065bb32aea-nand/baseline-a55/README.md"
+                }
+            ],
+            "Q_DOWNLOAD_URL": "https://api.github.com/repos/altera-fpga/agilex5e-ed-gsrd/releases/assets/511237956",
+            "Q_GITHUB_RELEASE": "QPDS26.1.1_REL_GSRD_PR",
+            "Q_VALIDATED": true
+        },
+        {
+            "id": "-",
+            "title": "HPS Baseline-A55 System Example Design for DE25 Nano Development and Education Board",
+            "source": "GitHub",
+            "family": "Agilex 5 E-Series",
+            "quartus_version": "26.1.1",
+            "patch_number": "Unknown",
+            "devkit": "DE25 Nano Development and Education Board",
+            "device_part": "A5EB013BB23BE4SCS",
+            "description": "This is the HPS Baseline System Example Design for DE25 Nano Development and Education Board.",
+            "rich_description": "<p></p><p>This is a hardware reference design for Altera Agilex 5 System On Chip (SoC) FPGA and it is part of the HPS Baseline System Example Design (formerly known as GSRD or Golden System Reference Design) that exercises soft IP in the fabric, boots to U-Boot, then Linux, and runs sample Linux applications.\nRefer to the <a href='\\\"https://altera-fpga.github.io/latest/embedded-designs/agilex-5/e-series/premium/gsrd/ug-gsrd-agx5e-premium/\\\"'>Agilex 5 E-Series Premium Development Kit HPS Baseline System Example Design</a> for information about this design.</p><p></p><p>The design uses HPS First configuration mode and boots from Arm Cortex-A55 core 0 processor.</p><p></p><h2>Baseline-A55 feature\n</h2><p>This reference design demonstrates the following system integration between Hard Processor System (HPS) and FPGA IPs:</p><ul><li>Hard Processor System (HPS) enablement and configuration\n<ul><li>Enable dual core Arm Cortex-A76 processor\n</li><li>Enable dual core Arm Cortex-A55 processor\n</li><li>HPS Peripheral and I/O (SD/MMC, EMAC, MDIO, USB, I3C, JTAG, UART, and GPIO)\n</li><li>HPS Clock and Reset\n</li><li>HPS FPGA Bridge and Interrupt\n</li></ul><li>HPS EMIF configuration (starting 25.1.1 ECC is enabled by default)\n</li><li>System integration with FPGA IPs\n<ul><li>Core subsystem that consists of NiosV subsystem, 256KB of FPGA On-Chip Memory, System ID, Programmable I/O (PIO) IP for controlling DIPSW, PushButton, and LEDs.\n</li><li>NiosV subsystem that consists of JTAG Avalon Master Bridge IP and Address Span Extender IP to allow System-Console debug activity and FPGA content access through JTAG.\n\n</li></ul></li></li></ul><p></p><h3>USB modes\n</h3><p>This design supports USB 3.1 in both host and device mode.<br/>Once power up, the USB mode will remain and cannot be changed during runtime.\n\n</p><p>The linux device tree (dts) needs to be configured.<br/>The dts can be set with \"dr_mode\".\n\n</p><table border='\\\"1\\\"' cellpadding='\\\"10\\\"'><tr><th>dr_mode value</th><th>Equivalent USB mode</th></tr>\n<tr><td>host</td><td>Host</td></tr>\n<tr><td>peripheral</td><td>Device</td></tr></table>",
+            "category": "HPS",
+            "url": "https://www.github.com/altera-fpga/agilex5e-ed-gsrd",
+            "downloadUrl": "terasic-de25-nano-devkit-baseline-a55.zip",
+            "documentations": [
+                {
+                    "title": "HPS Baseline System Example Design User Guide for the DE25 Nano Development and Education Board",
+                    "downloadUrl": "https://altera-fpga.github.io/latest/embedded-designs/agilex-5/e-series/premium/gsrd/ug-gsrd-agx5e-premium/"
+                },
+                {
+                    "title": "HPS Baseline System Example Design README for the DE25 Nano Development and Education Board",
+                    "downloadUrl": "https://github.com/altera-fpga/agilex5e-ed-gsrd/blob/main/terasic-de25-nano-devkit/baseline-a55/README.md"
+                }
+            ],
+            "Q_DOWNLOAD_URL": "https://api.github.com/repos/altera-fpga/agilex5e-ed-gsrd/releases/assets/511238012",
+            "Q_GITHUB_RELEASE": "QPDS26.1.1_REL_GSRD_PR",
+            "Q_VALIDATED": true
+        },
+        {
+            "id": "-",
+            "title": "HPS Baseline-A55 System Example Design for Agilex 5 FPGA E-Series 065A Modular Development Kit",
+            "source": "GitHub",
+            "family": "Agilex 5 E-Series",
+            "quartus_version": "26.1.1",
+            "patch_number": "Unknown",
+            "devkit": "Agilex 5 FPGA E-Series 065A Modular Development Kit MK-A5E065AB32AEA",
+            "device_part": "A5ED065AB32AE1V",
+            "description": "This is the HPS Baseline System Example Design for Agilex 5 FPGA E-Series 065A Modular Development Kit.",
+            "rich_description": "<p></p><p>This is a hardware reference design for Altera Agilex 5 System On Chip (SoC) FPGA and it is part of the HPS Baseline System Example Design (formerly known as GSRD or Golden System Reference Design) that exercises soft IP in the fabric, boots to U-Boot, then Linux, and runs sample Linux applications.Refer to the <a href='\\\"https://altera-fpga.github.io/latest/embedded-designs/agilex-5/e-series/modular/gsrd/ug-gsrd-agx5e-modular/\"'>Agilex 5 E-Series Modular Development Kit HPS Baseline System Example Design</a> for information about this design.</p><p>The design uses HPS First configuration mode.</p><p></p><h2>Baseline feature\n</h2><p>This reference design demonstrates the following system integration between Hard Processor System (HPS) and FPGA IPs:</p><ul><li>Hard Processor System (HPS) enablement and configuration\n<ul><li>Enable dual core Arm Cortex-A76 processor\n</li><li>Enable dual core Arm Cortex-A55 processor\n</li><li>HPS Peripheral and I/O (SD/MMC, EMAC, MDIO, USB, I3C, JTAG, UART, and GPIO)\n</li><li>HPS Clock and Reset\n</li><li>HPS FPGA Bridge and Interrupt\n<ul><li>Note: The System MMU port in F2H and F2SDRAM bridges are disabled by default</li></ul>\n</li></ul><li>HPS EMIF configuration (starting 25.1.1 ECC is enabled by default)\n</li><li>System integration with FPGA IPs\n<ul><li>Fabric subsystem that consists of NiosV subsystem, 256KB of FPGA On-Chip Memory, System ID, Programmable I/O (PIO) IP for controlling DIPSW, PushButton, and LEDs.\n</li><li>NiosV subsystem that consists of JTAG Avalon Master Bridge IP and Address Span Extender IP to allow System-Console debug activity and FPGA content access through JTAG.\n\n</li></ul></li></li></ul><p></p><h3>USB modes\n</h3><p>This design supports USB 3.1 in both host and device mode.<br/>Once power up, the USB mode will remain and cannot be changed during runtime.\n\n</p><p>The linux device tree (dts) needs to be configured.<br/>The dts can be set with \"dr_mode\".\n\n</p><table border='\\\"1\\\"' cellpadding='\\\"10\\\"'><tr><th>dr_mode value</th><th>Equivalent USB mode</th></tr>\n<tr><td>host</td><td>Host</td></tr>\n<tr><td>peripheral</td><td>Device</td></tr></table>",
+            "category": "HPS",
+            "url": "https://www.github.com/altera-fpga/agilex5e-ed-gsrd",
+            "downloadUrl": "mk-a5e065ab32aea-baseline.zip",
+            "documentations": [
+                {
+                    "title": "HPS Baseline System Example Design User Guide for the Agilex 5 E-Series Modular Development Kit",
+                    "downloadUrl": "https://altera-fpga.github.io/latest/embedded-designs/agilex-5/e-series/modular/gsrd/ug-gsrd-agx5e-modular/"
+                },
+                {
+                    "title": "HPS Baseline System Example Design README for the Agilex 5 E-Series Modular Development Kit",
+                    "downloadUrl": "https://github.com/altera-fpga/agilex5e-ed-gsrd/blob/main/mk-a5e065ab32aea/baseline-a55/README.md"
+                }
+            ],
+            "Q_DOWNLOAD_URL": "",
+            "Q_GITHUB_RELEASE": "QPDS26.1.1_REL_GSRD_PR",
+            "Q_VALIDATED": true
+        },
+        {
+            "id": "-",
+            "title": "HPS Baseline-A55 System Example Design with HPS Expansion Board for Agilex 5 FPGA E-Series 065B Premium Development Kit",
+            "source": "GitHub",
+            "family": "Agilex 5 E-Series",
+            "quartus_version": "26.1.1",
+            "patch_number": "Unknown",
+            "devkit": "Agilex 5 FPGA E-Series 065B Premium Development Kit DK-A5E065BB32AEA",
+            "device_part": "A5ED065BB32AE4S",
+            "description": "This is the HPS Baseline System Example Design for Agilex 5 FPGA E-Series 065B Premium Development Kit with Out of Box Experience (OOBE) daughter card, which is also known as HPS Enablement Expansion Board.",
+            "rich_description": "<p></p><p>This is a hardware reference design for Altera Agilex 5 System On Chip (SoC) FPGA and it is part of the HPS Baseline System Example Design (formerly known as GSRD or Golden System Reference Design) that exercises soft IP in the fabric, boots to U-Boot, then Linux, and runs sample Linux applications.\nRefer to the <a href='\\\"https://altera-fpga.github.io/latest/embedded-designs/agilex-5/e-series/premium/gsrd/ug-gsrd-agx5e-premium/\"'>Agilex 5 E-Series Premium Development Kit HPS Baseline System Example Design</a> for information about this design.</p><p></p><p>The design uses HPS First configuration mode and boots from Arm Cortex-A55 core processor.</p><p></p><h2>Baseline-A55 feature\n</h2><p>This reference design demonstrates the following system integration between Hard Processor System (HPS) and FPGA IPs:</p><ul><li>Hard Processor System (HPS) enablement and configuration\n<ul><li>Enable dual core Arm Cortex-A76 processor\n</li><li>Enable dual core Arm Cortex-A55 processor\n</li><li>HPS Peripheral and I/O (SD/MMC, EMAC, MDIO, USB, I3C, JTAG, UART, and GPIO)\n</li><li>HPS Clock and Reset\n</li><li>HPS FPGA Bridge and Interrupt\n<ul><li>Note: The System MMU port in F2H and F2SDRAM bridges are disabled by default</li></ul>\n</li></ul><li>HPS EMIF configuration (starting 25.1.1 ECC is enabled by default)\n</li><li>System integration with FPGA IPs\n<ul><li>Fabric subsystem that consists of NiosV subsystem, 256KB of FPGA On-Chip Memory, System ID, Programmable I/O (PIO) IP for controlling DIPSW, PushButton, and LEDs.\n</li><li>NiosV subsystem that consists of JTAG Avalon Master Bridge IP and Address Span Extender IP to allow System-Console debug activity and FPGA content access through JTAG.\n\n</li></ul></li></li></ul><p></p><h3>USB modes\n</h3><p>This design supports USB 3.1 in both host and device mode.<br/>Once power up, the USB mode will remain and cannot be changed during runtime.\n\n</p><p>The linux device tree (dts) needs to be configured.<br/>The dts can be set with \"dr_mode\".\n\n</p><table border='\\\"1\\\"' cellpadding='\\\"10\\\"'><tr><th>dr_mode value</th><th>Equivalent USB mode</th></tr>\n<tr><td>host</td><td>Host</td></tr>\n<tr><td>peripheral</td><td>Device</td></tr></table>",
+            "category": "HPS",
+            "url": "https://www.github.com/altera-fpga/agilex5e-ed-gsrd",
+            "downloadUrl": "dk-a5e065bb32aea-enablement-baseline-a55.zip",
+            "documentations": [
+                {
+                    "title": "HPS Baseline System Example Design User Guide for the Agilex 5 E-Series Premium Development Kit",
+                    "downloadUrl": "https://altera-fpga.github.io/latest/embedded-designs/agilex-5/e-series/premium/gsrd/ug-gsrd-agx5e-premium/"
+                },
+                {
+                    "title": "HPS Baseline System Example Design README for the Agilex 5 E-Series Premium Development Kit",
+                    "downloadUrl": "https://github.com/altera-fpga/agilex5e-ed-gsrd/blob/main/dk-a5e065bb32aea-enablement/baseline-a55/README.md"
+                }
+            ],
+            "Q_DOWNLOAD_URL": "https://api.github.com/repos/altera-fpga/agilex5e-ed-gsrd/releases/assets/511237953",
+            "Q_GITHUB_RELEASE": "QPDS26.1.1_REL_GSRD_PR",
+            "Q_VALIDATED": true
+        },
+        {
+            "id": "-",
+            "title": "HPS Baseline-A55 System Example Design for Agilex 5 FPGA E-Series 065B Modular Development Kit",
+            "source": "GitHub",
+            "family": "Agilex 5 E-Series",
+            "quartus_version": "26.1.1",
+            "patch_number": "Unknown",
+            "devkit": "Agilex 5 FPGA E-Series 065B Modular Development Kit MK-A5E065BB32AEA",
+            "device_part": "A5ED065BB32AE4S",
+            "description": "This is the HPS Baseline System Example Design for Agilex 5 FPGA E-Series 065B Modular Development Kit.",
+            "rich_description": "<p></p><p>This is a hardware reference design for Altera Agilex 5 System On Chip (SoC) FPGA and it is part of the HPS Baseline System Example Design (formerly known as GSRD or Golden System Reference Design) that exercises soft IP in the fabric, boots to U-Boot, then Linux, and runs sample Linux applications.Refer to the <a href='\\\"https://altera-fpga.github.io/latest/embedded-designs/agilex-5/e-series/modular/gsrd/ug-gsrd-agx5e-modular/\"'>Agilex 5 E-Series Modular Development Kit HPS Baseline System Example Design</a> for information about this design.</p><p>The design uses HPS First configuration mode.</p><p></p><h2>Baseline feature\n</h2><p>This reference design demonstrates the following system integration between Hard Processor System (HPS) and FPGA IPs:</p><ul><li>Hard Processor System (HPS) enablement and configuration\n<ul><li>Enable dual core Arm Cortex-A76 processor\n</li><li>Enable dual core Arm Cortex-A55 processor\n</li><li>HPS Peripheral and I/O (SD/MMC, EMAC, MDIO, USB, I3C, JTAG, UART, and GPIO)\n</li><li>HPS Clock and Reset\n</li><li>HPS FPGA Bridge and Interrupt\n<ul><li>Note: The System MMU port in F2H and F2SDRAM bridges are disabled by default</li></ul>\n</li></ul><li>HPS EMIF configuration (starting 25.1.1 ECC is enabled by default)\n</li><li>System integration with FPGA IPs\n<ul><li>Fabric subsystem that consists of NiosV subsystem, 256KB of FPGA On-Chip Memory, System ID, Programmable I/O (PIO) IP for controlling DIPSW, PushButton, and LEDs.\n</li><li>NiosV subsystem that consists of JTAG Avalon Master Bridge IP and Address Span Extender IP to allow System-Console debug activity and FPGA content access through JTAG.\n\n</li></ul></li></li></ul><p></p><h3>USB modes\n</h3><p>This design supports USB 3.1 in both host and device mode.<br/>Once power up, the USB mode will remain and cannot be changed during runtime.\n\n</p><p>The linux device tree (dts) needs to be configured.<br/>The dts can be set with \"dr_mode\".\n\n</p><table border='\\\"1\\\"' cellpadding='\\\"10\\\"'><tr><th>dr_mode value</th><th>Equivalent USB mode</th></tr>\n<tr><td>host</td><td>Host</td></tr>\n<tr><td>peripheral</td><td>Device</td></tr></table>",
+            "category": "HPS",
+            "url": "https://www.github.com/altera-fpga/agilex5e-ed-gsrd",
+            "downloadUrl": "mk-a5e065bb32aea-baseline.zip",
+            "documentations": [
+                {
+                    "title": "HPS Baseline System Example Design User Guide for the Agilex 5 E-Series Modular Development Kit",
+                    "downloadUrl": "https://altera-fpga.github.io/latest/embedded-designs/agilex-5/e-series/modular/gsrd/ug-gsrd-agx5e-modular/"
+                },
+                {
+                    "title": "HPS Baseline System Example Design README for the Agilex 5 E-Series Modular Development Kit",
+                    "downloadUrl": "https://github.com/altera-fpga/agilex5e-ed-gsrd/blob/main/mk-a5e065bb32aea/baseline-a55/README.md"
+                }
+            ],
+            "Q_DOWNLOAD_URL": "",
+            "Q_GITHUB_RELEASE": "QPDS26.1.1_REL_GSRD_PR",
+            "Q_VALIDATED": true
+        },
+        {
+            "id": "-",
+            "title": "HPS Baseline-A55 System Example Design with HPS Test Board for Agilex 5 FPGA E-Series 065A Premium Development Kit",
+            "source": "GitHub",
+            "family": "Agilex 5 E-Series",
+            "quartus_version": "26.1.1",
+            "patch_number": "Unknown",
+            "devkit": "Agilex 5 FPGA E-Series 065A Premium Development Kit DK-A5E065AB32AEA",
+            "device_part": "A5ED065AB32AE1V",
+            "description": "This is the HPS Baseline System Example Design for Agilex 5 FPGA E-Series 065A Premium Development Kit with HPS Test Board.",
+            "rich_description": "<p></p><p>This is a hardware reference design for Altera Agilex 5 System On Chip (SoC) FPGA and it is part of the HPS Baseline System Example Design (formerly known as GSRD or Golden System Reference Design) that exercises soft IP in the fabric, boots to U-Boot, then Linux, and runs sample Linux applications.\nRefer to the <a href='\\\"https://altera-fpga.github.io/latest/embedded-designs/agilex-5/e-series/premium/gsrd/ug-gsrd-agx5e-premium/\"'>Agilex 5 E-Series Premium Development Kit HPS Baseline System Example Design</a> for information about this design.</p><p></p><p>The design uses HPS First configuration mode and boots from Arm Cortex-A55 core processor.</p><p></p><h2>Baseline-A55 feature\n</h2><p>This reference design demonstrates the following system integration between Hard Processor System (HPS) and FPGA IPs:</p><ul><li>Hard Processor System (HPS) enablement and configuration\n<ul><li>Enable dual core Arm Cortex-A76 processor\n</li><li>Enable dual core Arm Cortex-A55 processor\n</li><li>HPS Peripheral and I/O (SD/MMC, EMAC, SPI, MDIO, I3C, JTAG, UART, TRACE, and GPIO)\n</li><li>HPS Clock and Reset\n</li><li>HPS FPGA Bridge and Interrupt\n<ul><li>Note: The System MMU port in F2H and F2SDRAM bridges are disabled by default</li></ul>\n</li></ul><li>HPS EMIF configuration (starting 25.1.1 ECC is enabled by default)\n</li><li>System integration with FPGA IPs\n<ul><li>Fabric subsystem that consists of NiosV subsystem, 256KB of FPGA On-Chip Memory, System ID, Programmable I/O (PIO) IP for controlling DIPSW, PushButton, and LEDs.\n</li><li>NiosV subsystem that consists of JTAG Avalon Master Bridge IP and Address Span Extender IP to allow System-Console debug activity and FPGA content access through JTAG.</li></ul></li></li></ul>",
+            "category": "HPS",
+            "url": "https://www.github.com/altera-fpga/agilex5e-ed-gsrd",
+            "downloadUrl": "dk-a5e065ab32aea-test-baseline-a55.zip",
+            "documentations": [
+                {
+                    "title": "HPS Baseline System Example Design User Guide for the Agilex 5 E-Series Premium Development Kit",
+                    "downloadUrl": "https://altera-fpga.github.io/latest/embedded-designs/agilex-5/e-series/premium/gsrd/ug-gsrd-agx5e-premium/"
+                },
+                {
+                    "title": "HPS Baseline System Example Design README for the Agilex 5 E-Series Premium Development Kit",
+                    "downloadUrl": "https://github.com/altera-fpga/agilex5e-ed-gsrd/blob/main/dk-a5e065ab32aea-test/baseline-a55/README.md"
+                }
+            ],
+            "Q_DOWNLOAD_URL": "https://api.github.com/repos/altera-fpga/agilex5e-ed-gsrd/releases/assets/511237948",
+            "Q_GITHUB_RELEASE": "QPDS26.1.1_REL_GSRD_PR",
+            "Q_VALIDATED": true
+        },
+        {
+            "id": "-",
+            "title": "HPS Baseline-A55 System Example Design with HPS Test Board for Agilex 5 FPGA E-Series 065B Premium Development Kit",
+            "source": "GitHub",
+            "family": "Agilex 5 E-Series",
+            "quartus_version": "26.1.1",
+            "patch_number": "Unknown",
+            "devkit": "Agilex 5 FPGA E-Series 065B Premium Development Kit DK-A5E065BB32AEA",
+            "device_part": "A5ED065BB32AE4S",
+            "description": "This is the HPS Baseline System Example Design for Agilex 5 FPGA E-Series 065B Premium Development Kit with HPS Test Board.",
+            "rich_description": "<p></p><p>This is a hardware reference design for Altera Agilex 5 System On Chip (SoC) FPGA and it is part of the HPS Baseline System Example Design (formerly known as GSRD or Golden System Reference Design) that exercises soft IP in the fabric, boots to U-Boot, then Linux, and runs sample Linux applications.\nRefer to the <a href='\\\"https://altera-fpga.github.io/latest/embedded-designs/agilex-5/e-series/premium/gsrd/ug-gsrd-agx5e-premium/\"'>Agilex 5 E-Series Premium Development Kit HPS Baseline System Example Design</a> for information about this design.</p><p></p><p>The design uses HPS First configuration mode and boots from Arm Cortex-A55 core processor.</p><p></p><h2>Baseline-A55 feature\n</h2><p>This reference design demonstrates the following system integration between Hard Processor System (HPS) and FPGA IPs:</p><ul><li>Hard Processor System (HPS) enablement and configuration\n<ul><li>Enable dual core Arm Cortex-A76 processor\n</li><li>Enable dual core Arm Cortex-A55 processor\n</li><li>HPS Peripheral and I/O (SD/MMC, EMAC, SPI, MDIO, I3C, JTAG, UART, TRACE, and GPIO)\n</li><li>HPS Clock and Reset\n</li><li>HPS FPGA Bridge and Interrupt\n<ul><li>Note: The System MMU port in F2H and F2SDRAM bridges are disabled by default</li></ul>\n</li></ul><li>HPS EMIF configuration (starting 25.1.1 ECC is enabled by default)\n</li><li>System integration with FPGA IPs\n<ul><li>Fabric subsystem that consists of NiosV subsystem, 256KB of FPGA On-Chip Memory, System ID, Programmable I/O (PIO) IP for controlling DIPSW, PushButton, and LEDs.\n</li><li>NiosV subsystem that consists of JTAG Avalon Master Bridge IP and Address Span Extender IP to allow System-Console debug activity and FPGA content access through JTAG.</li></ul></li></li></ul>",
+            "category": "HPS",
+            "url": "https://www.github.com/altera-fpga/agilex5e-ed-gsrd",
+            "downloadUrl": "dk-a5e065bb32aea-test-baseline-a55.zip",
+            "documentations": [
+                {
+                    "title": "HPS Baseline System Example Design User Guide for the Agilex 5 E-Series Premium Development Kit",
+                    "downloadUrl": "https://altera-fpga.github.io/latest/embedded-designs/agilex-5/e-series/premium/gsrd/ug-gsrd-agx5e-premium/"
+                },
+                {
+                    "title": "HPS Baseline System Example Design README for the Agilex 5 E-Series Premium Development Kit",
+                    "downloadUrl": "https://github.com/altera-fpga/agilex5e-ed-gsrd/blob/main/dk-a5e065bb32aea-test/baseline-a55/README.md"
+                }
+            ],
+            "Q_DOWNLOAD_URL": "https://api.github.com/repos/altera-fpga/agilex5e-ed-gsrd/releases/assets/511237970",
+            "Q_GITHUB_RELEASE": "QPDS26.1.1_REL_GSRD_PR",
             "Q_VALIDATED": true
         },
         {
