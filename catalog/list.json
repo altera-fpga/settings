@@ -1,6 +1,27 @@
 {
-    "num": 117,
+    "num": 118,
     "designs": [
+        {
+            "id": "-",
+            "title": "ROS Consolidated Robot Controller Example Design for Agilex™ 5 Devices",
+            "source": "GitHub",
+            "family": "Agilex 5",
+            "quartus_version": "26.1",
+            "patch_number": "Unknown",
+            "devkit": "Agilex 5 FPGA E-Series 065B Modular Development Kit MK-A5E065BB32AEA",
+            "device_part": "A5ED065BB32AE4S",
+            "description": "The Robot Operating System (ROS) is a set of software libraries and tools that help you build robot applications",
+            "rich_description": "In this example design we demonstrate a ROS 2 based, 6-axis robot controller running on the Agilex™ 5 FPGA E-Series Modular Development Kit. \nMotor drives and control is handled by a 6-axis Drive-on-Chip design integrated with ROS 2 through a ROS Control hardware interface. \nMoveIt2 is used to provide path planning capabilities along with collision avoidance and scene mapping. \nA basic MoveIt client is provided which employs a simulated UFACTORY Lite 6 robot arm.",
+            "category": "Robotics",
+            "url": "https://github.com/altera-fpga/agilex-ed-drive-on-chip",
+            "downloadUrl": "DOC_CRC_TANDEM_MOTORSIM_AGILEX5.zip",
+            "documentations": [
+                {
+                    "title": "ROS Consolidated Robot Controller Example Design for Agilex™ 5 Devices",
+                    "downloadUrl": "https://altera-fpga.github.io/rel-26.1/embedded-designs/agilex-5/e-series/modular-065b/drive-on-chip/doc-crc/"
+                }
+            ]
+        }
         {
             "id": "-",
             "title": "Agilex 7 FPGA - TinyML LiteRT System Example Design on Nios® V/g Processor",
