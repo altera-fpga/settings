@@ -20,8 +20,8 @@
                     "title": "ROS Consolidated Robot Controller Example Design for Agilex™ 5 Devices",
                     "downloadUrl": "https://altera-fpga.github.io/rel-26.1/embedded-designs/agilex-5/e-series/modular-065b/drive-on-chip/doc-crc/"
                 }
-            ]
-        }
+            ],
+        },
         {
             "id": "-",
             "title": "Agilex 7 FPGA - TinyML LiteRT System Example Design on Nios® V/g Processor",
