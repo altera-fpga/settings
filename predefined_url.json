@@ -13,5 +13,20 @@
     },
     {
         "url": "https://github.com/altera-fpga/agilex3c-nios-ed"
+    },
+    {
+        "url": "https://github.com/altera-fpga/agilex5-ed-pcie-rp"
+    },
+    {
+        "url": "https://github.com/altera-fpga/agilex5-ed-ethernet"
+    },
+    {
+        "url": " https://github.com/altera-fpga/agilex5-ed-ptp"
+    },
+    {
+        "url": "https://github.com/altera-fpga/agilex7-ed-ptp"
+    },
+    {
+        "url": "https://github.com/altera-fpga/agilex7-ed-pcie-rp"
     }
 ]
