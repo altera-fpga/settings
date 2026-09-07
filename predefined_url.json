@@ -21,12 +21,45 @@
         "url": "https://github.com/altera-fpga/agilex5-ed-ethernet"
     },
     {
-        "url": " https://github.com/altera-fpga/agilex5-ed-ptp"
+        "url": "https://github.com/altera-fpga/agilex5-ed-ptp"
     },
     {
         "url": "https://github.com/altera-fpga/agilex7-ed-ptp"
     },
     {
         "url": "https://github.com/altera-fpga/agilex7-ed-pcie-rp"
+    },
+    {
+        "url": "https://github.com/altera-fpga/cyclonev-ed-hps-baseline"
+    },
+    {
+        "url": "https://github.com/altera-fpga/arria10-ed-hps-baseline"
+    },
+    {
+        "url": "https://github.com/altera-fpga/stratix10-ed-hps-baseline"
+    },
+    {
+        "url": "https://github.com/altera-fpga/agilex7-ed-hps-baseline"
+    },
+    {
+        "url": "https://github.com/altera-fpga/agilex5-ed-hps-baseline"
+    },
+    {
+        "url": "https://github.com/altera-fpga/agilex3-ed-hps-baseline"
+    },
+    {
+        "url": "https://github.com/altera-fpga/agilex72-ed-hps-baseline"
+    },
+    {
+        "url": "https://github.com/altera-fpga/agilex9-ed-hps-baseline"
+    },
+    {
+        "url": "https://github.com/altera-fpga/agilex5-ed-hps-fpga-bridges"
+    },
+    {
+        "url": "https://github.com/altera-fpga/agilex72-ed-hps-fpga-bridges"
+    },
+    {
+        "url": "https://github.com/altera-fpga/agilex5-ed-platform-management"
     }
 ]
