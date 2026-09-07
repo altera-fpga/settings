@@ -26,6 +26,18 @@ CONTROLLER_JSON = "controller.json"
 PREDEFINED_URL_FILE = "predefined_url.json"
 
 
+def keep_running(context, exc):
+    """Log a failure and swallow it so remaining process flows can continue."""
+    if isinstance(exc, (KeyboardInterrupt, GeneratorExit)):
+        raise exc
+    if isinstance(exc, SystemExit):
+        logging.error(
+            f"Intercepted process exit (code={exc.code}) {context}."
+        )
+        return
+    logging.error(f"{context}: {exc}")
+
+
 def is_github(url):
     return "github.com" in url
 
@@ -53,14 +65,17 @@ def add_controller(options, content):
     This is to control whether the Quartus for a particular version should be always regenerate the list.json
     and shouldn't be using this pre-generated list.json.
     """
-    if os.path.exists(options.controller):
-        with open(options.controller, "r", encoding="utf-8") as file:
-            controller_content = json.load(file)
+    try:
+        if os.path.exists(options.controller):
+            with open(options.controller, "r", encoding="utf-8") as file:
+                controller_content = json.load(file)
 
             # Combine content and controller into one.
             content = {**content, **controller_content}
-    else:
-        logging.info("Controller not found.")
+        else:
+            logging.info("Controller not found.")
+    except Exception as e:
+        logging.error(f"Failed to apply controller {options.controller}: {e}")
     return content
 
 
@@ -122,6 +137,9 @@ def convert_to_raw_github_url(github_url):
 
 
 def use_raw_image_url(rich_description, repo_url):
+    if not rich_description:
+        return rich_description
+
     img_pattern = r'<img [^>]*src="([^"]+)"[^>]*>'
 
     # Function to replace the URL
@@ -163,11 +181,18 @@ def fetch_github_releases(repo_owner, repo_name, headers):
     try:
         response = requests.get(releases_url, headers=headers)
         response.raise_for_status()  # Raise an exception for HTTP errors
-        return response.json()
-    except requests.exceptions.RequestException as e:
+        releases = response.json()
+        if not isinstance(releases, list):
+            logging.error(
+                f"Unexpected releases payload for repository {repo_owner}/{repo_name}."
+            )
+            return []
+        return releases
+    except Exception as e:
         logging.error(
             f"Failed to fetch releases for repository {repo_owner}/{repo_name}. Error: {e}"
         )
+        return []
 
 
 def process_github_url(url_detail):
@@ -181,62 +206,73 @@ def process_github_url(url_detail):
     )
 
     for release in releases:
-        design_package_maps = {}
-        list_json_by_release = []
+        tag_name = release.get("tag_name", "<unknown>")
+        try:
+            design_package_maps = {}
+            list_json_by_release = []
 
-        # Flow to get list.json from a release
-        for asset in release.get("assets", []):
-            if "name" in asset:
-                # Example: s10_pcie_devkit_blinking_led_stp.zip => https://api.github.com/repos/intel-sandbox/personal.kbrunham.fpga-partial-reconfig/releases/assets/159359041
-                design_package_maps[asset["name"]] = asset["url"]
+            # Flow to get list.json from a release
+            for asset in release.get("assets", []):
+                if "name" in asset:
+                    # Example: s10_pcie_devkit_blinking_led_stp.zip => https://api.github.com/repos/intel-sandbox/personal.kbrunham.fpga-partial-reconfig/releases/assets/159359041
+                    design_package_maps[asset["name"]] = asset["url"]
 
-                if asset["name"] == LIST_JSON:
-                    list_json_url = asset["url"]
+                    if asset["name"] == LIST_JSON:
+                        list_json_url = asset["url"]
 
-                    # Set the header - please read https://docs.github.com/en/rest/releases/assets
-                    headers = url_detail["headers"]
-                    headers[
-                        "Accept"
-                    ] = "application/octet-stream"  # This is required to download file
+                        # Set the header - please read https://docs.github.com/en/rest/releases/assets
+                        headers = url_detail["headers"]
+                        headers[
+                            "Accept"
+                        ] = "application/octet-stream"  # This is required to download file
 
-                    try:
-                        list_json_response = requests.get(
-                            list_json_url, headers=headers
-                        )
-                        list_json_response.raise_for_status()  # Raise an exception for HTTP errors
-                        data = list_json_response.json()
-                        list_json_by_release = get_design_examples_list(data)
-                    except requests.exceptions.RequestException as e:
-                        logging.error(
-                            f"Unable to fetch {LIST_JSON} from release '{release['tag_name']}': {e}"
-                        )
-            else:
-                logging.error(f"Missing 'name' field in asset: {asset}")
-
-        # If list.json is found...
-        if list_json_by_release:
-            logging.info(
-                f"Found {len(list_json_by_release)} design examples in release '{release['tag_name']}'"
-            )
-
-            for item in list_json_by_release:
-                if item["downloadUrl"] in design_package_maps:
-                    item["Q_DOWNLOAD_URL"] = design_package_maps[item["downloadUrl"]]
+                        try:
+                            list_json_response = requests.get(
+                                list_json_url, headers=headers
+                            )
+                            list_json_response.raise_for_status()  # Raise an exception for HTTP errors
+                            data = list_json_response.json()
+                            list_json_by_release = get_design_examples_list(data)
+                        except Exception as e:
+                            logging.error(
+                                f"Unable to fetch {LIST_JSON} from release '{tag_name}': {e}"
+                            )
                 else:
-                    logging.warning(
-                        f"Missing asset {item['downloadUrl']} in release {release['tag_name']}"
+                    logging.error(f"Missing 'name' field in asset: {asset}")
+
+            # If list.json is found...
+            if list_json_by_release:
+                logging.info(
+                    f"Found {len(list_json_by_release)} design examples in release '{tag_name}'"
+                )
+
+                for item in list_json_by_release:
+                    download_url = item.get("downloadUrl", "")
+                    if download_url in design_package_maps:
+                        item["Q_DOWNLOAD_URL"] = design_package_maps[download_url]
+                    else:
+                        logging.warning(
+                            f"Missing asset {download_url} in release {tag_name}"
+                        )
+                        item["Q_DOWNLOAD_URL"] = ""
+
+                    item["Q_GITHUB_RELEASE"] = tag_name
+
+                    # Modify the Rich Description Image URL by using raw GitHub URL
+                    item["rich_description"] = use_raw_image_url(
+                        item.get("rich_description"),
+                        f"{url_detail['repo_owner']}/{url_detail['repo_name']}",
                     )
-                    item["Q_DOWNLOAD_URL"] = ""
 
-                item["Q_GITHUB_RELEASE"] = release["tag_name"]
-
-                # Modify the Rich Description Image URL by using raw GitHub URL
-                item["rich_description"] = use_raw_image_url(item["rich_description"], f"{url_detail['repo_owner']}/{url_detail['repo_name']}")
-
-            list_json.extend(list_json_by_release)
-        else:
-            logging.warning(
-                f"Unable to read {LIST_JSON} in release '{release['tag_name']}'. Skipping..."
+                list_json.extend(list_json_by_release)
+            else:
+                logging.warning(
+                    f"Unable to read {LIST_JSON} in release '{tag_name}'. Skipping..."
+                )
+        except BaseException as e:
+            keep_running(
+                f"while processing release '{tag_name}' from {url_detail['url']}",
+                e,
             )
 
     if not list_json:
@@ -254,28 +290,22 @@ def process_non_github_url(url_detail):
     list_json = []
     try:
         response = requests.get(url_detail["url"], headers=url_detail["headers"])
-        try:
-            data = json.loads(response.text, strict=False)
-            list_json_by_url = get_design_examples_list(data)
+        response.raise_for_status()
+        data = json.loads(response.text, strict=False)
+        list_json_by_url = get_design_examples_list(data)
 
-            if list_json_by_url:
-                logging.info(
-                    f"Found {len(list_json_by_url)} design examples in this non GitHub URL"
-                )
-                list_json_by_url = [
-                    {**item, "Q_DOWNLOAD_URL": item["downloadUrl"]}
-                    for item in list_json_by_url
-                ]
-                list_json.extend(list_json_by_url)
-            else:
-                logging.error(
-                    f"Unable to find any design examples in URL {url_detail['url']}"
-                )
-        except json.JSONDecodeError:
-            logging.error(
-                f"URL {url_detail['url']} did not return a valid JSON response."
+        if list_json_by_url:
+            logging.info(
+                f"Found {len(list_json_by_url)} design examples in this non GitHub URL"
             )
-    except requests.exceptions.RequestException as e:
+            for item in list_json_by_url:
+                item["Q_DOWNLOAD_URL"] = item.get("downloadUrl", "")
+            list_json.extend(list_json_by_url)
+        else:
+            logging.error(
+                f"Unable to find any design examples in URL {url_detail['url']}"
+            )
+    except Exception as e:
         logging.error(f"Failed to fetch URL {url_detail['url']}: {e}")
     return list_json
 
@@ -387,33 +417,39 @@ def get_design_examples(options):
         logging.info("----------------------------------------")
         logging.info(f"Processing URL {url_detail['url']}")
 
-        if is_github(url_detail["url"]):
-            list_json = process_github_url(url_detail)
-        else:
-            list_json = process_non_github_url(url_detail)
+        try:
+            if is_github(url_detail["url"]):
+                list_json = process_github_url(url_detail)
+            else:
+                list_json = process_non_github_url(url_detail)
 
-        # Added validation status for predefined URL
-        for item in list_json:
-            item["Q_VALIDATED"] = True
+            # Added validation status for predefined URL
+            for item in list_json:
+                item["Q_VALIDATED"] = True
 
-        all_list_json.extend(list_json)
+            all_list_json.extend(list_json)
+        except BaseException as e:
+            keep_running(f"while processing URL {url_detail['url']}", e)
 
     logging.info("----------------------------------------")
-    if all_list_json:
-        if options.predefined_url:
-            logging.info(f"Merging {len(all_list_json)} design example(s) into existing catalog...")
-            merged = merge_with_existing_catalog(options, all_list_json)
-            logging.info(f"Total design examples after merge: {len(merged)}")
-            all_list_json = metadata_formatize(merged)
+    try:
+        if all_list_json:
+            if options.predefined_url:
+                logging.info(f"Merging {len(all_list_json)} design example(s) into existing catalog...")
+                merged = merge_with_existing_catalog(options, all_list_json)
+                logging.info(f"Total design examples after merge: {len(merged)}")
+                all_list_json = metadata_formatize(merged)
+            else:
+                logging.info(f"Consolidating all {LIST_JSON} files into '{options.output}'...")
+                logging.info(f"Total consolidated design examples: {len(all_list_json)}")
+                all_list_json = metadata_formatize(all_list_json)
+            replace_if_diff(options, all_list_json)
+        elif options.predefined_url:
+            logging.warning(f"No {LIST_JSON} files were found for the included URLs. Existing catalog unchanged.")
         else:
-            logging.info(f"Consolidating all {LIST_JSON} files into '{options.output}'...")
-            logging.info(f"Total consolidated design examples: {len(all_list_json)}")
-            all_list_json = metadata_formatize(all_list_json)
-        replace_if_diff(options, all_list_json)
-    elif options.predefined_url:
-        logging.warning(f"No {LIST_JSON} files were found for the included URLs. Existing catalog unchanged.")
-    else:
-        logging.error(f"No {LIST_JSON} files were found.")
+            logging.error(f"No {LIST_JSON} files were found.")
+    except BaseException as e:
+        keep_running("while consolidating design examples", e)
 
 
 def check_prerequisite(options):
@@ -423,19 +459,55 @@ def check_prerequisite(options):
     )
 
 
-class ExitOnExceptionHandler(logging.StreamHandler):
+def running_in_github_actions():
+    return os.environ.get("GITHUB_ACTIONS", "").lower() == "true"
+
+
+def escape_github_actions_message(message):
+    """Escape characters that would break GitHub Actions workflow commands."""
+    return str(message).replace("%", "%25").replace("\r", "%0D").replace("\n", "%0A")
+
+
+class ErrorTrackingHandler(logging.StreamHandler):
+    """Log records and remember errors without aborting the process."""
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.error_messages = []
+
     def emit(self, record):
-        super().emit(record)
-        if record.levelno in (logging.ERROR, logging.CRITICAL):
-            raise SystemExit(-1)
+        try:
+            super().emit(record)
+            if record.levelno >= logging.ERROR:
+                message = record.getMessage()
+                self.error_messages.append(message)
+                if running_in_github_actions():
+                    # Annotate the GitHub Actions job without stopping remaining process flows.
+                    print(
+                        f"::error::{escape_github_actions_message(message)}",
+                        file=sys.stderr,
+                    )
+        except Exception:
+            self.handleError(record)
+
+
+_LOG_HANDLER = None
 
 
 def initialize_logging():
+    global _LOG_HANDLER
+    _LOG_HANDLER = ErrorTrackingHandler()
     logging.basicConfig(
         level=logging.INFO,
         format="%(asctime)s - %(levelname)s - %(message)s",
-        handlers=[ExitOnExceptionHandler()],
+        handlers=[_LOG_HANDLER],
     )
+
+
+def get_logged_errors():
+    if _LOG_HANDLER is None:
+        return []
+    return list(_LOG_HANDLER.error_messages)
 
 
 def close_logging():
@@ -458,10 +530,34 @@ def main(argv):
 
     initialize_logging()
     check_prerequisite(options)
-    get_design_examples(options)
+    try:
+        get_design_examples(options)
+    except BaseException as e:
+        keep_running("while collecting design examples", e)
+
+    errors = get_logged_errors()
+    if errors:
+        logging.info("----------------------------------------")
+        logging.info(
+            f"Completed all process flows with {len(errors)} error(s). Issues:"
+        )
+        for index, message in enumerate(errors, 1):
+            logging.info(f"  {index}. {message}")
+
     close_logging()
+    return 1 if errors else 0
 
 
 if "__main__" == __name__:
-    result = main(sys.argv)
-    sys.exit(result)
+    exit_code = 0
+    try:
+        exit_code = main(sys.argv)
+    except KeyboardInterrupt:
+        raise
+    except Exception as e:
+        try:
+            logging.error(f"Unexpected error: {e}")
+        except Exception:
+            print(f"ERROR: Unexpected error: {e}", file=sys.stderr)
+        exit_code = 1
+    sys.exit(exit_code)
