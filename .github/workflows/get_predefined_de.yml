@@ -6,10 +6,6 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-  # Schedule the workflow to run daily at 12 AM UTC
-  #schedule:
-    #- cron: "0 0 * * *"
-
   # Schedule the workflow to run weekly on Sunday at 12 AM UTC
   schedule:
     - cron: "0 0 * * 0"
@@ -51,6 +47,7 @@ jobs:
         run: python .github/get_predefined_de/main.py
 
       - name: Create Pull Request if Changes
+        if: ${{ !cancelled() }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
