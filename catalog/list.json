@@ -1,5 +1,5 @@
 {
-    "num": 149,
+    "num": 159,
     "designs": [
         {
             "id": "-",
@@ -1507,7 +1507,7 @@
             "rich_description": "<p></p><p>This is a hardware reference design for Altera Agilex 5 System On Chip (SoC) FPGA and it is part of the HPS Baseline System Example Design (formerly known as GSRD or Golden System Reference Design) that exercises soft IP in the fabric, boots to U-Boot, then Linux, and runs sample Linux applications.Refer to the <a href='\\\"https://altera-fpga.github.io/latest/embedded-designs/agilex-5/e-series/modular/gsrd/ug-gsrd-agx5e-modular/\"'>Agilex 5 E-Series Modular Development Kit HPS Baseline System Example Design</a> for information about this design.</p><p>The design uses HPS First configuration mode.</p><p></p><h2>Baseline feature\n</h2><p>This reference design demonstrates the following system integration between Hard Processor System (HPS) and FPGA IPs:</p><ul><li>Hard Processor System (HPS) enablement and configuration\n<ul><li>Enable dual core Arm Cortex-A76 processor\n</li><li>Enable dual core Arm Cortex-A55 processor\n</li><li>HPS Peripheral and I/O (SD/MMC, EMAC, MDIO, USB, I3C, JTAG, UART, and GPIO)\n</li><li>HPS Clock and Reset\n</li><li>HPS FPGA Bridge and Interrupt\n<ul><li>Note: The System MMU port in F2H and F2SDRAM bridges are disabled by default</li></ul>\n</li></ul><li>HPS EMIF configuration (starting 25.1.1 ECC is enabled by default)\n</li><li>System integration with FPGA IPs\n<ul><li>Fabric subsystem that consists of NiosV subsystem, 256KB of FPGA On-Chip Memory, System ID, Programmable I/O (PIO) IP for controlling DIPSW, PushButton, and LEDs.\n</li><li>NiosV subsystem that consists of JTAG Avalon Master Bridge IP and Address Span Extender IP to allow System-Console debug activity and FPGA content access through JTAG.\n\n</li></ul></li></li></ul><p></p><h3>USB modes\n</h3><p>This design supports USB 3.1 in both host and device mode.<br/>Once power up, the USB mode will remain and cannot be changed during runtime.\n\n</p><p>The linux device tree (dts) needs to be configured.<br/>The dts can be set with \"dr_mode\".\n\n</p><table border='\\\"1\\\"' cellpadding='\\\"10\\\"'><tr><th>dr_mode value</th><th>Equivalent USB mode</th></tr>\n<tr><td>host</td><td>Host</td></tr>\n<tr><td>peripheral</td><td>Device</td></tr></table>",
             "category": "HPS",
             "url": "https://www.github.com/altera-fpga/agilex5e-ed-gsrd",
-            "downloadUrl": "mk-a5e065bb32aes1-baseline.zip",
+            "downloadUrl": "mk-a5e065bb32aes1-baseline-a55.zip",
             "documentations": [
                 {
                     "title": "HPS Baseline System Example Design User Guide for the Agilex 5 E-Series Modular Development Kit",
@@ -1518,7 +1518,7 @@
                     "downloadUrl": "https://github.com/altera-fpga/agilex5e-ed-gsrd/blob/main/mk-a5e065bb32aes1/baseline-a55/README.md"
                 }
             ],
-            "Q_DOWNLOAD_URL": "",
+            "Q_DOWNLOAD_URL": "https://api.github.com/repos/altera-fpga/agilex5e-ed-gsrd/releases/assets/511238009",
             "Q_GITHUB_RELEASE": "QPDS26.1.1_REL_GSRD_PR",
             "Q_VALIDATED": true
         },
@@ -1727,7 +1727,7 @@
             "rich_description": "<p></p><p>This is a hardware reference design for Altera Agilex 5 System On Chip (SoC) FPGA and it is part of the HPS Baseline System Example Design (formerly known as GSRD or Golden System Reference Design) that exercises soft IP in the fabric, boots to U-Boot, then Linux, and runs sample Linux applications.\nRefer to the <a href='\\\"https://altera-fpga.github.io/latest/embedded-designs/agilex-5/e-series/premium/gsrd/ug-gsrd-agx5e-premium/\"'>Agilex 5 E-Series Premium Development Kit HPS Baseline System Example Design</a> for information about this design.</p><p>Starting with Altera® FPGA Design Suite 26.1, the HPS Baseline-A55 System Example Design has been upgraded to use the Visual Designer Studio (VDS) flow. This repository contains the VDS-based implementation of the HPS Baseline‑A55 System Example Design, maintaining functional equivalence with earlier Quartus Design releases while adopting the VDS system design methodology.</p><p>Visual Designer Studio is a next‑generation system design environment integrated directly into Quartus® Prime Pro Edition. It simplifies the creation of complex systems through an intuitive drag‑and‑drop interface and intelligent connectivity automation, enabling faster IP integration, system assembly, and seamless RTL integration.</p><p></p><p>The design uses HPS First configuration mode and boots from Arm Cortex-A55 core processor.</p><p></p><h2>Baseline-A55 feature\n</h2><p>This reference design demonstrates the following system integration between Hard Processor System (HPS) and FPGA IPs:</p><ul><li>Hard Processor System (HPS) enablement and configuration\n<ul><li>Enable dual core Arm Cortex-A76 processor\n</li><li>Enable dual core Arm Cortex-A55 processor\n</li><li>HPS Peripheral and I/O (SD/MMC, EMAC, MDIO, USB, I3C, JTAG, UART, and GPIO)\n</li><li>HPS Clock and Reset\n</li><li>HPS FPGA Bridge and Interrupt\n<ul><li>Note: The System MMU port in F2H and F2SDRAM bridges are disabled by default</li></ul>\n</li></ul><li>HPS EMIF configuration (starting 25.1.1 ECC is enabled by default)\n</li><li>System integration with FPGA IPs\n<ul><li>Fabric subsystem that consists of NiosV subsystem, 256KB of FPGA On-Chip Memory, System ID, Programmable I/O (PIO) IP for controlling DIPSW, PushButton, and LEDs.\n</li><li>NiosV subsystem that consists of JTAG Avalon Master Bridge IP and Address Span Extender IP to allow System-Console debug activity and FPGA content access through JTAG.\n\n</li></ul></li></li></ul><p></p><h3>USB modes\n</h3><p>This design supports USB 3.1 in both host and device mode.<br/>Once power up, the USB mode will remain and cannot be changed during runtime.\n\n</p><p>The linux device tree (dts) needs to be configured.<br/>The dts can be set with \"dr_mode\".\n\n</p><table border='\\\"1\\\"' cellpadding='\\\"10\\\"'><tr><th>dr_mode value</th><th>Equivalent USB mode</th></tr>\n<tr><td>host</td><td>Host</td></tr>\n<tr><td>peripheral</td><td>Device</td></tr></table>",
             "category": "HPS",
             "url": "https://www.github.com/altera-fpga/agilex5e-ed-gsrd",
-            "downloadUrl": "a5ed065a-premium-devkit-oobe-baseline-a55.zip",
+            "downloadUrl": "dk-a5e065ab32aea-enablement-baseline-a55-vds.zip",
             "documentations": [
                 {
                     "title": "HPS Baseline System Example Design User Guide for the Agilex 5 E-Series Premium Development Kit",
@@ -1738,7 +1738,7 @@
                     "downloadUrl": "https://github.com/altera-fpga/agilex5e-ed-gsrd/blob/main/a5ed065a-premium-devkit-oobe/baseline-a55/README.md"
                 }
             ],
-            "Q_DOWNLOAD_URL": "",
+            "Q_DOWNLOAD_URL": "https://api.github.com/repos/altera-fpga/agilex5e-ed-gsrd/releases/assets/511237912",
             "Q_GITHUB_RELEASE": "QPDS26.1.1_REL_GSRD_PR",
             "Q_VALIDATED": true
         },
@@ -1951,7 +1951,7 @@
             "rich_description": "<p></p><p>This is a hardware reference design for Altera Agilex 5 System On Chip (SoC) FPGA and it is part of the HPS Baseline System Example Design (formerly known as GSRD or Golden System Reference Design) that exercises soft IP in the fabric, boots to U-Boot, then Linux, and runs sample Linux applications.Refer to the <a href='\\\"https://altera-fpga.github.io/latest/embedded-designs/agilex-5/e-series/modular/gsrd/ug-gsrd-agx5e-modular/\"'>Agilex 5 E-Series Modular Development Kit HPS Baseline System Example Design</a> for information about this design.</p><p>The design uses HPS First configuration mode.</p><p></p><h2>Baseline feature\n</h2><p>This reference design demonstrates the following system integration between Hard Processor System (HPS) and FPGA IPs:</p><ul><li>Hard Processor System (HPS) enablement and configuration\n<ul><li>Enable dual core Arm Cortex-A76 processor\n</li><li>Enable dual core Arm Cortex-A55 processor\n</li><li>HPS Peripheral and I/O (SD/MMC, EMAC, MDIO, USB, I3C, JTAG, UART, and GPIO)\n</li><li>HPS Clock and Reset\n</li><li>HPS FPGA Bridge and Interrupt\n<ul><li>Note: The System MMU port in F2H and F2SDRAM bridges are disabled by default</li></ul>\n</li></ul><li>HPS EMIF configuration (starting 25.1.1 ECC is enabled by default)\n</li><li>System integration with FPGA IPs\n<ul><li>Fabric subsystem that consists of NiosV subsystem, 256KB of FPGA On-Chip Memory, System ID, Programmable I/O (PIO) IP for controlling DIPSW, PushButton, and LEDs.\n</li><li>NiosV subsystem that consists of JTAG Avalon Master Bridge IP and Address Span Extender IP to allow System-Console debug activity and FPGA content access through JTAG.\n\n</li></ul></li></li></ul><p></p><h3>USB modes\n</h3><p>This design supports USB 3.1 in both host and device mode.<br/>Once power up, the USB mode will remain and cannot be changed during runtime.\n\n</p><p>The linux device tree (dts) needs to be configured.<br/>The dts can be set with \"dr_mode\".\n\n</p><table border='\\\"1\\\"' cellpadding='\\\"10\\\"'><tr><th>dr_mode value</th><th>Equivalent USB mode</th></tr>\n<tr><td>host</td><td>Host</td></tr>\n<tr><td>peripheral</td><td>Device</td></tr></table>",
             "category": "HPS",
             "url": "https://www.github.com/altera-fpga/agilex5e-ed-gsrd",
-            "downloadUrl": "mk-a5e065ab32aea-baseline.zip",
+            "downloadUrl": "mk-a5e065ab32aea-baseline-a55.zip",
             "documentations": [
                 {
                     "title": "HPS Baseline System Example Design User Guide for the Agilex 5 E-Series Modular Development Kit",
@@ -1962,7 +1962,7 @@
                     "downloadUrl": "https://github.com/altera-fpga/agilex5e-ed-gsrd/blob/main/mk-a5e065ab32aea/baseline-a55/README.md"
                 }
             ],
-            "Q_DOWNLOAD_URL": "",
+            "Q_DOWNLOAD_URL": "https://api.github.com/repos/altera-fpga/agilex5e-ed-gsrd/releases/assets/511238004",
             "Q_GITHUB_RELEASE": "QPDS26.1.1_REL_GSRD_PR",
             "Q_VALIDATED": true
         },
@@ -2007,7 +2007,7 @@
             "rich_description": "<p></p><p>This is a hardware reference design for Altera Agilex 5 System On Chip (SoC) FPGA and it is part of the HPS Baseline System Example Design (formerly known as GSRD or Golden System Reference Design) that exercises soft IP in the fabric, boots to U-Boot, then Linux, and runs sample Linux applications.Refer to the <a href='\\\"https://altera-fpga.github.io/latest/embedded-designs/agilex-5/e-series/modular/gsrd/ug-gsrd-agx5e-modular/\"'>Agilex 5 E-Series Modular Development Kit HPS Baseline System Example Design</a> for information about this design.</p><p>The design uses HPS First configuration mode.</p><p></p><h2>Baseline feature\n</h2><p>This reference design demonstrates the following system integration between Hard Processor System (HPS) and FPGA IPs:</p><ul><li>Hard Processor System (HPS) enablement and configuration\n<ul><li>Enable dual core Arm Cortex-A76 processor\n</li><li>Enable dual core Arm Cortex-A55 processor\n</li><li>HPS Peripheral and I/O (SD/MMC, EMAC, MDIO, USB, I3C, JTAG, UART, and GPIO)\n</li><li>HPS Clock and Reset\n</li><li>HPS FPGA Bridge and Interrupt\n<ul><li>Note: The System MMU port in F2H and F2SDRAM bridges are disabled by default</li></ul>\n</li></ul><li>HPS EMIF configuration (starting 25.1.1 ECC is enabled by default)\n</li><li>System integration with FPGA IPs\n<ul><li>Fabric subsystem that consists of NiosV subsystem, 256KB of FPGA On-Chip Memory, System ID, Programmable I/O (PIO) IP for controlling DIPSW, PushButton, and LEDs.\n</li><li>NiosV subsystem that consists of JTAG Avalon Master Bridge IP and Address Span Extender IP to allow System-Console debug activity and FPGA content access through JTAG.\n\n</li></ul></li></li></ul><p></p><h3>USB modes\n</h3><p>This design supports USB 3.1 in both host and device mode.<br/>Once power up, the USB mode will remain and cannot be changed during runtime.\n\n</p><p>The linux device tree (dts) needs to be configured.<br/>The dts can be set with \"dr_mode\".\n\n</p><table border='\\\"1\\\"' cellpadding='\\\"10\\\"'><tr><th>dr_mode value</th><th>Equivalent USB mode</th></tr>\n<tr><td>host</td><td>Host</td></tr>\n<tr><td>peripheral</td><td>Device</td></tr></table>",
             "category": "HPS",
             "url": "https://www.github.com/altera-fpga/agilex5e-ed-gsrd",
-            "downloadUrl": "mk-a5e065bb32aea-baseline.zip",
+            "downloadUrl": "mk-a5e065bb32aea-baseline-a55.zip",
             "documentations": [
                 {
                     "title": "HPS Baseline System Example Design User Guide for the Agilex 5 E-Series Modular Development Kit",
@@ -2018,7 +2018,7 @@
                     "downloadUrl": "https://github.com/altera-fpga/agilex5e-ed-gsrd/blob/main/mk-a5e065bb32aea/baseline-a55/README.md"
                 }
             ],
-            "Q_DOWNLOAD_URL": "",
+            "Q_DOWNLOAD_URL": "https://api.github.com/repos/altera-fpga/agilex5e-ed-gsrd/releases/assets/511238008",
             "Q_GITHUB_RELEASE": "QPDS26.1.1_REL_GSRD_PR",
             "Q_VALIDATED": true
         },
@@ -3410,6 +3410,180 @@
             "downloadUrl": "agilex3_niosv_m_baseline_ghrd.zip",
             "Q_DOWNLOAD_URL": "https://api.github.com/repos/altera-fpga/agilex3-ed-niosv/releases/assets/247410476",
             "Q_GITHUB_RELEASE": "25.1.0-v1.0",
+            "Q_VALIDATED": true
+        },
+        {
+            "id": "-",
+            "title": "Agilex™ 5 PCIe Root Port System Example Design",
+            "source": "GitHub",
+            "family": "Agilex 5",
+            "quartus_version": "26.1",
+            "patch_number": "Unknown",
+            "devkit": "Agilex 5 FPGA E-Series 065B Modular Development Kit MK-A5E065BB32AEA",
+            "device_part": "A5ED065BB32AE4S",
+            "description": "This system example design demonstrates a PCIe root port running on theAgilex™ 5 FPGA E-Series 065B Modular Development Kitconnected to a Non-Volatile Memory express (NVMe) endpoint. The PCIe root port is capable of Gen4x4 speeds. The design is intended to serve as a reference to customers on how to implement and run a performant root port system using the Agilex™ 5 SoC and relevant IP.",
+            "rich_description": "<p>The PCIe root port example design is based on the Agilex™ 5 Golden System Reference Design (GSRD) with the following components added:</p><ul>\n<li>Linux driver for PCIe root port IP that runs on HPS, enumerates the PCIe endpoint(s) and configures the PCIe root port Hard IP (HIP) through a dedicated reconfiguration AXI-Lite interface.</li>\n<li>The Multichannel DMA (MCDMA) bridge which interfaces between the SoC's AXI-MM interface on one end and the AXI-ST interface on the PCIe root port IP (carrying PCIe TLP traffic) on the other.</li>\n<li>Various bridges, interconnects and adapters to handle clock crossing, data path and control path.</li>\n</ul><p>The system block diagram is shown below:</p><p><img alt=\"Agilex™ 5 Root Port block diagram\" src=\"https://raw.githubusercontent.com/altera-fpga/agilex5-ed-pcie-rp/rel/26.1/images/SM_RP_MDK.png\"/></p><ul>\n<li>The HPS-to-FPGA (H2F) lightweight AXI4 interface on the HPS is used for accessing the control and status (CSR) interface of various blocks on the design. It connects to the reconfiguration interface on the PCIe root port HIP as well as the Configuration Slave (CS) interface on the MCDMA bridge.</li>\n<li>Configuration of the PCIe Endpoint (as part of Enumeration) is done via the CS interface. This interface supports only one outstanding configuration write/read transaction, as the number of PCIe tags allotted to this interface is only one (inside the MCDMA bridge).</li>\n<li>The connection to the HIP reconfiguration interface allows for updating the Type1 configuration space fields such as Primary, Secondary and Subordinate Bus numbers as well as Memory ranges to support different addressing schemes, i.e., Route by ID or Route by Address. PCIe root port configuration and status register accesses for IRQ and error status are also done via the same path.</li>\n<li>Transfer of large memory transactions between the SoC's H2F AXI4 interface and the PCIe endpoint occurs via the Bursting AXI-MM Slave (BAS) interface on the MCDMA bridge. This interface theoretically supports 64 outstanding read transactions. </li>\n<li>MSI/MSI-X interrupts from the PCIe endpoint are handled through the Bursting AXI-MM Master (BAM) interface on the bridge IP.</li>\n<li>The bridge IP also supports memory requests (Read/Write) initiated by the endpoint (DMA bus mastering) targeting System Memory. These transactions are routed via the HPS's FPGA-to-HPS (F2H) AXI4 interface as shown in the diagram.</li>\n</ul>",
+            "category": "HPS, PCIe",
+            "url": "https://github.com/altera-fpga/agilex5-ed-pcie-rp/tree/rel/26.1",
+            "downloadUrl": "a5ed065b-modular-devkit-pcie-rp-gen4x4.zip",
+            "documentations": [],
+            "Q_DOWNLOAD_URL": "https://api.github.com/repos/altera-fpga/agilex5-ed-pcie-rp/releases/assets/480618998",
+            "Q_GITHUB_RELEASE": "26.1-2",
+            "Q_VALIDATED": true
+        },
+        {
+            "id": "-",
+            "title": "Agilex™ 5 PCIe Root Port System Example Design",
+            "source": "GitHub",
+            "family": "Agilex 5",
+            "quartus_version": "25.1",
+            "devkit": "Agilex 5 FPGA E-Series 065B Premium Development Kit DK-A5E065BB32AES1",
+            "device_part": "A5ED065BB32AE4SR0",
+            "description": "This system example design demonstrates a PCIe root port running on theAgilex™ 5 FPGA E-Series 065B Premium Development Kitconnected to a Non-Volatile Memory express (NVMe) endpoint. The PCIe root port is capable of Gen4x4 speeds. The design is intended to serve as a reference to customers on how to implement and run a performant root port system using the Agilex™ 5 SoC and relevant IP.",
+            "rich_description": "<p>The PCIe root port example design is based on the Agilex™ 5 Golden System Reference Design (GSRD) with the following components added:</p><ul>\n<li>Linux driver for PCIe root port IP that runs on HPS, enumerates the PCIe endpoint(s) and configures the PCIe root port Hard IP (HIP) through a dedicated reconfiguration AXI-Lite interface.</li>\n<li>The Multichannel DMA (MCDMA) bridge which interfaces between the SoC's AXI-MM interface on one end and the AXI-ST interface on the PCIe root port IP (carrying PCIe TLP traffic) on the other.</li>\n<li>Various bridges, interconnects and adapters to handle clock crossing, data path and control path.</li>\n</ul><p>The system block diagram is shown below:</p><p><img alt=\"Agilex™ 5 Root Port block diagram\" src=\"https://raw.githubusercontent.com/altera-fpga/agilex5-ed-pcie-rp/rel/25.1/images/SM_RP.png\"/></p><ul>\n<li>The HPS-to-FPGA (H2F) lightweight AXI4 interface on the HPS is used for accessing the control and status (CSR) interface of various blocks on the design. It connects to the reconfiguration interface on the PCIe root port HIP as well as the Configuration Slave (CS) interface on the MCDMA bridge.</li>\n<li>Configuration of the PCIe Endpoint (as part of Enumeration) is done via the CS interface. This interface supports only one outstanding configuration write/read transaction, as the number of PCIe tags allotted to this interface is only one (inside the MCDMA bridge).</li>\n<li>The connection to the HIP reconfiguration interface allows for updating the Type1 configuration space fields such as Primary, Secondary and Subordinate Bus numbers as well as Memory ranges to support different addressing schemes, i.e., Route by ID or Route by Address. PCIe root port configuration and status register accesses for IRQ and error status are also done via the same path.</li>\n<li>Transfer of large memory transactions between the SoC's H2F AXI4 interface and the PCIe endpoint occurs via the Bursting AXI-MM Slave (BAS) interface on the MCDMA bridge. This interface theoretically supports 64 outstanding read transactions. </li>\n<li>MSI/MSI-X interrupts from the PCIe endpoint are handled through the Bursting AXI-MM Master (BAM) interface on the bridge IP.</li>\n<li>The bridge IP also supports memory requests (Read/Write) initiated by the endpoint (DMA bus mastering) targeting System Memory. These transactions are routed via the HPS's FPGA-to-HPS (F2H) AXI4 interface as shown in the diagram.</li>\n</ul>",
+            "category": "HPS, PCIe",
+            "url": "https://github.com/altera-fpga/agilex5-ed-pcie-rp",
+            "downloadUrl": "a5ed065es-premium-devkit-pcie-rp-gen4x4.zip",
+            "Q_DOWNLOAD_URL": "https://api.github.com/repos/altera-fpga/agilex5-ed-pcie-rp/releases/assets/293975793",
+            "Q_GITHUB_RELEASE": "25.1-2",
+            "Q_VALIDATED": true
+        },
+        {
+            "id": "-",
+            "title": "Agilex™ 5 PCIe Root Port System Example Design",
+            "source": "GitHub",
+            "family": "Agilex 5",
+            "quartus_version": "26.1",
+            "patch_number": "Unknown",
+            "devkit": "Agilex 5 FPGA E-Series 065B Modular Development Kit MK-A5E065BB32AEA",
+            "device_part": "A5ED065BB32AE4S",
+            "description": "This system example design demonstrates a PCIe root port running on theAgilex™ 5 FPGA E-Series 065B Modular Development Kitconnected to a Non-Volatile Memory express (NVMe) endpoint. The PCIe root port is capable of Gen4x4 speeds. The design is intended to serve as a reference to customers on how to implement and run a performant root port system using the Agilex™ 5 SoC and relevant IP.",
+            "rich_description": "<p>The PCIe root port example design is based on the Agilex™ 5 Golden System Reference Design (GSRD) with the following components added:</p><ul>\n<li>Linux driver for PCIe root port IP that runs on HPS, enumerates the PCIe endpoint(s) and configures the PCIe root port Hard IP (HIP) through a dedicated reconfiguration AXI-Lite interface.</li>\n<li>The Multichannel DMA (MCDMA) bridge which interfaces between the SoC's AXI-MM interface on one end and the AXI-ST interface on the PCIe root port IP (carrying PCIe TLP traffic) on the other.</li>\n<li>Various bridges, interconnects and adapters to handle clock crossing, data path and control path.</li>\n</ul><p>The system block diagram is shown below:</p><p><img alt=\"Agilex™ 5 Root Port block diagram\" src=\"https://raw.githubusercontent.com/altera-fpga/agilex5-ed-pcie-rp/rel/26.1/images/SM_RP_MDK.png\"/></p><ul>\n<li>The HPS-to-FPGA (H2F) lightweight AXI4 interface on the HPS is used for accessing the control and status (CSR) interface of various blocks on the design. It connects to the reconfiguration interface on the PCIe root port HIP as well as the Configuration Slave (CS) interface on the MCDMA bridge.</li>\n<li>Configuration of the PCIe Endpoint (as part of Enumeration) is done via the CS interface. This interface supports only one outstanding configuration write/read transaction, as the number of PCIe tags allotted to this interface is only one (inside the MCDMA bridge).</li>\n<li>The connection to the HIP reconfiguration interface allows for updating the Type1 configuration space fields such as Primary, Secondary and Subordinate Bus numbers as well as Memory ranges to support different addressing schemes, i.e., Route by ID or Route by Address. PCIe root port configuration and status register accesses for IRQ and error status are also done via the same path.</li>\n<li>Transfer of large memory transactions between the SoC's H2F AXI4 interface and the PCIe endpoint occurs via the Bursting AXI-MM Slave (BAS) interface on the MCDMA bridge. This interface theoretically supports 64 outstanding read transactions. </li>\n<li>MSI/MSI-X interrupts from the PCIe endpoint are handled through the Bursting AXI-MM Master (BAM) interface on the bridge IP.</li>\n<li>The bridge IP also supports memory requests (Read/Write) initiated by the endpoint (DMA bus mastering) targeting System Memory. These transactions are routed via the HPS's FPGA-to-HPS (F2H) AXI4 interface as shown in the diagram.</li>\n</ul>",
+            "category": "HPS, PCIe",
+            "url": "https://github.com/altera-fpga/agilex5-ed-pcie-rp/tree/rel/26.1",
+            "downloadUrl": "a5ed065b-modular-devkit-pcie-rp-gen4x4.zip",
+            "documentations": [],
+            "Q_DOWNLOAD_URL": "https://api.github.com/repos/altera-fpga/agilex5-ed-pcie-rp/releases/assets/448501494",
+            "Q_GITHUB_RELEASE": "26.1-1",
+            "Q_VALIDATED": true
+        },
+        {
+            "id": "-",
+            "title": "Agilex™ 5 PCIe Root Port System Example Design",
+            "source": "GitHub",
+            "family": "Agilex 5",
+            "quartus_version": "25.1",
+            "devkit": "Agilex 5 FPGA E-Series 065B Premium Development Kit DK-A5E065BB32AES1",
+            "device_part": "A5ED065BB32AE4SR0",
+            "description": "This system example design demonstrates a PCIe root port running on theAgilex™ 5 FPGA E-Series 065B Premium Development Kitconnected to a Non-Volatile Memory express (NVMe) endpoint. The PCIe root port is capable of Gen4x4 speeds. The design is intended to serve as a reference to customers on how to implement and run a performant root port system using the Agilex™ 5 SoC and relevant IP.",
+            "rich_description": "<p>The PCIe root port example design is based on the Agilex™ 5 Golden System Reference Design (GSRD) with the following components added:</p><ul>\n<li>Linux driver for PCIe root port IP that runs on HPS, enumerates the PCIe endpoint(s) and configures the PCIe root port Hard IP (HIP) through a dedicated reconfiguration AXI-Lite interface.</li>\n<li>The Multichannel DMA (MCDMA) bridge which interfaces between the SoC's AXI-MM interface on one end and the AXI-ST interface on the PCIe root port IP (carrying PCIe TLP traffic) on the other.</li>\n<li>Various bridges, interconnects and adapters to handle clock crossing, data path and control path.</li>\n</ul><p>The system block diagram is shown below:</p><p><img alt=\"Agilex™ 5 Root Port block diagram\" src=\"https://raw.githubusercontent.com/altera-fpga/agilex5-ed-pcie-rp/rel/25.1/images/SM_RP.png\"/></p><ul>\n<li>The HPS-to-FPGA (H2F) lightweight AXI4 interface on the HPS is used for accessing the control and status (CSR) interface of various blocks on the design. It connects to the reconfiguration interface on the PCIe root port HIP as well as the Configuration Slave (CS) interface on the MCDMA bridge.</li>\n<li>Configuration of the PCIe Endpoint (as part of Enumeration) is done via the CS interface. This interface supports only one outstanding configuration write/read transaction, as the number of PCIe tags allotted to this interface is only one (inside the MCDMA bridge).</li>\n<li>The connection to the HIP reconfiguration interface allows for updating the Type1 configuration space fields such as Primary, Secondary and Subordinate Bus numbers as well as Memory ranges to support different addressing schemes, i.e., Route by ID or Route by Address. PCIe root port configuration and status register accesses for IRQ and error status are also done via the same path.</li>\n<li>Transfer of large memory transactions between the SoC's H2F AXI4 interface and the PCIe endpoint occurs via the Bursting AXI-MM Slave (BAS) interface on the MCDMA bridge. This interface theoretically supports 64 outstanding read transactions. </li>\n<li>MSI/MSI-X interrupts from the PCIe endpoint are handled through the Bursting AXI-MM Master (BAM) interface on the bridge IP.</li>\n<li>The bridge IP also supports memory requests (Read/Write) initiated by the endpoint (DMA bus mastering) targeting System Memory. These transactions are routed via the HPS's FPGA-to-HPS (F2H) AXI4 interface as shown in the diagram.</li>\n</ul>",
+            "category": "HPS, PCIe",
+            "url": "https://github.com/altera-fpga/agilex5-ed-pcie-rp",
+            "downloadUrl": "a5ed065es-premium-devkit-pcie-rp-gen4x4.zip",
+            "Q_DOWNLOAD_URL": "https://api.github.com/repos/altera-fpga/agilex5-ed-pcie-rp/releases/assets/261042143",
+            "Q_GITHUB_RELEASE": "25.1-1",
+            "Q_VALIDATED": true
+        },
+        {
+            "id": "-",
+            "title": "Agilex™ 5 E-Series(Group A) 25G/10G Ethernet System Example Design",
+            "source": "GitHub",
+            "family": "Agilex 5",
+            "quartus_version": "26.1.1 Pro Edition",
+            "devkit": "Agilex™ 5 FPGA and SoC E-Series 065A Modular Development Kit [MK-A5E065AB32AEA]",
+            "device_part": "A5ED065AB32AE1V",
+            "description": "This design is based on the Agilex 5 SoC Golden Hardware Reference Design (GHRD) which is part of the Golden System Reference Design (GSRD), enhanced with additional components such as ethernet interface with GTS Ethernet Hard IP, L2 Packet Switch and Custom Packet generator the traffic data rate support upto 25G/10Gbps.",
+            "rich_description": "<p>This design is based on base GHRD with the following feature additions: \n-Important features of the design include,\n-Single Ethernet port working at 10G speed.\n-Configurable L2 Packet Switch supporting multiple source streams to Ethernet port and packet rerouting from Ethernet port to multiple destinations like HPS or User Logic(Packet client).\n-Separate DMA channel per direction for HPS system memory accesses.\n-Performance achievability matching the lane rate (25G/10G) using User Logic (Packet Client) through the L2 Packet Switch.  </p><h2>Repository Structure</h2><ul>\n<li>Directory Structure used in this example design\n <code>bash\n    |--- a5e065a-mod-devkit-prod-es  \n        |--- src\n        |   |--- hw \n        |   |--- sw</code></li>\n</ul>",
+            "category": "Ethernet",
+            "url": "https://github.com/altera-fpga/agilex5-ed-ethernet",
+            "downloadUrl": "agilex5-ed-ethernet-SED-1xETH-a5e065a-mdk-Q26.1.1-Rel-1.1.zip",
+            "Q_DOWNLOAD_URL": "",
+            "Q_GITHUB_RELEASE": "SED-1xETH-a5e065a-mdk-Q26.1.1-Rel-1.1",
+            "Q_VALIDATED": true
+        },
+        {
+            "id": "-",
+            "title": "Agilex™ 5 1x10G Ethernet System Example Design",
+            "source": "GitHub",
+            "family": "Agilex 5",
+            "quartus_version": "26.1 Pro Edition",
+            "devkit": "Agilex™ 5 FPGA and SoC E-Series 065B Modular Development Kit MK-A5E065BB32AEA",
+            "device_part": "A5ED065BB32AE4S",
+            "description": "This design is based on the Agilex 5 SoC Golden Hardware Reference Design (GHRD) which is part of the Golden System Reference Design (GSRD), enhanced with additional components such as ethernet interface with GTS Ethernet Hard IP, L2 Packet Switch and Custom Packet generator the traffic data rate support 10Gbps.",
+            "rich_description": "<p>This design is based on base GHRD with the following feature additions: \n-Important features of the design include,\n-Single Ethernet port working at 10G speed.\n-Configurable L2 Packet Switch supporting multiple source streams to Ethernet port and packet rerouting from Ethernet port to multiple destinations like HPS or User Logic(Packet client).\n-Separate DMA channel per direction for HPS system memory accesses.\n-Performance achievability matching the lane rate (10G) using User Logic (Packet Client) through the L2 Packet Switch.  </p><h2>Repository Structure</h2><ul>\n<li>Directory Structure used in this example design\n <code>bash\n    |--- a5e065b-mod-devkit-prod-es  \n        |--- src\n        |   |--- hw \n        |   |--- sw</code></li>\n</ul>",
+            "category": "Unknown",
+            "url": "https://github.com/altera-fpga/agilex5-ed-ethernet",
+            "downloadUrl": "SED-1x10GE-a5e065b-mdk-Q26.1-Rel-1.2.zip",
+            "Q_DOWNLOAD_URL": "",
+            "Q_GITHUB_RELEASE": "SED-1x10GE-a5e065b-mdk-Q26.1-Rel-1.2",
+            "Q_VALIDATED": true
+        },
+        {
+            "id": "-",
+            "title": "Agilex™ 5 1x10G Ethernet System Example Design",
+            "source": "GitHub",
+            "family": "Agilex 5",
+            "quartus_version": "26.1 Pro Edition",
+            "devkit": "Agilex™ 5 FPGA and SoC E-Series 065B Modular Development Kit MK-A5E065BB32AEA",
+            "device_part": "A5ED065BB32AE4S",
+            "description": "This design is based on the Agilex 5 SoC Golden Hardware Reference Design (GHRD) which is part of the Golden System Reference Design (GSRD), enhanced with additional components such as ethernet interface with GTS Ethernet Hard IP, L2 Packet Switch and Custom Packet generator the traffic data rate support 10Gbps.",
+            "rich_description": "<p>This design is based on base GHRD with the following feature additions: \n-Important features of the design include,\n-Single Ethernet port working at 10G speed.\n-Configurable L2 Packet Switch supporting multiple source streams to Ethernet port and packet rerouting from Ethernet port to multiple destinations like HPS or User Logic(Packet client).\n-Separate DMA channel per direction for HPS system memory accesses.\n-Performance achievability matching the lane rate (10G) using User Logic (Packet Client) through the L2 Packet Switch.  </p><h2>Repository Structure</h2><ul>\n<li>Directory Structure used in this example design\n <code>bash\n    |--- a5e065b-mod-devkit-prod-es  \n        |--- src\n        |   |--- hw \n        |   |--- sw</code></li>\n</ul>",
+            "category": "Unknown",
+            "url": "https://github.com/altera-fpga/agilex5-ed-ethernet",
+            "downloadUrl": "source_code.zip",
+            "Q_DOWNLOAD_URL": "",
+            "Q_GITHUB_RELEASE": "SED-1x10GE-a5e065b-mdk-Q26.1-Rel-1.1",
+            "Q_VALIDATED": true
+        },
+        {
+            "id": "-",
+            "title": "Agilex™ 5 1x10G Ethernet System Example Design",
+            "source": "GitHub",
+            "family": "Agilex 5",
+            "quartus_version": "25.3 Pro Edition",
+            "devkit": "Agilex 5 FPGA E-Series 065B Modular Development Kit MK-A5E065BB32AES1",
+            "device_part": "A5ED065BB32AE6SR0",
+            "description": "This design is based on the Agilex 5 SoC Golden Hardware Reference Design (GHRD) which is part of the Golden System Reference Design (GSRD), enhanced with additional components such as ethernet interface with GTS Ethernet Hard IP, L2 Packet Switch and Custom Packet generator the traffic data rate support 10Gbps.",
+            "rich_description": "<p>This design is based on base GHRD with the following feature additions: \n-Important features of the design include,\n-Single Ethernet port working at 10G speed.\n-Configurable L2 Packet Switch supporting multiple source streams to Ethernet port and packet rerouting from Ethernet port to multiple destinations like HPS or User Logic(Packet client).\n-Separate DMA channel per direction for HPS system memory accesses.\n-Performance achievability matching the lane rate (10G) using User Logic (Packet Client) through the L2 Packet Switch.  </p><h2>Repository Structure</h2><ul>\n<li>Directory Structure used in this example design\n <code>bash\n    |--- a5e065b-mod-devkit-exp-es  \n        |--- src\n        |   |--- hw \n        |   |--- sw</code></li>\n</ul>",
+            "category": "Unknown",
+            "url": "https://github.com/altera-fpga/agilex5-ed-ethernet",
+            "downloadUrl": "source_code.zip",
+            "Q_DOWNLOAD_URL": "",
+            "Q_GITHUB_RELEASE": "SED-1x10GE-a5e065b-mdk-Q25.3-Rel-1.1",
+            "Q_VALIDATED": true
+        },
+        {
+            "id": "-",
+            "title": "Agilex™ 5 FPGA E-Series Modular Development Kit 1x10G Ethernet System Example Design",
+            "source": "GitHub",
+            "family": "Agilex 5",
+            "quartus_version": "25.1 Pro Edition",
+            "devkit": "Agilex 5 FPGA E-Series 065B Modular Development Kit MK-A5E065BB32AES1",
+            "device_part": "A5ED065BB32AE6SR0",
+            "description": "This design is based on the Agilex 5 SoC Golden Hardware Reference Design (GHRD) which is part of the Golden System Reference Design (GSRD), enhanced with additional components such as ethernet interface with GTS Ethernet Hard IP, L2 Packet Switch and Custom Packet generator the traffic data rate support 10Gbps.",
+            "rich_description": "<p>This design is based on base GHRD with the following feature additions: \n-Important features of the design include,\n-Single Ethernet port working at 10G speed.\n-Configurable L2 Packet Switch supporting multiple source streams to Ethernet port and packet rerouting from Ethernet port to multiple destinations like HPS or User Logic(Packet client).\n-Separate DMA channel per direction for HPS system memory accesses.\n-Performance achievability matching the lane rate (10G) using User Logic (Packet Client) through the L2 Packet Switch.  </p><h2>Repository Structure</h2><ul>\n<li>Directory Structure used in this example design\n <code>bash\n    |--- a5e065b-mod-devkit-exp-es  \n        |--- src\n        |   |--- hw \n        |   |--- sw</code></li>\n</ul>",
+            "category": "Unknown",
+            "url": "https://github.com/altera-fpga/agilex5-ed-ethernet",
+            "downloadUrl": "source_code.zip",
+            "Q_DOWNLOAD_URL": "",
+            "Q_GITHUB_RELEASE": "SED-1x10GE-a5e065b-mdk-Q25.1-Rel-1.1p1",
+            "Q_VALIDATED": true
+        },
+        {
+            "id": "-",
+            "title": "Agilex™ 5 FPGA E-Series Modular Development Kit 1x10G Ethernet System Example Design",
+            "source": "GitHub",
+            "family": "Agilex 5",
+            "quartus_version": "25.1 Pro Edition",
+            "devkit": "Agilex 5 FPGA E-Series 065B Modular Development Kit MK-A5E065BB32AES1",
+            "device_part": "A5ED065BB32AE6SR0",
+            "description": "This design is based on the Agilex 5 SoC Golden Hardware Reference Design (GHRD) which is part of the Golden System Reference Design (GSRD), enhanced with additional components such as ethernet interface with GTS Ethernet Hard IP, L2 Packet Switch and Custom Packet generator the traffic data rate support 10Gbps.",
+            "rich_description": "<p>This design is based on base GHRD with the following feature additions: \n-Important features of the design include,\n-Single Ethernet port working at 10G speed.\n-Configurable L2 Packet Switch supporting multiple source streams to Ethernet port and packet rerouting from Ethernet port to multiple destinations like HPS or User Logic(Packet client).\n-Separate DMA channel per direction for HPS system memory accesses.\n-Performance achievability matching the lane rate (10G) using User Logic (Packet Client) through the L2 Packet Switch.  </p><h2>Repository Structure</h2><ul>\n<li>Directory Structure used in this example design\n <code>bash\n    |--- a5e065b-mod-devkit-exp-es  \n        |--- src\n        |   |--- hw \n        |   |--- sw</code></li>\n</ul>",
+            "category": "Unknown",
+            "url": "https://github.com/altera-fpga/agilex5-ed-ethernet",
+            "downloadUrl": "source_code.zip",
+            "Q_DOWNLOAD_URL": "",
+            "Q_GITHUB_RELEASE": "SED-1x10GE-a5e065b-mdk-Q25.1-Rel-1.1",
             "Q_VALIDATED": true
         }
     ],
