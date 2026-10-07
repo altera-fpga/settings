@@ -1,5 +1,5 @@
 {
-    "num": 159,
+    "num": 162,
     "designs": [
         {
             "id": "-",
@@ -3584,6 +3584,57 @@
             "downloadUrl": "source_code.zip",
             "Q_DOWNLOAD_URL": "",
             "Q_GITHUB_RELEASE": "SED-1x10GE-a5e065b-mdk-Q25.1-Rel-1.1",
+            "Q_VALIDATED": true
+        },
+        {
+            "id": "-",
+            "title": " Agilex™ 5 SoC 2x25GbE PTP1588 System Example Design ",
+            "source": "GitHub",
+            "family": "Agilex 5",
+            "quartus_version": "26.1 Pro Edition",
+            "devkit": "Agilex™ 5 FPGA E-Series 065A Premium Development Kit(DK-A5E065AB32AEA)",
+            "device_part": "A5ED065AB32AE1V",
+            "description": "This design is based on the Agilex 5 SoC Golden Hardware Reference Design (GHRD) which is part of the Golden System Reference Design (GSRD), enhanced with additional components such as ethernet interface with GTS Ethernet Hard IP, L2 Packet Switch and Custom Packet generator the traffic data rate support 10Gbps with support for PTP IEEE-1588v2.",
+            "rich_description": "<p>The Agilex™ 5 2x125GbE Precision Time Protocol(PTP1588v2) System Example Design includes two Ethernet ports with built-in two-step hardware PTP timestamping capabilities. The integrated Agilex™ 5 Hard Processor System (HPS) runs a PTP software stack that complements the hardware-based timestamping functionality. The System Example Design (SED) provides the necessary drivers and user applications to support the Linux Network stack, the Linux PTP stack, and Layer 2 Packet Switch through the Linux kernel Traffic Control (TC) system.",
+            "category": "PTP-IEEE1588v2",
+            "url": "https://github.com/altera-fpga/agilex5-ed-ptp",
+            "downloadUrl": "source_code.zip",
+            "Q_DOWNLOAD_URL": "",
+            "Q_GITHUB_RELEASE": "SED-2X25GE_PTP-a5e065a-pdk-Q26.1-Rel1.1",
+            "Q_VALIDATED": true
+        },
+        {
+            "id": "-",
+            "title": " Agilex™ 5 SoC 2x10GbE PTP1588 System Example Design ",
+            "source": "GitHub",
+            "family": "Agilex 5",
+            "quartus_version": "26.1 Pro Edition",
+            "devkit": "Agilex™ 5 FPGA E-Series 065B Premium Development Kit(DK-A5E065BB32AEA)",
+            "device_part": "A5ED065BB32AE4S",
+            "description": "This design is based on the Agilex 5 SoC Golden Hardware Reference Design (GHRD) which is part of the Golden System Reference Design (GSRD), enhanced with additional components such as ethernet interface with GTS Ethernet Hard IP, L2 Packet Switch and Custom Packet generator the traffic data rate support 10Gbps with support for PTP IEEE-1588v2.",
+            "rich_description": "<p>The Agilex™ 5 2x10GbE Precision Time Protocol(PTP1588v2) System Example Design includes two Ethernet ports with built-in two-step hardware PTP timestamping capabilities. The integrated Agilex™ 5 Hard Processor System (HPS) runs a PTP software stack that complements the hardware-based timestamping functionality. The System Example Design (SED) provides the necessary drivers and user applications to support the Linux Network stack, the Linux PTP stack, and Layer 2 Packet Switch through the Linux kernel Traffic Control (TC) system.",
+            "category": "PTP-IEEE1588v2",
+            "url": "https://github.com/altera-fpga/agilex5-ed-ptp",
+            "downloadUrl": "source_code.zip",
+            "Q_DOWNLOAD_URL": "",
+            "Q_GITHUB_RELEASE": "SED-2X10GE_PTP-a5e065b-pdk-Q26.1-Rel1.1",
+            "Q_VALIDATED": true
+        },
+        {
+            "id": "-",
+            "title": "Agilex™ 5 FPGA E-Series Premium Development Kit 2x10G PTP1588 System Example Design ",
+            "source": "GitHub",
+            "family": "Agilex 5",
+            "quartus_version": "25.3 Pro Edition",
+            "devkit": "Agilex™ 5 FPGA and SoC E-Series Premium Development Kit (ES) (DK-A5E065BB32AES1)",
+            "device_part": "A5ED065BB32AE6SR0",
+            "description": "This design is based on the Agilex 5 SoC Golden Hardware Reference Design (GHRD) which is part of the Golden System Reference Design (GSRD), enhanced with additional components such as ethernet interface with GTS Ethernet Hard IP, L2 Packet Switch and Custom Packet generator the traffic data rate support 10Gbps with support for PTP IEEE-1588v2.",
+            "rich_description": "<p>The Agilex™ 5 2x10GbE Precision Time Protocol(PTP1588v2) System Example Design includes two Ethernet ports with built-in two-step hardware PTP timestamping capabilities. The integrated Agilex™ 5 Hard Processor System (HPS) runs a PTP software stack that complements the hardware-based timestamping functionality. The System Example Design (SED) provides the necessary drivers and user applications to support the Linux Network stack, the Linux PTP stack, and Layer 2 Packet Switch through the Linux kernel Traffic Control (TC) system.",
+            "category": "PTP-IEEE1588v2",
+            "url": "https://github.com/altera-fpga/agilex5-ed-ptp",
+            "downloadUrl": "source_code.zip",
+            "Q_DOWNLOAD_URL": "",
+            "Q_GITHUB_RELEASE": "SED-2X10GE_PTP-agilex5_dk_a5e065bb32aes1-Q25.3-Rel1.1",
             "Q_VALIDATED": true
         }
     ],
