@@ -869,17 +869,17 @@
             "devkit": "Agilex 5 FPGA ESeries 065B Premium Development Kit DKA5E065BB32AES1",
             "device_part": "A5ED065BB32AE6SR0",
             "description": "Nios® V/g Processor-based TinyML LiteRT example design on the Agilex® 5 FPGA.",
-            "rich_description": "<p>This design demonstrates the TinyML application using LiteRT for microcontrollers software with Nios® V/g processor in the Agilex™ 5 FPGA E-Series 065B Premium Development Kit (ES1) DK-A5E065BB32AES1. </p><p><img alt=\"image\" src=\"https://github.com/intel-innersource/applications.fpga.niosv-example-designs.niosv-example-designs/blob/rel/25.3.1/a5e065b-prem-devkit/niosv_g/tinyml_liteRT/img/block_diagram.png\"/></p>",
+            "rich_description": "<p>This design demonstrates the TinyML application using LiteRT for microcontrollers software with Nios® V/g processor in the Agilex™ 5 FPGA E-Series 065B Premium Development Kit (ES1) DK-A5E065BB32AES1. </p><p><img alt=\"image\" src=\"https://github.com/altera-fpga/agilex5-ed-niosv/blob/rel/25.3.1/niosv_g/tinyml_liteRT/img/block_diagram.png\"/></p>",
             "category": "AI",
-            "url": "https://github.com/intel-innersource/applications.fpga.niosv-example-designs.niosv-example-designs/blob/rel/25.3.1/agf014ea-dev-devkit/niosv_g/tinyml_liteRT",
+            "url": "https://github.com/altera-fpga/agilex5-ed-niosv/blob/rel/25.3.1/niosv_g/tinyml_liteRT",
             "downloadUrl": "agilex5_niosv_g_tinyml_liteRT.zip",
             "documentations": [
                 {
                     "title": "Design Document",
-                    "downloadUrl": "https://github.com/intel-innersource/applications.fpga.niosv-example-designs.niosv-example-designs/blob/rel/25.3.1/agf014ea-dev-devkit/niosv_g/tinyml_liteRT/img/block_diagram.png"
+                    "downloadUrl": "https://github.com/altera-fpga/agilex5-ed-niosv/blob/rel/25.3.1/niosv_g/tinyml_liteRT/img/block_diagram.png"
                 }
             ],
-            "Q_DOWNLOAD_URL": "https://api.github.com/repos/altera-fpga/agilex5-ed-niosv/releases/assets/349981796",
+            "Q_DOWNLOAD_URL": "https://api.github.com/repos/altera-fpga/agilex5-ed-niosv/releases/assets/618127813",
             "Q_GITHUB_RELEASE": "25.3.1",
             "Q_VALIDATED": true
         },
@@ -3234,6 +3234,30 @@
         },
         {
             "id": "-",
+            "title": "Nios® V/g Baseline Design",
+            "source": "GitHub",
+            "family": "Agilex 3",
+            "quartus_version": "26.1.1",
+            "patch_number": "Unknown",
+            "devkit": "Atum Nios V Starter Kit",
+            "device_part": "A3CZ135BB18AE7S",
+            "description": "This design demonstrates the Baseline Design for a Nios® V/g processor with basic bare minimum peripherals required for any application execution",
+            "rich_description": "<p>This example design includes a Nios® V/g processor connected to the On Chip RAM-II, JTAG UART IP, Parallel- IO and System ID peripheral core. </p><p>The objective of the design is to accomplish data transfer between the processor and on chip memory and toggling the on board LEDs with and without using the Push Button. </p><p><img alt=\"image\" src=\"https://github.com/altera-fpga/agilex3-ed-niosv/blob/rel/26.1.1/terasic_atum_a3_nano/niosv_g/niosv_g_baseline_design/img/baseline_design_block_design.png\"/></p>",
+            "category": "Nios V",
+            "url": "https://github.com/altera-fpga/agilex3-ed-niosv/releases/download/26.1.1/niosv_g_baseline_design.zip",
+            "downloadUrl": "niosv_g_baseline_design.zip",
+            "documentations": [
+                {
+                    "title": "Design Document",
+                    "downloadUrl": "https://github.com/altera-fpga/agilex3-ed-niosv/blob/rel/26.1.1/niosv_g/niosv_g_baseline_design/docs/Niosvg_processor_Baseline_Design_on_Atum_A3_Nano_FPGA.md"
+                }
+            ],
+            "Q_DOWNLOAD_URL": "https://api.github.com/repos/altera-fpga/agilex3-ed-niosv/releases/assets/618013289",
+            "Q_GITHUB_RELEASE": "26.1.1",
+            "Q_VALIDATED": true
+        },
+        {
+            "id": "-",
             "title": "Terasic Atum A3 Nano FPGA - TinyML LiteRT System Example Design Example on Nios® V/g Processor",
             "source": "GitHub",
             "family": "Agilex 3",
@@ -3244,15 +3268,15 @@
             "description": "Nios® V/g Processor-based TinyML LiteRT System Example Design on the Terasic Atum A3 Nano FPGA.",
             "rich_description": "<p>This design demonstrates the TinyML application using LiteRT for microcontrollers software with Nios® V/g processor on the Atum A3 Nano FPGA board. </p><p><img alt=\"image\" src=\"https://github.com/altera-fpga/agilex3-ed-niosv/blob/rel/26.1.1/terasic_atum_a3_nano/niosv_g/niosv_g_tinyml_liteRT/img/block_diagram.png\"/></p>",
             "category": "AI",
-            "url": "https://github.com/altera-fpga/agilex3-ed-niosv/releases/download/26.1.1/atum_a3_nano_niosv_g_tinyml_liteRT.zip",
-            "downloadUrl": "atum_a3_nano_niosv_g_tinyml_liteRT.zip",
+            "url": "https://github.com/altera-fpga/agilex3-ed-niosv/releases/download/26.1.1/niosv_g_tinyml_liteRT.zip",
+            "downloadUrl": "niosv_g_tinyml_liteRT.zip",
             "documentations": [
                 {
                     "title": "Design Document",
                     "downloadUrl": "https://github.com/altera-fpga/agilex3-ed-niosv/blob/rel/26.1.1/terasic_atum_a3_nano/niosv_g/niosv_g_tinyml_liteRT/docs/Niosv_g_Processor_TinyML_Design_on_Terasic_Atum_A3_Nano_FPGA.md"
                 }
             ],
-            "Q_DOWNLOAD_URL": "",
+            "Q_DOWNLOAD_URL": "https://api.github.com/repos/altera-fpga/agilex3-ed-niosv/releases/assets/618012963",
             "Q_GITHUB_RELEASE": "26.1.1",
             "Q_VALIDATED": true
         },
@@ -3268,39 +3292,15 @@
             "description": "The System Example Design demonstrates ping application. The Nios V/g acts as the core. The Triple Speed Ethernet (TSE) IP is configured in RGMII mode and connectes to the onboard DP83867IR TI PHY via RGMII interface.",
             "rich_description": "The design has 2 MSGDMA IPs configured in Memory Mapped to Stream (MM2S) mode for Transmission and Stream to Memory Mapped (S2MM) mode for Reception. To test the application, connect the RGMII Interface of the Atum A3 Nano FPGA board to the Link Partner using RJ-45 cable",
             "category": "Networking",
-            "url": "https://github.com/altera-fpga/agilex3-ed-niosv/releases/download/26.1.1/atum_a3_nano_niosv_g_webserver_ping.zip",
-            "downloadUrl": "atum_a3_nano_niosv_g_webserver_ping.zip",
+            "url": "https://github.com/altera-fpga/agilex3-ed-niosv/releases/download/26.1.1/niosv_g_webserver_ping.zip",
+            "downloadUrl": "niosv_g_webserver_ping.zip",
             "documentations": [
                 {
                     "title": "Design Document",
                     "downloadUrl": "https://github.com/altera-fpga/agilex3-ed-niosv/blob/rel/26.1.1/terasic_atum_a3_nano/niosv_g/niosv_g_webserver_ping/docs/Nios_Vg_Processor_Webserver_Ping_Design_on_Atum_A3_Nano_FPGA.md"
                 }
             ],
-            "Q_DOWNLOAD_URL": "",
-            "Q_GITHUB_RELEASE": "26.1.1",
-            "Q_VALIDATED": true
-        },
-        {
-            "id": "-",
-            "title": "Nios® V/g Baseline Design",
-            "source": "GitHub",
-            "family": "Agilex 3",
-            "quartus_version": "26.1.1",
-            "patch_number": "Unknown",
-            "devkit": "Atum Nios V Starter Kit",
-            "device_part": "A3CZ135BB18AE7S",
-            "description": "This design demonstrates the Baseline Design for a Nios® V/g processor with basic bare minimum peripherals required for any application execution",
-            "rich_description": "<p>This example design includes a Nios® V/g processor connected to the On Chip RAM-II, JTAG UART IP, Parallel- IO and System ID peripheral core. </p><p>The objective of the design is to accomplish data transfer between the processor and on chip memory and toggling the on board LEDs with and without using the Push Button. </p><p><img alt=\"image\" src=\"https://github.com/altera-fpga/agilex3-ed-niosv/blob/rel/26.1.1/terasic_atum_a3_nano/niosv_g/niosv_g_baseline_design/img/baseline_design_block_design.png\"/></p>",
-            "category": "Nios V",
-            "url": "https://github.com/altera-fpga/agilex3-ed-niosv/releases/download/26.1.1/atum_niosv_g_baseline_design.zip",
-            "downloadUrl": "atum_niosv_g_Baseline_Design.zip",
-            "documentations": [
-                {
-                    "title": "Design Document",
-                    "downloadUrl": "https://github.com/altera-fpga/agilex3-ed-niosv/blob/rel/26.1.1/niosv_g/niosv_g_baseline_design/docs/Niosvg_processor_Baseline_Design_on_Atum_A3_Nano_FPGA.md"
-                }
-            ],
-            "Q_DOWNLOAD_URL": "",
+            "Q_DOWNLOAD_URL": "https://api.github.com/repos/altera-fpga/agilex3-ed-niosv/releases/assets/618012554",
             "Q_GITHUB_RELEASE": "26.1.1",
             "Q_VALIDATED": true
         },
