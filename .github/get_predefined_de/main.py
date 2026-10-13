@@ -401,6 +401,69 @@ def merge_with_existing_catalog(options, new_designs):
     return merged
 
 
+def is_empty_field(value):
+    """True when a catalog field value has no usable text."""
+    return value is None or (isinstance(value, str) and not value.strip())
+
+
+def require_present(item, field):
+    """Reject a design when `field` is not in the record."""
+    if field not in item:
+        return f"{field} is missing"
+    return None
+
+
+def require_non_empty(item, field):
+    """Reject a design when `field` is present but blank."""
+    if field not in item or not is_empty_field(item[field]):
+        return None
+    return f"{field} is empty"
+
+
+def catalog_field_rejection(item):
+    """Return why a design must be left out of list.json, or None to keep it.
+
+    Add another field check by appending a (field, check) pair. A check takes
+    (item, field) and returns a rejection reason, or None when the field passes.
+    """
+    field_checks = [
+        ("Q_DOWNLOAD_URL", require_present),
+        ("Q_DOWNLOAD_URL", require_non_empty),
+    ]
+    for field, check in field_checks:
+        reason = check(item, field)
+        if reason:
+            return reason
+    return None
+
+
+def design_label(item):
+    for key in ("name", "title", "id", "url", "downloadUrl"):
+        value = item.get(key)
+        if isinstance(value, str) and value.strip():
+            return value.strip()
+    return "<unnamed>"
+
+
+def select_designs_for_catalog(designs):
+    """Keep only designs that pass every catalog field check."""
+    included = []
+    for item in designs:
+        reason = catalog_field_rejection(item)
+        if reason:
+            logging.warning(
+                f"Excluding '{design_label(item)}' from {LIST_JSON}: {reason}."
+            )
+            continue
+        included.append(item)
+    excluded = len(designs) - len(included)
+    if excluded:
+        logging.info(
+            f"Excluded {excluded} design(s) from {LIST_JSON} after field checks."
+        )
+    return included
+
+
 def get_design_examples(options):
     all_list_json = []
 
@@ -436,14 +499,15 @@ def get_design_examples(options):
         if all_list_json:
             if options.predefined_url:
                 logging.info(f"Merging {len(all_list_json)} design example(s) into existing catalog...")
-                merged = merge_with_existing_catalog(options, all_list_json)
-                logging.info(f"Total design examples after merge: {len(merged)}")
-                all_list_json = metadata_formatize(merged)
+                designs = merge_with_existing_catalog(options, all_list_json)
+                logging.info(f"Total design examples after merge: {len(designs)}")
             else:
                 logging.info(f"Consolidating all {LIST_JSON} files into '{options.output}'...")
                 logging.info(f"Total consolidated design examples: {len(all_list_json)}")
-                all_list_json = metadata_formatize(all_list_json)
-            replace_if_diff(options, all_list_json)
+                designs = all_list_json
+            designs = select_designs_for_catalog(designs)
+            logging.info(f"Design examples included in {LIST_JSON}: {len(designs)}")
+            replace_if_diff(options, metadata_formatize(designs))
         elif options.predefined_url:
             logging.warning(f"No {LIST_JSON} files were found for the included URLs. Existing catalog unchanged.")
         else:
