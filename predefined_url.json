@@ -48,7 +48,7 @@
         "url": "https://github.com/altera-fpga/agilex3-ed-hps-baseline"
     },
     {
-        "url": "https://github.com/altera-fpga/agilex72-ed-hps-baseline"
+        "url": "https://github.com/altera-fpga/agilex27-ed-hps-baseline"
     },
     {
         "url": "https://github.com/altera-fpga/agilex9-ed-hps-baseline"
@@ -57,7 +57,7 @@
         "url": "https://github.com/altera-fpga/agilex5-ed-hps-fpga-bridges"
     },
     {
-        "url": "https://github.com/altera-fpga/agilex72-ed-hps-fpga-bridges"
+        "url": "https://github.com/altera-fpga/agilex27-ed-hps-fpga-bridges"
     },
     {
         "url": "https://github.com/altera-fpga/agilex5-ed-platform-management"
