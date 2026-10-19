@@ -334,13 +334,8 @@ def extract_url_details(urls):
     return urls_details
 
 
-def get_legacy_predefined_url():
-    # return ["https://bsas.intel.com/api/design_examples/latest/"]
-    return []
-
-
 def get_predefined_url():
-    predefined_urls = get_legacy_predefined_url()
+    predefined_urls = []
     try:
         with open(PREDEFINED_URL_FILE, "r", encoding="utf-8") as file:
             data = json.load(file)
@@ -366,39 +361,6 @@ def get_unique_urls(url_details):
             temp_list.append(item["url"])
             unique_list.append(item)
     return unique_list
-
-
-def merge_with_existing_catalog(options, new_designs):
-    """Load the existing catalog and merge new designs into it.
-    Uses 'url' as the unique key: matching entries are updated, new ones are appended."""
-    existing_designs = []
-
-    if os.path.exists(options.output):
-        try:
-            with open(options.output, "r", encoding="utf-8") as file:
-                existing_content = json.load(file)
-                existing_designs = existing_content.get("designs", [])
-                logging.info(f"Loaded {len(existing_designs)} existing design(s) from catalog.")
-        except Exception as e:
-            logging.warning(f"Could not read existing catalog: {e}. Starting fresh.")
-
-    new_designs_by_url = {d["url"]: d for d in new_designs if "url" in d}
-
-    merged = []
-    seen_urls = set()
-    for design in existing_designs:
-        url = design.get("url")
-        if url and url in new_designs_by_url:
-            merged.append(new_designs_by_url[url])
-            seen_urls.add(url)
-        else:
-            merged.append(design)
-
-    for url, design in new_designs_by_url.items():
-        if url not in seen_urls:
-            merged.append(design)
-
-    return merged
 
 
 def is_empty_field(value):
@@ -467,12 +429,7 @@ def select_designs_for_catalog(designs):
 def get_design_examples(options):
     all_list_json = []
 
-    if options.predefined_url:
-        logging.info(f"--predefined_url mode: processing {len(options.predefined_url)} specified URL(s) only.")
-        predefined_urls = options.predefined_url
-    else:
-        predefined_urls = get_predefined_url()
-
+    predefined_urls = get_predefined_url()
     url_details = extract_url_details(predefined_urls)
     url_details = get_unique_urls(url_details)
 
@@ -497,19 +454,11 @@ def get_design_examples(options):
     logging.info("----------------------------------------")
     try:
         if all_list_json:
-            if options.predefined_url:
-                logging.info(f"Merging {len(all_list_json)} design example(s) into existing catalog...")
-                designs = merge_with_existing_catalog(options, all_list_json)
-                logging.info(f"Total design examples after merge: {len(designs)}")
-            else:
-                logging.info(f"Consolidating all {LIST_JSON} files into '{options.output}'...")
-                logging.info(f"Total consolidated design examples: {len(all_list_json)}")
-                designs = all_list_json
-            designs = select_designs_for_catalog(designs)
+            logging.info(f"Consolidating all {LIST_JSON} files into '{options.output}'...")
+            logging.info(f"Total consolidated design examples: {len(all_list_json)}")
+            designs = select_designs_for_catalog(all_list_json)
             logging.info(f"Design examples included in {LIST_JSON}: {len(designs)}")
             replace_if_diff(options, metadata_formatize(designs))
-        elif options.predefined_url:
-            logging.warning(f"No {LIST_JSON} files were found for the included URLs. Existing catalog unchanged.")
         else:
             logging.error(f"No {LIST_JSON} files were found.")
     except BaseException as e:
@@ -582,14 +531,6 @@ def close_logging():
 
 def main(argv):
     option_parser = optparse.OptionParser(usage=DEFAULT_USAGE_TEXT, version=VERSION)
-    option_parser.add_option(
-        "--predefined_url",
-        action="append",
-        dest="predefined_url",
-        default=None,
-        help="Only process specified predefined URL(s) and merge into existing catalog. "
-             "Can be specified multiple times. e.g. --predefined_url <url1> --predefined_url <url2>",
-    )
     options, args = option_parser.parse_args(argv)
 
     initialize_logging()
