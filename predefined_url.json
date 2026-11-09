@@ -1,5 +1,11 @@
 [
     {
+        "url": "https://github.com/altera-fpga/agilex-ed-robotics"
+    },
+    {
+        "url": "https://github.com/altera-fpga/agilex-ed-drive-on-chip"
+    },
+    {
         "url": "https://github.com/altera-fpga/agilex5-ed-camera"
     },
     {
